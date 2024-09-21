@@ -1,0 +1,132 @@
+
+<div style="padding: 1%"></div>
+
+
+    <div style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(232, 151, 255);
+    ">
+      <h1> <b> See Your Vacancy List</b></h1>
+    <h3>You can <b>Update</b> & <b>Delete</b></h3>
+
+    <button mat-icon-button aria-label="Applicants">
+        <mat-icon style="font-size: 25px;">notifications</mat-icon>
+        <span  matBadge="{{ jobDetails.length }}" matBadgeColor="warn" matBadgeOverlap="false" ></span>
+      </button>
+      
+    </div>
+
+
+
+
+
+<div class="container mt-5 p-2">
+
+
+
+
+    <table mat-table [dataSource]="jobDetails" class="mat-elevation-z8">
+
+   <!-- ID Column -->
+   <ng-container matColumnDef="#">
+    <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>#</b> </th>
+    <td mat-cell *matCellDef="let element; let i = index" style="background-color: rgb(255, 255, 255);"> <b>{{ i + 1 }}</b> </td>
+</ng-container>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;" disabled> <b>ID</b> </th>
+            <td mat-cell *matCellDef="let element" style="background-color: rgb(227, 227, 227);" disabled> <b>{{element.id}}</b> </td>
+        </ng-container>
+
+        <!-- Job Title Column -->
+        <ng-container matColumnDef="Job Title">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Job Title</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.jobTitle}} </td>
+        </ng-container>
+
+        <!-- Job Description Column -->
+        <ng-container matColumnDef="Job Description">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Job Description</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.jobDescription}} </td>
+        </ng-container>
+
+        <!-- Salary Column -->
+        <ng-container matColumnDef="Salary">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Salary</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+        </ng-container>
+
+        <!-- Experience Column -->
+        <ng-container matColumnDef="Experience">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Experience</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> <b>{{element.experienceRequired}}</b> </td>
+        </ng-container>
+
+
+        <!-- Education Column -->
+        <ng-container matColumnDef="Education">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Education</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.educationQualification}} </td>
+        </ng-container>
+
+        <!-- Deadline Column -->
+        <ng-container matColumnDef="Deadline">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Deadline</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.applicationDeadline}} </td>
+        </ng-container>
+
+
+
+
+        <!-- Contact Column -->
+        <ng-container matColumnDef="Contact">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Contact</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: justify; "> {{element.contactInformation}} </td>
+        </ng-container>
+
+
+          <!-- Edit Column -->
+          <ng-container matColumnDef="Edit">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Edit</b> </th>
+            <td mat-cell *matCellDef="let element"> 
+                
+                <button mat-icon-button color="primary" (click)="editJobPost(element.id)">
+                <mat-icon>edit</mat-icon>    
+                </button>
+            
+            
+            
+            </td>
+        </ng-container>
+ 
+
+          <!-- Delete Column -->
+          <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Delete</b> </th>
+            <td mat-cell *matCellDef="let element"> 
+                
+                
+                <button mat-icon-button color="warn" (click)="deleteJobPost(element.id)">
+                    <mat-icon>delete</mat-icon>    
+                    </button>
+            
+            
+            
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>

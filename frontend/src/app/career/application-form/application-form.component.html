@@ -1,0 +1,122 @@
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+    <h1 style="font-size: xx-large;">Application Form</h1>
+    <ul class="breadcrumb">
+        <li><a href="/home">Home</a></li>
+        <li> <a href="/career">Career</a></li>
+        <li>Application Form</li>
+    </ul>
+  </div>
+  
+  
+  
+  <div class="row p-3"></div>
+  
+
+
+
+
+
+
+<div style="padding: 1%"></div>
+
+<h1>
+    <div style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(252, 164, 255);
+    ">
+        <b> Apply for " <u>Job Name</u> "</b>
+    </div>
+</h1>
+
+
+<div class="container mt-5">
+    <div class="card p-2">
+
+        <div class="row m-3" > 
+            <form class="row g-3" #newApplicantForm="ngForm" (ngSubmit)="applyForNewJob(newApplicantForm)">
+
+                <!-- information -->
+                <div class="col-8 row g-10">
+
+                  <!-- firstName, lastName, email, phone, dateOfBirth, applicationDate -->
+
+
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" [(ngModel)]="jobApp.firstName"
+                            name="firstName">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" [(ngModel)]="jobApp.lastName"
+                            name="lastName">
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" [(ngModel)]="jobApp.email" name="email">
+                    </div>
+                    <div class="col-12">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone"
+                            [(ngModel)]="jobApp.phone" name="phone">
+                    </div>
+
+
+                 
+
+                    <div class="col-md-6">
+                        <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirth"
+                            [(ngModel)]="jobApp.dateOfBirth" name="dateOfBirth">
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- image and pdf  -->
+
+
+
+
+                <div class="col-4 row row-cols-1 row g-2 m-1">
+
+
+                    <div class="col">
+
+                        <b>Image</b> <br>
+                        <input type="file" id="image">
+
+                    </div>
+
+                    <div class="col">
+                        <b>pdf</b><br>
+
+                        <input type="file" id="image">
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </div>
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+</div>

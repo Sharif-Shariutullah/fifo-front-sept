@@ -1,0 +1,145 @@
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+    <h1 style="font-size: xx-large;">Contact</h1>
+    <ul class="breadcrumb">
+        <li><a href="/home">Home</a></li>
+        <li>Contact</li>
+    </ul>
+</div>
+
+
+
+<div class="row p-3"></div>
+
+<div class="container text-center pt-5">
+    <div class="row m-5">
+
+
+        <!-- Get in Touch with Us -->
+
+        <div class="col-4 px-4 py-5">
+            <div class="leftSideInfo">
+                <h1>Get in Touch with Us</h1>
+            </div>
+
+            <div class="border-all">
+                <div>
+                    <h1>Office</h1>
+                    <p>9th Floor, Janata Tower, Software Technology Park, Dhaka-1215</p>
+                </div>
+
+                <div>
+                    <h1>Email Address</h1>
+                    <p>info@fifo-tech.com</p>
+                </div>
+
+                <div>
+                    <h1>Phone</h1>
+                    <p>
+                        +88-02-44810012-3 <br />
+                        +880 1927 666 222 <br />
+                        Saturday-Thursday (09 am-06 pm)
+                    </p>
+                </div>
+
+                <div>
+                    <h1>Follow Us</h1>
+
+                    <div>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a href="https://www.facebook.com/FIFOTech/" class="nav-link px-2 text-muted">
+                                    <i class="fa-brands fa-facebook" style="color: #4267b2; font-size: 24px"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.youtube.com/channel/UCD9upeq2pAQzYv9B-Gz07fg"
+                                    class="nav-link px-2 text-muted">
+                                    <i class="fa-brands fa-youtube" style="color: #ff0000; font-size: 24px"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://bd.linkedin.com/company/fifotech" class="nav-link px-2 text-muted">
+                                    <i class="fa-brands fa-linkedin" style="color: #0077b5; font-size: 24px"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- contact form  -->
+
+
+        <div class="col-8">
+            <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ask for Help</h1>
+
+            <div class="container">
+
+                <form #ContactForm="ngForm" (ngSubmit)="createContact(ContactForm)">
+                    <!-- input -->
+
+
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput placeholder="FIFO-Tech Company" [(ngModel)]="clientContactObject.companyName"
+                            name="companyName">
+                        <mat-icon matPrefix>apartment</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="9th floor, Janata Tower, Software Technology Park, Dhaka-1215"
+                            [(ngModel)]="clientContactObject.companyAddress" name="companyAddress">
+                        <mat-icon matPrefix>pin_drop</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Your Name</mat-label>
+                        <input matInput placeholder="Full Name" [(ngModel)]="clientContactObject.clientName"
+                            name="clientName">
+                        <mat-icon matPrefix>account_circle</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="abc@example.com" [(ngModel)]="clientContactObject.email"
+                            name="email">
+                        <mat-icon matPrefix>mail</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-50">
+                        <mat-label>Tel-Phone</mat-label>
+                        <input matInput placeholder="02-44810012 (required)"
+                            [(ngModel)]="clientContactObject.companyPhone" name="companyPhone">
+                        <mat-icon matPrefix>dialpad</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-50 p-2">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="+880 1927 666 222(required)"
+                            [(ngModel)]="clientContactObject.companyMobileNumber" name="companyMobileNumber">
+                        <mat-icon matPrefix>call</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput rows="6" style="width: 100%" placeholder="Message"
+                            [(ngModel)]="clientContactObject.message" name="message"></textarea>
+                        <mat-icon matPrefix>chat_info</mat-icon>
+                    </mat-form-field>
+
+
+                    <button type="submit" mat-raised-button style="background-color: aqua;">
+                        Submit
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

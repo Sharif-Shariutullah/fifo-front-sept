@@ -1,0 +1,108 @@
+
+<div style="padding: 1%"></div>
+
+
+    <div style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(232, 151, 255);
+    ">
+      <h1> <b> Client Contact List</b></h1>
+
+    <button mat-icon-button aria-label="Applicants">
+        <mat-icon style="font-size: 25px;">notifications</mat-icon>
+        <span  matBadge="{{ contactDetails.length }}" matBadgeColor="warn" matBadgeOverlap="false" ></span>
+      </button>
+      
+    </div>
+
+
+
+
+
+<div class="container mt-5 p-2">
+
+
+
+
+    <table mat-table [dataSource]="contactDetails" class="mat-elevation-z8">
+
+   <!-- indexing -->
+   <ng-container matColumnDef="#">
+    <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>#</b> </th>
+    <td mat-cell *matCellDef="let element; let i = index" style="background-color: rgb(255, 255, 255);"> <b>{{ i + 1 }}</b> </td>
+</ng-container>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;" disabled> <b>ID</b> </th>
+            <td mat-cell *matCellDef="let element" style="background-color: rgb(227, 227, 227);" disabled> <b>{{element.contactId}}</b> </td>
+        </ng-container>
+
+        <!-- Company Name Column -->
+        <ng-container matColumnDef="Company Name">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Company Name</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+        </ng-container>
+
+        <!-- Company Address Column -->
+        <ng-container matColumnDef="Company Address">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Company Address</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.companyAddress}} </td>
+        </ng-container>
+
+        <!-- Client Name Column -->
+        <ng-container matColumnDef="Client Name">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Client Name</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.clientName}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Email</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> <b>{{element.email}}</b> </td>
+        </ng-container>
+
+
+        <!-- Education Column -->
+        <ng-container matColumnDef="Company Phone">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Company Phone</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.companyPhone}} </td>
+        </ng-container>
+
+        <!-- Mobile Column -->
+        <ng-container matColumnDef="Mobile">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Mobile</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.companyMobileNumber}} </td>
+        </ng-container>
+
+
+
+
+        <!-- Message Column -->
+        <ng-container matColumnDef="Message">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Message</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: justify; "> {{element.message}} </td>
+        </ng-container>
+
+
+       
+ 
+
+        
+        
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>
+

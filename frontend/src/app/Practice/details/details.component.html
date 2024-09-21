@@ -1,0 +1,48 @@
+
+
+<div class="product-list">
+
+
+
+
+
+    <mat-card class="product-card" *ngFor="let prac of practice">
+        <div class="product-image">
+            <img [src]="prac.processedImg" alt="product-image">
+        </div>
+        <div class="product-details">
+            <h2 class="product-name">{{ prac.title }}</h2>
+
+            
+            <p class="product-description">{{ prac.subtitle }}</p>
+            <mat-divider></mat-divider>
+            <div class="product-info">
+                <div class="info-row">
+                    <span class="info-label">Description:</span>
+                    <span class="info-value"> {{ prac.description }}  </span>
+                </div>
+                
+            </div>
+
+
+
+
+            <mat-divider></mat-divider>
+            <div class="actions">
+           
+               
+                <button mat-raised-button color="accent" class="update-button" [routerLink]="'/practice-edit' +
+                    prac.id">Update</button>
+                &nbsp;
+                <button mat-raised-button color="warn" class="delete-button" (click)="deletePractice(prac.id)">
+                    Delete
+                </button>
+
+
+            </div>
+
+
+
+        </div>
+    </mat-card>
+</div>

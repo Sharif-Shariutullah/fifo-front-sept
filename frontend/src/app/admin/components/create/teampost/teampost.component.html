@@ -1,0 +1,99 @@
+<div style="padding: 1%"></div>
+ 
+<h1>
+  <div
+    style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(151, 255, 173);
+    "
+  >
+    <b> Add in Gallery </b>
+  </div>
+</h1>
+
+<div class="container">
+  <div class="card p-2">
+
+  <form #TeamMemberForm="ngForm" (ngSubmit)="createTeamMember(TeamMemberForm)">
+ 
+    <div class="col-md-6">
+      <label for="Name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Name"
+        [(ngModel)]="Object.name"
+        name="Name"
+        placeholder="Your name"
+      />
+    </div>
+
+
+    <div class="col-md-6">
+        <label for="designation" class="form-label"> Designation </label>
+        <input
+          type="text"
+          class="form-control"
+          id="designation"
+          [(ngModel)]="Object.designation"
+          name="designation"
+          placeholder="what is your designation"
+        />
+      </div>
+ 
+
+
+      <div class="col-md-6">
+        <label for="mail" class="form-label">Mail</label>
+        <input
+          type="text"
+          class="form-control"
+          id="mail"
+          [(ngModel)]="Object.mail"
+          name="mail"
+          placeholder="abc@gmail.com"
+        />
+      </div>
+
+
+
+
+      <div class="col-md-6">
+        <label for="linkedInId" class="form-label">linkedInId</label>
+        <input
+          type="text"
+          class="form-control"
+          id="linkedInId"
+          [(ngModel)]="Object.linkedInId"
+          name="linkedInId"
+          placeholder="https://www.linkedin.com/in/....../"
+        />
+      </div>
+
+
+    <div class="col-12">
+      <label for="content" class="form-label">Details</label>
+      <textarea class="form-control"
+      id="content"
+      [(ngModel)]="Object.details"
+      name="content"
+      placeholder="write what ever you like ( 5000 words limit)"
+      rows="8">
+        </textarea>
+       
+
+    </div>
+
+
+
+    <div class="col-12 mt-4 float center">
+      <button type="submit" class="btn btn-primary">Create a Team Member </button>
+    </div>
+
+
+
+  </form>
+</div>
+</div>

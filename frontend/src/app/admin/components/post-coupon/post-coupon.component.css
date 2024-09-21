@@ -1,0 +1,42 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 90px;
+}
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  /* Update with your desired color code */
+}
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+.container form mat-form-field {
+  margin-bottom: 20px;
+}
+.container form mat-form-field .mat-form-field-wrapper {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.container form mat-form-field .mat-form-field-outline {
+  border-width: 1px;
+}
+.container form mat-form-field .mat-input-element {
+  color: #3f51b5;
+  /* Update with your desired color code */
+}
+.container form button {
+  align-self: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .container form mat-form-field {
+    margin-bottom: 10px;
+  }
+}/*# sourceMappingURL=post-coupon.component.css.map */

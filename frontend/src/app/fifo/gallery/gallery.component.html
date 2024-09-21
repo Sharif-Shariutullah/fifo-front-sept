@@ -1,0 +1,90 @@
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+  <h1 style="font-size: xx-large">Gallery</h1>
+  <ul class="breadcrumb">
+    <li><a href="/home">Home</a></li>
+    <li>Gallery</li>
+  </ul>
+</div>
+
+
+<!-- 
+<div class="container">
+  <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
+    <mat-grid-tile *ngFor="let g of galleryDetails">
+      <div class="container">
+        <h1><b>Name :</b> &nbsp; &nbsp; {{ g.galleryName }}</h1>
+        <hr />
+
+        <h1><b>Details :</b> &nbsp; &nbsp; {{ g.galleryDetails }}</h1>
+        <button mat-raised-button color="primary" (click)="detailsById(g.id)">
+          View
+        </button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+ -->
+
+
+
+
+ 
+
+<div class="product-list">
+
+
+
+
+
+  <mat-card class="product-card" *ngFor="let prac of practice">
+      <div class="product-image">
+          <img [src]="prac.processedImg" alt="product-image">
+      </div>
+      <div class="product-details">
+          <h2 class="product-name">{{ prac.title }}</h2>
+
+          
+          <!-- <p class="product-description">{{ prac.subtitle }}</p> -->
+          <!-- <mat-divider></mat-divider> -->
+          <!-- <div class="product-info"> -->
+              <!-- <div class="info-row">
+                  <span class="info-label">Description:</span>
+                  <span class="info-value"> {{ prac.description }}  </span>
+              </div> -->
+              
+          <!-- </div> -->
+
+
+
+
+      </div>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- details page  -->
+<!-- 
+<div class="row p-5"></div>
+<div class="row p-5"></div>
+
+<div class="container mt-5" *ngIf="file">
+    <div class="card">
+      <img [src]="'data:' + file.type + ';base64,' + file.imageData" class="card-img-top" alt="{{ file.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ file.newsTitle }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ file.newsSubtitle }}</h6>
+        <p class="card-text">{{ file.newsDescription }}</p>
+        <p><strong>Post Date: </strong>{{ file.postDate | date }}</p>
+      </div>
+    </div>
+  </div>
+   -->

@@ -1,0 +1,63 @@
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+  <h1 style="font-size: xx-large;">Career</h1>
+  <ul class="breadcrumb">
+      <li><a href="/home">Home</a></li>
+      <li>Career</li>
+  </ul>
+</div>
+
+
+
+<div class="row p-3"></div>
+
+
+
+<h1>
+  <div
+    style="padding: 5%; position: static; background-color: rgb(239, 250, 215)"
+  >
+    Carrer list to Apply
+  </div>
+</h1>
+
+<div class="container">
+  <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
+    <mat-grid-tile *ngFor="let j of jobDetails">
+      <div class="container">
+        <h1><b>Job Title :</b> &nbsp; &nbsp; {{ j.jobTitle }}</h1>
+        <hr />
+
+        <h1><b>Job Desription :</b> &nbsp; &nbsp; {{ j.jobDescription }}</h1>
+
+        <h1>
+          <b>Experience :</b> &nbsp; &nbsp; {{ j.experienceRequired }} years
+        </h1>
+        <h1>
+          <b>Qualification :</b> &nbsp; &nbsp; {{ j.educationQualification }}
+        </h1>
+        <h1><b>Deadline :</b> &nbsp; &nbsp; {{ j.applicationDeadline }}</h1>
+        <h1><b>Contact :</b> &nbsp; &nbsp; {{ j.contactInformation }}</h1>
+
+        <button
+          mat-raised-button
+          color="warn"
+          class="align-content-end;"
+          routerLink="/applicationForm"
+          routerLinkActive="active"
+        >
+          Apply Now
+        </button>
+        <button mat-raised-button color="primary" (click)="CareerView(j.id)">
+          View Career
+        </button>
+        <!-- <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button> -->
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="container pt-5">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, deserunt
+  pariatur iste quo culpa sunt soluta ab, nostrum cumque recusandae omnis optio
+  sapiente, error numquam vitae quisquam repudiandae corporis aspernatur.
+</div>

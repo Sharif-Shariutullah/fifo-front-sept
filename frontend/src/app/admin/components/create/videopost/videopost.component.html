@@ -1,0 +1,63 @@
+<div style="padding: 1%"></div>
+
+<h1>
+  <div
+    style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(151, 255, 173);
+    "
+  >
+    <b> Post A video </b>
+  </div>
+</h1>
+
+<div class="container">
+  <div class="card p-2">
+    <form #videoForm="ngForm" (ngSubmit)="createVideo(videoForm)">
+      <div class="col-md-6">
+        <label for="title" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="Object.videoName"
+          name="title"
+          placeholder="write a wonderful title"
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="content" class="form-label">Details</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="Object.videoDetails"
+          name="content"
+          placeholder="Subtitle"
+        />
+      </div>
+
+      <div class="col-12">
+        <label for="content" class="form-label">YouTube Iframe </label>
+        <textarea
+          class="form-control"
+          id="content"
+          [(ngModel)]="Object.youtubeIframe"
+          name="content"
+          placeholder=" (iframe width=..... height=.... src= https://www.youtube.com/embed/.....    title=......
+          frameborder=0           allow=.........           referrerpolicy=    ..... allowfullscreen>    /iframe)"
+          rows="8"
+        >
+        </textarea>
+      </div>
+
+      <div class="col-12 mt-4 float center">
+        <button type="submit" class="btn btn-primary">Create Video</button>
+      </div>
+    </form>
+  </div>
+</div>

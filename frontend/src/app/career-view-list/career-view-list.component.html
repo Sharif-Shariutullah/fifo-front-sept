@@ -1,0 +1,43 @@
+<div class="container mt-5" *ngFor="let j of jobDetails">
+
+
+
+
+  <div class="row">
+    <!-- left hand site column -->
+    <div class="col-6">
+        <h1><b>Job Title :</b> &nbsp; &nbsp; {{ j.jobTitle }}</h1>
+        <hr />
+
+
+    </div>
+
+    <!-- right hand site column -->
+    <div class="col-6">
+      <div class="job-information">
+
+        <h1><b>Job Desription :</b> &nbsp; &nbsp; {{ j.jobDescription }}</h1>
+
+        <h1>
+          <b>Experience :</b> &nbsp; &nbsp; {{ j.experienceRequired }} years
+        </h1>
+        <h1>
+          <b>Qualification :</b> &nbsp; &nbsp; {{ j.educationQualification }}
+        </h1>
+        <h1><b>Deadline :</b> &nbsp; &nbsp; {{ j.applicationDeadline }}</h1>
+        <h1><b>Contact :</b> &nbsp; &nbsp; {{ j.contactInformation }}</h1>
+
+
+
+
+
+      </div>
+
+
+      <div class="job-information"></div>
+    </div>
+
+
+    
+  </div>
+</div>

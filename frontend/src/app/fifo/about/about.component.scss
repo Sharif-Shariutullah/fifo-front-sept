@@ -1,0 +1,56 @@
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+  justify-content: center;
+  
+  }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+  
+  
+  
+  .bgCrumb {
+    // background-image: linear-gradient(to bottom right, rgb(154, 190, 212), rgb(241, 241, 241));
+    background-image: linear-gradient(180deg, rgba(0, 157, 255, 0.646), rgb(241, 241, 241));
+  }
+
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* Horizontally centers the image */
+    align-items: center; /* Vertically centers the image */
+    height: 100%; /* Ensure the container height takes the available space */
+    padding: 20px; /* Optional: Add some padding to the container */
+  }
+  
+  .centered-image {
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-height: 100%; /* Ensures the image doesn't exceed the container height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+    width: auto; /* Adjusts the width automatically based on the height */
+    height: auto; /* Adjusts the height automatically based on the width */
+  }
+  
+
+
+
+  .bg {
+    background-image: linear-gradient(to bottom right, rgb(242, 250, 255), rgb(241, 241, 241));
+  }

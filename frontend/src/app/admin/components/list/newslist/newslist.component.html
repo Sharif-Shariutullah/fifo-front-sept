@@ -1,0 +1,132 @@
+
+<div style="padding: 1%"></div>
+
+
+    <div style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(232, 151, 255);
+    ">
+      <h1> <b> See Your News List</b></h1>
+    <h3>You can <b>Update</b> & <b>Delete</b></h3>
+
+    <button mat-icon-button aria-label="Applicants">
+        <mat-icon style="font-size: 25px;">notifications</mat-icon>
+        <span  matBadge="{{ newsModelArray.length }}" matBadgeColor="warn" matBadgeOverlap="false" ></span>
+      </button>
+      
+    </div>
+
+
+
+
+
+<div class="container mt-5 p-2">
+
+
+
+
+    <table mat-table [dataSource]="newsModelArray" class="mat-elevation-z8">
+
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>ID</b> </th>
+            <td mat-cell *matCellDef="let element" style="background-color: grey;"> <b>{{element.newsId}}</b> </td>
+        </ng-container>
+
+        <!-- Job Title Column -->
+        <ng-container matColumnDef="News Title">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>News Title</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <!-- Job Description Column -->
+        <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Description</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+        </ng-container>
+
+        <!-- Salary Column -->
+        <ng-container matColumnDef="Author">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Author</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+        </ng-container>
+
+        <!-- Experience Column -->
+        <ng-container matColumnDef="Image">
+            <th mat-header-cell *matHeaderCellDef style="background-color: rgb(127, 129, 128);"> <b>Image</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> <b>{{element.imageUrl}}</b> </td>
+       
+            <button mat-icon-button color="primary">
+                <mat-icon>image</mat-icon>    
+                </button>
+            
+       
+        </ng-container>
+
+
+        <!-- Education Column -->
+        <ng-container matColumnDef="Video">
+            <th mat-header-cell *matHeaderCellDef style="background-color: rgb(246, 25, 0);"> <b>Video</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.videoUrl}} </td>
+
+
+            <button mat-icon-button color="primary">
+                <mat-icon>video_library</mat-icon>    
+                </button>
+            
+        </ng-container>
+
+      
+
+
+
+   
+
+
+          <!-- Edit Column -->
+          <ng-container matColumnDef="Edit">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Edit</b>
+            
+            </th>
+            <td mat-cell *matCellDef="let element"> 
+                
+                <button mat-icon-button color="primary" (click)="editNews(element.newsId)">
+                <mat-icon>edit</mat-icon>    
+                </button>
+            
+            
+            
+            </td>
+        </ng-container>
+ 
+
+          <!-- Delete Column -->
+          <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef style="background-color: rgb(184, 255, 211);"> <b>Delete</b> </th>
+            <td mat-cell *matCellDef="let element"> 
+                
+                
+                <button mat-icon-button color="warn" (click)="deleteNews(element.newsId)">
+                    <mat-icon>delete</mat-icon>    
+                    </button>
+            
+            
+            
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>

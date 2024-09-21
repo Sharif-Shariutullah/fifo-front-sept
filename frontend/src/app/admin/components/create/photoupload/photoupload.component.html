@@ -1,0 +1,58 @@
+<div style="padding: 1%"></div>
+ 
+<h1>
+  <div
+    style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(151, 255, 173);
+    "
+  >
+    <b> Add in Gallery </b>
+  </div>
+</h1>
+
+<div class="container">
+  <div class="card p-2">
+
+  <form #galleryForm="ngForm" (ngSubmit)="createGallery(galleryForm)">
+ 
+    <div class="col-md-6">
+      <label for="title" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="Object.galleryName"
+        name="title"
+        placeholder="write a wonderful title"
+      />
+    </div>
+
+ 
+    <div class="col-12">
+      <label for="content" class="form-label">Details</label>
+      <textarea class="form-control"
+      id="content"
+      [(ngModel)]="Object.galleryDetails"
+      name="content"
+      placeholder="write what ever you like ( 5000 words limit)"
+      rows="8">
+        </textarea>
+       
+
+    </div>
+
+
+
+    <div class="col-12 mt-4 float center">
+      <button type="submit" class="btn btn-primary">Create Gallery </button>
+    </div>
+
+
+
+  </form>
+</div>
+</div>
+

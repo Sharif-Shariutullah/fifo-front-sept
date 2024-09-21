@@ -1,0 +1,122 @@
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+  <h1 style="font-size: xx-large;">Service</h1>
+  <ul class="breadcrumb">
+      <li><a href="/home">Home</a></li>
+      <li>Service</li>
+  </ul>
+</div>
+
+
+
+<div class="row p-3"></div>
+
+
+
+
+<div class="bg">
+  <div class="pt-5"></div>
+
+  <!-- coming data from db dynamically -->
+
+  <!-- 
+  
+  <div class="container">
+    <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
+      <mat-grid-tile *ngFor="let s of serviceDetails">
+        <div class="container">
+          <h1><b>Service Name:</b> &nbsp; &nbsp; {{ s.serviceName }}</h1>
+          <hr />
+  
+          <h1><b>Service Details:</b> &nbsp; &nbsp; {{ s.serviceDetails }}</h1>
+  
+          
+         
+          <button mat-raised-button color="primary" (click)="detailsById(s.id)">
+            View 
+          </button>
+           <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div> -->
+
+  <div class="container">
+    <!-- row 01  -->
+
+    <div class="row" style="justify-content: space-around">
+      <div class="card p-2 col-6 block-right" routerLink="/app-design-development" routerLinkActive="active">
+        <img src="assets\photo\service\application-design.jpeg" class="card-img-top" alt="application-design" />
+        <div class="card-body">
+          <h2 class="card-title">Application Design & Development</h2>
+          <h4 class="card-text">
+            We develops static and dynamic mobile and web applications with
+            unique designs and error-free development
+          </h4>
+        </div>
+      </div>
+
+      <div class="card p-2 col-5 block-left" routerLink="/back-office" routerLinkActive="active">
+        <div class="card-body">
+          <h2 class="card-title">Back-Office Services</h2>
+          <h4 class="card-text">
+            FIFOTech streamlines operations, improves efficiency, and reduces
+            costs with accurate and timely
+          </h4>
+        </div>
+        <img src="assets\photo\service\back-office.jpeg" class="card-img-bottom" alt="back-office" />
+      </div>
+    </div>
+
+    <!-- row 02  -->
+
+    <div class="row pt-5 block-up" style="justify-content: space-around">
+      <div class="card p-2 col-5" routerLink="/contact-center" routerLinkActive="active">
+        <div class="card-body">
+          <h2 class="card-title">Contact Center Services</h2>
+          <h4 class="card-text">
+            Enhance customer engagement with multilingual support, tailored to
+            client needs and brand value
+          </h4>
+        </div>
+        <img src="assets\photo\service\contact-cernter.jpeg" class="card-img-bottom" alt="back-office" />
+      </div>
+
+      <div class="card p-2 col-6 block-left" routerLink="/digital-marketing" routerLinkActive="active">
+        <img src="assets\photo\service\Digital-Marketing-1024x373.jpg" class="card-img-top" alt="application-design" />
+        <div class="card-body">
+          <h2 class="card-title">Digital Marketing Services</h2>
+          <h4 class="card-text">
+            Boost business growth with targeted campaigns, expert execution, and
+            a money-back guarantee
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 3  -->
+
+    <div class="row pt-5 pb-5 block-right" style="justify-content: space-around">
+      <div class="card p-2 col-6" routerLink="/skills-development" routerLinkActive="active">
+        <img src="assets\photo\service\skills-development.jpeg" class="card-img-top" alt="application-design" />
+        <div class="card-body">
+          <h2 class="card-title">Skills Development</h2>
+          <h4 class="card-text">
+            We offer advanced IT and technical training, recognized by
+            government programs, to meet job market demands
+          </h4>
+        </div>
+      </div>
+
+      <div class="card p-2 col-5 block-left" routerLink="/creative-design" routerLinkActive="active">
+        <div class="card-body">
+          <h2 class="card-title">Creative Design Services</h2>
+          <h4 class="card-text">
+            Deliver tailored, innovative designs with post-production support,
+            prioritizing client satisfaction
+          </h4>
+        </div>
+        <img src="assets\photo\service\creative-services.jpeg" class="card-img-bottom" alt="back-office" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<section>
+<div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
+    <h1 style="font-size: xx-large;">Global BPO Alliance</h1>
+    <ul class="breadcrumb">
+        <li><a href="/home">Home</a></li>
+        <li>Global BPO</li>
+    </ul>
+</div>
+
+</section>
+
+
+<!-- 
+
+
+<div class="container">
+    <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
+        <mat-grid-tile *ngFor="let g of globalBpoModelDetails">
+            <div class="container">
+                <h1><b>title :</b> &nbsp; &nbsp; {{ g.title }}</h1>
+                <hr />
+                <h1><b>subtitle :</b> &nbsp; &nbsp; {{ g.subtitle }}</h1>
+                <hr />
+                <h1><b>Details :</b> &nbsp; &nbsp; {{ g.details }}</h1>
+
+
+
+                <button mat-raised-button color="primary" (click)="detailsById(g.id)">
+                    View
+                </button>
+                <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div> -->
+
+
+
+
+
+
+
+ 
+
+<div class="product-list">
+
+
+
+
+
+    <mat-card class="product-card" *ngFor="let prac of practice">
+        <div class="product-image">
+            <img [src]="prac.processedImg" alt="product-image">
+        </div>
+        <div class="product-details">
+            <h2 class="product-name">{{ prac.title }}</h2>
+  
+            
+            <p class="product-description">{{ prac.subtitle }}</p>
+            <mat-divider></mat-divider>
+            <div class="product-info">
+                <div class="info-row">
+                    <span class="info-label">Description:</span>
+                    <span class="info-value"> {{ prac.description }}  </span>
+                </div> 
+                
+             </div>
+  
+  
+  
+  
+        </div>
+    </mat-card>
+  </div>
+  
+  
+  
+
+
+
+
+
+
+
+
+<!-- video  -->
+<section >
+<div class=" container-video">
+    <h1 style=" font-size:xx-large ;" class="video-text" routerLink="/video" routerLinkActive="active"> Video</h1>
+</div>
+</section>

@@ -1,0 +1,99 @@
+<div style="padding: 1%"></div>
+
+<h1>
+  <div
+    style="
+      padding: 3%;
+      text-align: center;
+      position: static;
+      background-color: rgb(151, 255, 173);
+    "
+  >
+    <b> Create a new Job</b>
+  </div>
+</h1>
+
+<div class="container mt-5">
+  <div class="card p-2">
+
+
+    <form
+      class="row g-3"
+      #jobPostingForm="ngForm"
+      (ngSubmit)="createJob(jobPostingForm)"
+    >
+
+
+      <div class="col-md-6">
+        <label for="jobTitle" class="form-label">Job Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="jobTitle"
+          [(ngModel)]="jobPost.jobTitle"
+          name="jobTitle"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="jobDescription" class="form-label">Job Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="jobDescription"
+          [(ngModel)]="jobPost.jobDescription"
+          name="jobDescription"
+        />
+      </div>
+      <div class="col-12">
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          type="text"
+          class="form-control"
+          id="salary"
+          [(ngModel)]="jobPost.salary"
+          name="salary"
+        />
+      </div>
+      <div class="col-12">
+        <label for="experienceRequired" class="form-label">Experience</label>
+        <input
+          type="text"
+          class="form-control"
+          id="experienceRequired"
+          [(ngModel)]="jobPost.experienceRequired"
+          name="experienceRequired"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="educationQualification" class="form-label">Education</label>
+        <input
+          type="text"
+          class="form-control"
+          id="educationQualification"
+          [(ngModel)]="jobPost.educationQualification"
+          name="educationQualification"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="applicationDeadline" class="form-label">Dead Line</label>
+        <input
+          type="date"
+          class="form-control"
+          id="applicationDeadline"
+          [(ngModel)]="jobPost.applicationDeadline"
+          name="applicationDeadline"
+        />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Create JOB</button>
+      </div>
+
+
+      
+    </form>
+  </div>
+</div>
