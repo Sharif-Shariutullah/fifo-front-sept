@@ -84,32 +84,48 @@ body {
   }
 }
 
-.footer-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  /* Adjust this if needed */
-  padding-top: 1%;
-}
 
-.logo-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  /* Adjust this if needed */
-  padding-top: 0.2%;
-  font-weight: 600;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
 
-.footer-logo img {
-  width: 100px;
-  /* Adjust this width as needed */
-  max-width: 100%;
-  height: auto;
-}
+
+
+
+
+
+// .footer-logo {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 10px;
+//   /* Adjust this if needed */
+//   padding-top: 1%;
+// }
+
+// .logo-title {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-bottom: 10px;
+//   /* Adjust this if needed */
+//   padding-top: 0.2%;
+//   font-weight: 600;
+//   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+// }
+
+// .footer-logo img {
+//   width: 100px;
+//   /* Adjust this width as needed */
+//   max-width: 100%;
+//   height: auto;
+// }
+
+
+
+
+
+
+
+
+
 
 .link-icon {
   display: flex;
@@ -185,3 +201,35 @@ body {
 
 
 
+
+// ---------------footer--------------------
+// footer--01
+
+.footer-logo {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: auto;
+  align-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .footer-logo {
+    width: 60%; 
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer-logo {
+    width: 50%; 
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer-logo {
+    width: 40%; 
+    max-width: 100px;
+  }
+}

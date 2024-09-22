@@ -80,7 +80,7 @@ transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
   }
 
 
-
+// image animation 
 
 img {
   width: 100%;
@@ -88,7 +88,12 @@ img {
 }
 
 img:hover {
-  transform: translate(20px);
+  // transform: translate(20px);                 // from right to left
+  
+  transform: scale(1.2);                  /* Zoom in */
+  // transform: scale(0.8); /* Zoom out */
+
+
 }
 
 
@@ -137,12 +142,12 @@ img:hover {
 
 
 
-// ###         animation of all directions
+// ###       ----------------------------  animation of all directions
 
 /* Appear from the left */
 @keyframes appear-left {
   from {
-    opacity: 0;
+    // opacity: 0;
     transform: translateX(-100px); /* Move from the left */
   }
   to {
@@ -154,7 +159,7 @@ img:hover {
 /* Appear from the right */
 @keyframes appear-right {
   from {
-    opacity: 0;
+    // opacity: 0;
     transform: translateX(100px); /* Move from the right */
   }
   to {
@@ -166,7 +171,7 @@ img:hover {
 /* Appear from the top */
 @keyframes appear-up {
   from {
-    opacity: 0;
+    // opacity: 0;
     transform: translateY(-100px); /* Move from the top */
   }
   to {
@@ -178,7 +183,7 @@ img:hover {
 /* Appear from the bottom */
 @keyframes appear-down {
   from {
-    opacity: 0;
+    // opacity: 0;
     transform: translateY(100px); /* Move from the bottom */
   }
   to {
@@ -186,6 +191,13 @@ img:hover {
     transform: translateY(0); /* Default position */
   }
 }
+
+
+
+
+
+
+
 
 /* Block classes for each direction */
 .block-left {

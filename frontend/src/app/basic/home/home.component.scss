@@ -149,7 +149,9 @@ body {
 }
 
 .img-animation:hover {
-  transform: translate(20px);
+  // transform: translate(20px);          /* moving right */
+  transform: scale(1.2);                  /* Zoom in */
+  // transform: scale(0.8);                 /* Zoom out */
 }
 
 // * {
@@ -176,7 +178,7 @@ body {
 
 .container-video {
   width: 100%;
-  height: 500px;
+  height: 350px;
   background-position: center;
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1580852300513-9b50125bf293?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -414,6 +416,22 @@ body {
 // .carousel-item img {
 //     transition: transform 3s ease; /* Apply zoom out effect over 3 seconds */
 // }
+
+
+
+.carousel-overlay{
+  width: 100%;
+  display: block;
+  opacity: 0.7;
+background: linear-gradient(to bottom, red, blue);
+// position: absolute;
+}
+
+
+
+
+
+
 
 .carousel-item-next,
 .carousel-item-prev,
@@ -790,7 +808,7 @@ body {
 
 
 // ---------------footer--------------------
-
+// footer--01
 
 .footer-logo {
   justify-content: center;
@@ -865,52 +883,131 @@ hr {
 
 
 
-//------------------------------------ practice --------------------------
+
+
+
+
+
+// Client or Member Images css 
+
+// .custom-row {
+//   --bs-gutter-x: 2rem; 
+//   --bs-gutter-y: 1rem; 
+// }
+
+
+
+// .custom-row {
+//   --bs-gutter-x: 1.5rem; 
+//   --bs-gutter-y: 0;      
+// }
+
+
+//   .custom-row img {
+//     max-width: 100%;
+//     height: auto;
+//     display: block;
+//     margin-right: 10px; /* Space between images */
+// }
+
+// .custom-row .col-sm-2 {
+//   flex: 0 0 20%;  /* 20% width */
+//   max-width: 20%;
+// }
+
+
+// @media (max-width: 767px) {
+//     .custom-row {
+//         display: flex;
+//         flex-wrap: nowrap;
+//         overflow-x: auto;
+//         padding: 0; /* Remove padding if needed */
+//     }
+//     .custom-row .col-sm-2 {
+//         flex: 0 0 auto;
+//         width: 80px; /* Adjust size as needed */
+//     }
+//     .custom-row img {
+//         width: 80px; /* Set the width for smaller images */
+//         height: auto; /* Maintain aspect ratio */
+//     }}
+
+
+
 
 .custom-row {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 0; /* Remove padding if needed */
+  flex-wrap: wrap; /* Allows the columns to wrap */
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
 }
+
+.custom-row > .col-sm-2 {
+  flex: 0 0 auto;
+  width: 16.666667%; /* Bootstrap's default col-sm-2 width */
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
 .custom-row img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-right: 10px; /* Space between images */
 }
-@media (max-width: 767px) {
 
-  .custom-row .col-sm-2 {
-      flex: 0 0 auto;
-      width: 100px; /* Adjust size as needed */
+/* Mobile view (for smaller devices) */
+@media (max-width: 767.98px) {
+  .custom-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
   }
 
+  .custom-row > .col-sm-2 {
+    flex: 0 0 auto;
+    width: 80px; /* Define specific width for mobile */
+  }
 
-
-}
-
-
-
-
-  .row img {
-    max-width: 100%;
+  .custom-row img {
+    width: 80px;
     height: auto;
-    display: block;
-    margin-right: 10px; /* Space between images */
+  }
 }
-@media (max-width: 767px) {
-    .row {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 0; /* Remove padding if needed */
+
+/* For medium and larger devices (default Bootstrap behavior) */
+@media (min-width: 768px) {
+  .custom-row > .col-sm-2 {
+    flex: 0 0 16.666667%; /* Restore default col-sm-2 width */
+    max-width: 16.666667%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+    .head-section {
+      background-image: linear-gradient(180deg, #c4b6fd, #93acfc);
     }
-    .row .col-sm-2 {
-        flex: 0 0 auto;
-        width: 80px; /* Adjust size as needed */
+
+
+    p {
+      font-size: 18px;
     }
-    .row img {
-        width: 80px; /* Set the width for smaller images */
-        height: auto; /* Maintain aspect ratio */
-    }}
+
+
+
+    .about-text{
+
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: justify;
+      color: gray;
+    font-size: medium;
+    padding-left: 5px;
+    padding-right: 15px;
+
+  }

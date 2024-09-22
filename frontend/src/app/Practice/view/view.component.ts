@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Typed from 'typed.js';
 
-
+ 
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -55,8 +55,8 @@ initializeTypedText(): void {
       'Software Development', 
       
     ],
-    typeSpeed: 50,
-    backSpeed: 25,
+    typeSpeed: 60,
+    backSpeed: 20,
     loop: true
   };
   const typed = new Typed('#typed-text', options);

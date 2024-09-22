@@ -10,6 +10,35 @@ import { FileUploadService } from 'src/app/_service/file-upload.service';
 })
 export class AboutComponent implements OnInit {
 
+
+// Read More and Read Less 
+
+
+readMore = false; // Initially, the "Read More" content is hidden
+
+  toggleReadMore() {
+    this.readMore = !this.readMore; // Toggle between true and false
+  }
+
+
+
+  readMore2 = false; // Initially, the "Read More" content is hidden
+
+  toggleReadMore2() {
+    this.readMore2 = !this.readMore2; // Toggle between true and false
+  }
+
+
+
+
+
+
+
+
+
+
+
+
   selectedFile: File | null = null;
   fileId: number | null = null;
   message: string = '';

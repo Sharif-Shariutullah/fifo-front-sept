@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <div class="row py-5 bgCrumb" style="text-align: center; align-items: center">
     <h1 style="font-size: xx-large">About</h1>
     <ul class="breadcrumb">
@@ -8,170 +8,228 @@
   </div>
 
   <div class="row p-3"></div>
-</section>
+</section> -->
 
+<section class="container">
+  <h1
+    class="fs-1 mt-4"
+    style="
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-align: center;
+      font-weight: bolder;
+    "
+  >
+    About Company
+    <hr />
+  </h1>
 
-<section>
-<div class="container">
+  <div class="container">
+    <div class="row align-items-center gx-3 gy-5 py-5">
+      <div class="col-12 col-md-12 col-lg-5">
+        <img
+          src="assets\photo\team\Towhid-Bhai.jpg"
+          class="img-fluid mx-auto d-block"
+          alt="about us"
+        />
+      </div>
 
-  <!-- row no 1 -->
+      <div class="col-12 col-md-12 text-center text-lg-start col-lg-7">
+        <h2 class="fw-bold text-primary fs-3 pb-2">
+          <strong
+            >FIFOTech: A Leading BPO Service Provider in Bangladesh</strong
+          >
+        </h2>
 
+        <p class="about-text px-2">
+          <strong>FIFOTech</strong> stands proudly as one of the premier
+          <strong>Business Process Outsourcing (BPO)</strong> service providers
+          in Bangladesh, delivering a comprehensive range of
+          <strong>IT/ITES services</strong> with a focus on exceeding customer
+          satisfaction. Our cutting-edge <strong>BPO solutions</strong> empower
+          clients by streamlining their business operations, enhancing
+          efficiency, and driving success.
+        </p>
 
-  <div class="row">
-    <!-- <div class="col-6" style="object-fit: fill; justify-items: center; align-items: center;"> -->
-    <div class="col-6 image-container">
-      <img
-        src="assets\photo\team\Towhid-Bhai.jpg"
-        alt="ceo"
-        class="centered-image"
-      />
-    </div>
+        <!-- Additional paragraphs controlled by readMore flag -->
+        <div *ngIf="readMore">
+          <p class="about-text px-2">
+            As an esteemed member of the
+            <strong
+              >Bangladesh Association of Contact Center & Outsourcing
+              (BACCO)</strong
+            >, we ensure flawless service delivery by leveraging our extensive
+            industry expertise and strong offshore partnerships. Additionally,
+            our collaboration with the
+            <strong>Global BPO Alliance (GBA)</strong> guarantees the best value
+            propositions by offering
+            <strong>high-quality, low-cost</strong> solutions tailored to meet
+            both inshore and offshore requirements.
+          </p>
 
-    <div class="col-6 p-5">
-      <h1
-        class="fs-1"
-        style="
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-          text-align: center;
-        "
-      >
-        About Company
-      </h1>
-<br>
-      <div
-        class="fs-6"
-        style="
-          font-family: Arial, Helvetica, sans-serif;
-          text-align: justify;
-          color: gray;
-        "
-      >
-      <h1><strong>FIFOTech: A Leading BPO Service Provider in Bangladesh</strong></h1>
-      <p>
-        <strong>FIFOTech</strong> stands proudly as one of the premier <strong>Business Process Outsourcing (BPO)</strong> service providers in Bangladesh, 
-        delivering a comprehensive range of <strong>IT/ITES services</strong> with a focus on exceeding customer satisfaction. 
-        Our cutting-edge <strong>BPO solutions</strong> empower clients by streamlining their business operations, enhancing efficiency, and driving success.
-      </p>
-      <p>
-        As an esteemed member of the <strong>Bangladesh Association of Contact Center & Outsourcing (BACCO)</strong>, we ensure flawless service delivery by 
-        leveraging our extensive industry expertise and strong offshore partnerships. Additionally, our collaboration with the 
-        <strong>Global BPO Alliance (GBA)</strong> guarantees the best value propositions by offering <strong>high-quality, low-cost</strong> solutions tailored to 
-        meet both inshore and offshore requirements.
-      </p>
-      <p>
-        At FIFOTech, we take pride in delivering <strong>end-to-end, customer-centric</strong> solutions across all departments of your organization. 
-        Whether it’s operational support or strategic alignment, we cover every facet of your business with a keen focus on <strong>quality</strong> and <strong>efficiency</strong>. 
-        Our <strong>state-of-the-art infrastructure</strong> allows us to provide uninterrupted support services around the clock, 365 days a year, 
-        ensuring that our clients can rely on us for their most critical needs.
-      </p>
+          <p class="about-text px-2">
+            At FIFOTech, we take pride in delivering
+            <strong>end-to-end, customer-centric</strong> solutions across all
+            departments of your organization. Whether it’s operational support
+            or strategic alignment, we cover every facet of your business with a
+            keen focus on <strong>quality</strong> and
+            <strong>efficiency</strong>. Our
+            <strong>state-of-the-art infrastructure</strong> allows us to
+            provide uninterrupted support services around the clock, 365 days a
+            year, ensuring that our clients can rely on us for their most
+            critical needs.
+          </p>
+        </div>
+
+        <!-- Button to toggle visibility of the additional paragraphs -->
+        <button class="btn btn-primary" (click)="toggleReadMore()">
+          {{ readMore ? "Read Less" : "Read More" }}
+        </button>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- row no 2 -->
 
-  <div class="row p-5 bg">
-    <div class="col-6">
-      <h1
-        class="fs-1"
-        style="
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-          text-align: center;
-        "
-      >
-        Our Management
-      </h1>
-<br>
-      <div
-        style="
-          font-family: Arial, Helvetica, sans-serif;
-          text-align: justify;
-          color: gray;
-        "
-        class="fs-6"
-      >
-      <h2><strong>FIFOTech’s Management Team: Leaders in Excellence</strong></h2>
-        <p>
-          The <strong>management team at FIFOTech</strong> is one of the most diverse and skilled in the BPO industry, 
-          bringing unparalleled <strong>expertise</strong> and <strong>practical experience</strong> from both the <strong>IT/ITES</strong> and <strong>Telecommunications sectors</strong>. 
-          With their strong leadership, they ensure the seamless development and delivery of services that not only meet but exceed our clients' expectations.
-        </p>
-        <p>
-          Our management team's extensive knowledge plays a key role in attracting and retaining our valuable clients by enhancing the overall customer experience. 
-          Each member is committed to providing tailored solutions, resolving challenges efficiently, and driving measurable results for our partners. 
-          The dedication and expertise of our team are reflected in their ability to consistently deliver <strong>integrity</strong>, <strong>transparency</strong>, 
-          and <strong>superior quality</strong> in every interaction.
-        </p>
-        <p>
-          Our team remains committed to helping clients achieve their goals on time, delivering unparalleled service through their 
-          <strong>professionalism</strong>, <strong>precision</strong>, and <strong>commitment to excellence</strong>.
+  <div class="container">
+    <div class="row align-items-center gx-3 gy-5 py-5">
+      <!-- text  -->
+
+      <div class="col-12 col-md-12 text-center text-lg-start col-lg-7">
+        <h2 class="fw-bold text-primary fs-3 pb-2">
+          <strong>FIFOTech’s Management Team: Leaders in Excellence</strong>
+        </h2>
+
+        <p class="about-text px-2">
+          The <strong>management team at FIFOTech</strong> is one of the most
+          diverse and skilled in the BPO industry, bringing unparalleled
+          <strong>expertise</strong> and
+          <strong>practical experience</strong> from both the
+          <strong>IT/ITES</strong> and
+          <strong>Telecommunications sectors</strong>. With their strong
+          leadership, they ensure the seamless development and delivery of
+          services that not only meet but exceed our clients' expectations.
         </p>
 
+        <p class="about-text px-2">
+          Our management team's extensive knowledge plays a key role in
+          attracting and retaining our valuable clients by enhancing the overall
+          customer experience. Each member is committed to providing tailored
+          solutions, resolving challenges efficiently, and driving measurable
+          results for our partners. The dedication and expertise of our team are
+          reflected in their ability to consistently deliver
+          <strong>integrity</strong>, <strong>transparency</strong>, and
+          <strong>superior quality</strong> in every interaction.
+        </p>
+        <!-- Additional paragraphs controlled by readMore flag -->
+        <div *ngIf="readMore2">
+          <p class="about-text px-2">
+            Our team remains committed to helping clients achieve their goals on
+            time, delivering unparalleled service through their
+            <strong>professionalism</strong>, <strong>precision</strong>, and
+            <strong>commitment to excellence</strong>.
+          </p>
+        </div>
 
+        <!-- Button to toggle visibility of the additional paragraphs -->
+        <button class="btn btn-primary" (click)="toggleReadMore2()">
+          {{ readMore2 ? "Read Less" : "Read More" }}
+        </button>
+      </div>
 
+      <!-- img -->
+
+      <div class="col-12 col-md-12 col-lg-5">
+        <img
+          src="assets\photo\Managment.jpg"
+          class="img-fluid mx-auto d-block"
+          alt="about us"
+        />
       </div>
     </div>
-
-    <!-- <div class="col-6" style="object-fit: cover;"> -->
-    <div class="col-6 image-container">
-      <img src="assets\photo\Managment.jpg" alt="" class="centered-image" />
-    </div>
   </div>
-</div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <section class="container">
-<div class=" row py-5">
-  <h1 class="fs-1" style="text-align: center;">Sister Concern of FIFOTech
-  </h1>
-  <hr>
-</div>
-
-<div class="row">
-  <div class="col-6 ">
-    <img
-      src="assets\photo\Shera-Bangla-Logo-T.png"
-      alt="sister concern"
-      class="centered-image"
-    />
+  <div class="row py-5">
+    <h1 class="fs-1" style="text-align: center">Sister Concern of FIFOTech</h1>
+    <hr />
   </div>
 
-  <div class="col-6 px-5">
-<title>Shera Bangla 64
-</title>
+  <div class="row">
+    <div class="col-6">
+      <img
+        src="assets\photo\Shera-Bangla-Logo-T.png"
+        alt="sister concern"
+        class="centered-image"
+      />
+    </div>
 
-<p class="fs-6" style="text-align: justify; line-height: 1.8;">
-  <strong>সেরা বাংলা ৬৪ এর বিশেষত্বঃ</strong> <br>
-  ৬৪ জেলার বিখ্যাত সেরা পণ্য-এক প্লাটফর্মে
-  প্রবাসীদের পক্ষে দেশে থাকা প্রিয়জনদেরকে যেকোন গিফট প্রদান
-  বিশেষ দিবসে দেশের যেকোনো প্রান্তে প্রিয়জনদের গিফট প্রদান
-  বছরব্যাপী বিভিন্ন দিবসে কর্পোরেট গিফট সামগ্রী
+    <div class="col-6 px-5">
+      <title>Shera Bangla 64</title>
 
-</p>
-<a
-  name=""
-  id=""
-  class="btn btn-primary"
-  href="https://sherabangla64.com/"
-  role="button"
-  >Visit Shera Bangla Site</a
->
-
-
+      <p class="fs-6" style="text-align: justify; line-height: 1.8">
+        <strong>সেরা বাংলা ৬৪ এর বিশেষত্বঃ</strong> <br />
+        ৬৪ জেলার বিখ্যাত সেরা পণ্য-এক প্লাটফর্মে প্রবাসীদের পক্ষে দেশে থাকা
+        প্রিয়জনদেরকে যেকোন গিফট প্রদান বিশেষ দিবসে দেশের যেকোনো প্রান্তে
+        প্রিয়জনদের গিফট প্রদান বছরব্যাপী বিভিন্ন দিবসে কর্পোরেট গিফট সামগ্রী
+      </p>
+      <a
+        name=""
+        id=""
+        class="btn btn-primary"
+        href="https://sherabangla64.com/"
+        role="button"
+        >Visit Shera Bangla Site</a
+      >
+    </div>
   </div>
-</div>
-
-
-
 </section>
-
-
-
-
-
-
 
 <!-- file upload system ashiq bhai  -->
 
