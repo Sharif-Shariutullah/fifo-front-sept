@@ -188,8 +188,16 @@ body {
   font-weight: bold;
 }
 
+
+.nav-item-mail :hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .nav-bg {
-  background-image: linear-gradient(to right, #71c9ce, #ffffff);
+  // background-image: linear-gradient(to right, #71c9ce, #ffffff);
+background-color: 	rgb(0,140,186);
+  
 }
 
 
@@ -233,3 +241,12 @@ body {
     max-width: 100px;
   }
 }
+
+
+
+.footer-subtext{
+color: #585858
+; 
+
+}
+
