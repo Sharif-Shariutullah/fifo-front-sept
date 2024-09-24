@@ -42,18 +42,26 @@ export class ContactComponent {
         Swal.fire({
           icon: "success",
           title: "Done",
-          text: "We got your Message!",
+          text: "We got your Message!  We Contact with you as soon as possible",
           showConfirmButton: false,
-          timer: 1500
+          timer: 2500
         });
 
 
 
-        ContactForm.reset();
+        // ContactForm.reset();  s
+        ContactForm.resetForm();
 
       },
       (error: HttpErrorResponse) => {
         console.log(error);
+
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong! Please try again later.'
+        });
       }
     );
   }

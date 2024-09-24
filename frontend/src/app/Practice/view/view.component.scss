@@ -76,3 +76,42 @@
   }
   
 
+
+
+  
+
+  .careers-section {
+    background: linear-gradient(to bottom, #f0f5ff, #ffffff);
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .careers-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .careers-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+  }
+
+  .careers-section .btn {
+    background-color: #3b3be3;
+    color: #fff;
+    padding: 10px 30px;
+  }
+
+  .rounded-img {
+    border-radius: 50px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .careers-section .btn {
+      margin-top: 20px;
+    }
+  }

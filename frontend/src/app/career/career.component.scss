@@ -59,3 +59,32 @@ button {
     text-transform: uppercase;
     margin-left: 8px;
   }
+
+
+
+  .blue-bg {
+    background-color: #0a58ca;
+    color: #fff;
+  }
+
+
+
+  .bg{
+
+    background: linear-gradient(to bottom, #f0f5ff, #ffffff);
+
+  }
+
+
+
+
+  .rounded-img {
+    // border-radius: 0% 44% 0% 36% / 30% 40% 20% 36% ;
+
+    
+    // border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%  ;
+    
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
