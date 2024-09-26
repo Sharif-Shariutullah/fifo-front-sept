@@ -1,3 +1,14 @@
+// h1, h2, h3, h4, h5, h6{
+//   // font-family: "Plus Jakarta Sans", sans-serif;
+// }
+
+p{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
@@ -88,3 +99,172 @@ button {
     max-width: 250px;
     height: auto;
   }
+
+
+
+
+
+
+
+.icon-style {
+
+  font-size: 30px;
+  display: flex;
+  align-items: center; 
+  color: rgb(47, 45, 45);
+
+}
+.text p {
+  font-size: larger;
+  margin: 0;
+  line-height: 1.5; 
+  // font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Merriweather", serif;
+
+
+}
+
+
+
+ .bg-circle {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  flex-shrink: 0; 
+}
+
+
+.bg-circle-1 {
+  background-color: #B7FBFF;
+}
+
+.bg-circle-2 {
+  background-color: #FDFAD9;
+}
+
+.bg-circle-3 {
+  background-color: #F5EFFF; 
+}
+
+.bg-circle-4 {
+  background-color: #C7FFD8; 
+}
+
+.bg-circle-5 {
+  background-color: #BDE8CA; 
+}
+
+.bg-circle-6 {
+  background-color: #FFDFD6; 
+}
+
+
+
+
+
+
+.job-listing {
+  background-color: #f3f4ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+box-sizing: border-box;
+flex-shrink: 1;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+}
+
+.job-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+    padding-bottom: 7%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  color: #0C0A25;
+  padding-left: 20px;
+}
+
+.job-meta {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.job-meta i {
+  color: #6c63ff;
+}
+
+.apply-button {
+  background-color: #3c52f3;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 20px;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #233AD6;
+    border-radius: 9px 9px 9px 9px;
+    padding: 10px 32px 10px 32px;
+  
+}
+
+.apply-button:hover {
+  background-color: #3243cc;
+}
+
+@media (max-width: 768px) {
+  .job-listing {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .apply-button {
+    margin-top: 10px;
+    width: 40%;
+    text-align: center;
+    // float: right;
+  }
+
+  .job-meta {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: contents;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    color: #6c757d;
+  }
+}
