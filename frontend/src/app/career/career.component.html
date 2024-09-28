@@ -34,8 +34,7 @@
           <button
             class="btn btn-primary px-5 py-3 mt-3 fs-5 fw-medium"
             type="button"
-            routerLink="/contact"
-            routerLinkActive="active"
+            (click)="scrollToSection()"
           >
             Explore Job Openings
             <span style="align-items: center"
@@ -60,7 +59,7 @@
 
 <!-- Row  2 of 6 -->
 
-<div class="py-5 bg-dark text-white">
+<div class="py-5 text-white bg-contrast">
   <div class="container">
     <h1 class="fs-1 fw-bold text-center pt-5 pb-1 " style="color: #F5F5F5;">
       Why Join Us?
@@ -151,75 +150,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Row  3 of 6 -->
-
+<section id="jobDetails"> 
 <div class="features-section py-5 ">
-  <div class="container">
-    <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
+  <div class="container" >
+    <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary"  >
       Open Position
     </h2>
 
     <div class="row g-5 pb-5">
-      <!-- <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div> -->
-    
+  
 
 
 <!-- -------------------------- data  ------------------------------->
-
-     <!-- Job Listing  -->
-
-<!-- 
-     <mat-grid-tile *ngFor="let j of jobDetails">
-  <div class="job-listing ">
-    <div class="job-details">
-      <div class="job-title ">{{ j.jobTitle }}</div>
-      <div class="job-meta">
-        <span><i class="fa-solid fa-hourglass-start"></i>&nbsp; {{ j.applicationDeadline }}</span>
-        <span class="px-5"><i class="fas fa-bolt"></i>&nbsp; {{ j.experienceRequired }} years</span>
-      
-        <span class="px-5"><i class="fa-solid fa-bangladeshi-taka-sign"></i> &nbsp; {{ j.salary }} </span>
-      
-      
-      </div>
-    </div>
-    <button class="apply-button" routerLink="/applicationForm"
-    routerLinkActive="active">Apply Now</button>
-  </div>
-
-</mat-grid-tile> -->
-
-
 
 
 
@@ -228,9 +171,9 @@
         <div class="job-details">
           <div class="job-title">{{ j.jobTitle }}</div>
           <div class="job-meta">
-            <span class="px-5 pb-2"><i class="fa-solid fa-hourglass-start"></i>&nbsp; <b>Deadline:</b> &nbsp; {{ j.applicationDeadline }}</span>
+            <span class="px-5 pb-2"><i class="fa-solid fa-hourglass-start"></i>&nbsp; <b>Deadline:</b> &nbsp; {{ j.applicationDeadline | date:'mediumDate' }}</span>
             <span class="px-5 pb-2"><i class="fas fa-bolt"></i>&nbsp; <b>Experience:</b> &nbsp; {{ j.experienceRequired }} years</span>
-            <span class="px-5 pb-2"><i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp; <b>Salary:</b> &nbsp; {{ j.salary }}</span>
+            <span class="px-5 pb-2"><i class="fa-solid fa-bangladeshi-taka-sign"></i>&nbsp; <b>Salary:</b> &nbsp; {{ j.salary | currency:'৳ ' }}</span>
           </div>
         </div>
     <!-- <div style="display: flex; justify-content: flex-end;"> -->
@@ -248,8 +191,7 @@
      <!-- Job Listing  1-->
 
 
-
-     <div class="job-listing ">
+     <!-- <div class="job-listing ">
       <div class="job-details">
         <div class="job-title ">Digital Marketer (SEO Intern)</div>
         <div class="job-meta">
@@ -258,11 +200,11 @@
         </div>
       </div>
       <button class="apply-button">Apply Now</button>
-    </div>
+    </div> -->
 
 
   <!-- Job Listing 2 -->
-  <div class="job-listing">
+  <!-- <div class="job-listing">
     <div class="job-details">
       <div class="job-title">Senior Software Engineer L1</div>
       <div class="job-meta">
@@ -272,100 +214,566 @@
     </div>
     <button class="apply-button">Apply Now</button>
   </div>
+     -->
     
     </div>
   </div>
 </div>
 
+</section>
 
 
+<!-- Row  4 of 6    Our Industry -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Row  4 of 6 -->
-
-<div class="features-section py-5 bg">
-  <div class="container">
-    <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
+<div class="features-section py-5 bg-contrast">
+  <div class="container text-center my-5">
+    <h1 class=" fw-bold text-center pt-5 text-white ">
       Our Industry Expertises
 
-      <br /><br /><br />
+          </h1>
 
-      Excellence Sets Our Standard
-    </h2>
+<div class="text-white text-center mb-5 fs-5 py-5 px-lg-5" style="line-height: 140%;">
+  Our deep understanding of diverse industries empowers us to design customized software solutions. 
+   Let our expertise be the catalyst for your next triumph
+</div>
+    <div class="row justify-content-center" >
 
-    <div class="row g-5 pb-5">
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
+
+     
+   
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-1">
+            <i class="icon-industry fas fa-paint-brush"></i>
+            <h4>UI/UX Design</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-2">
+            <i class="icon-industry fas fa-mobile-alt"></i>
+            <h4>Mobile App</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-3">
+            <i class="icon-industry fas fa-laptop-code"></i>
+            <h4>Web Application</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-4">
+            <i class="icon-industry fas fa-database"></i>
+            <h4>Data Management</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-5">
+            <i class="icon-industry fas fa-file-alt"></i>
+            <h4>Document Handling</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-6">
+            <i class="icon-industry fas fa-clipboard"></i>
+            <h4>Administrative Support</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-7">
+            <i class="icon-industry fas fa-shopping-cart"></i>
+            <h4>E-Commerce</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-8">
+            <i class="icon-industry fas fa-headset"></i>
+            <h4>Customer Support</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-1">
+            <i class="icon-industry fas fa-tools"></i>
+            <h4>Technical/Help Desk Support</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-2">
+            <i class="icon-industry fas fa-comments"></i>
+            <h4>Live Chat Support</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-3">
+            <i class="icon-industry fas fa-envelope"></i>
+            <h4>SMS/Email Support</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-4">
+            <i class="icon-industry fas fa-chart-bar"></i>
+            <h4>Customer Surveys</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-5">
+            <i class="icon-industry fas fa-phone-alt"></i>
+            <h4>Telemarketing</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-6">
+            <i class="icon-industry fas fa-robot"></i>
+            <h4>Chat Bots</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-7">
+            <i class="icon-industry fas fa-search"></i>
+            <h4>SEO</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-8">
+            <i class="icon-industry fab fa-facebook"></i>
+            <h4>Facebook Marketing</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-1">
+            <i class="icon-industry fab fa-instagram"></i>
+            <h4>Instagram Marketing</h4>
+          </div>
+        </div>
+      
+        <!-- <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-2">
+            <i class="icon-industry fas fa-share-alt"></i>
+            <h4>Social Media Marketing</h4>
+          </div>
+        </div> -->
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-3">
+            <i class="icon-industry fab fa-youtube"></i>
+            <h4>YouTube Marketing</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-4">
+            <i class="icon-industry fas fa-ad"></i>
+            <h4>Google AdSense</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-5">
+            <i class="icon-industry fas fa-bullhorn"></i>
+            <h4>Advertising</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-6">
+            <i class="icon-industry fas fa-graduation-cap"></i>
+            <h4>Skills Development</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-7">
+            <i class="icon-industry fas fa-file-alt"></i>
+            <h4>Content Development</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-8">
+            <i class="icon-industry fas fa-cube"></i>
+            <h4>3D Animation</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-1">
+            <i class="icon-industry fas fa-video"></i>
+            <h4>Video Editing</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-2">
+            <i class="icon-industry fas fa-film"></i>
+            <h4>Video Animation</h4>
+          </div>
+        </div>
+      
+        <div class="col-sm-2 col-md-2 col-lg-3">
+          <div class="expertise-card icon-bg-color-3">
+            <i class="icon-industry fas fa-paint-brush"></i>
+            <h4>Graphics Design</h4>
+          </div>
+        </div>
+  
+      
+
+
+     
+
+
+
+
     </div>
   </div>
+  
+
+
+  <!-- <div class="container">
+    <h1 class="fs-1 fw-bold text-center pt-5 text-white">
+      Our Industry Expertises
+
+          </h1>
+
+<div class="text-white text-center mb-3">
+  Our deep understanding of diverse industries empowers us to design customized software solutions. Let our expertise be the catalyst for your next triumph
 </div>
+
+
+    <div class="row g-5 pb-5">
+
+
+      <div class="col-md-6 col-lg-3"></div>
+      <div class="col-md-6 col-lg-3"></div>
+      <div class="col-md-6 col-lg-3"></div>
+
+
+
+    </div>
+  </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Row  5 of 6 -->
 
-<div class="features-section py-5 bg">
+<div class=" py-5 bg">
   <div class="container">
-    <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
-      Share Our Values
-    </h2>
-    Let's Create Magic Together.
+
+
+
+
+    <div class="row g-2 py-2">
+      <div class="col-md-8 col-lg-8">
+        <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
+          Share Our Values
+        </h2>
+      </div>
+      <div class="col-md-4 col-lg-4">
+
+<div class="justify-content-center fs-6" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+  At our company, we believe in fostering a culture built on honesty, respect, and collaboration. We strive to create an inclusive environment where everyone is valued and encouraged to bring their unique perspectives and ideas to the table.
+</div>
+
+      </div>
+     
+    </div>
+
+
+
+    
+    <div class="row g-5 pb-5">
+
+      <div class="col-md-4 col-lg-3 ">
+        <div class="me-3 icon-style bg-circle share-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h2 class="pt-4">  TEAMWORK </h2>
+
+          <p class="text">
+            The key to success is working together as a united team. 
+          </p>
+
+      </div>
+
+
+
+      <div class="col-md-4 col-lg-3">
+        <div class="me-3 icon-style bg-circle share-icon"><i class="fa-solid fa-user-tie"></i></div>
+     
+        <h2 class="pt-4">  PROFESSIONALISM </h2>
+
+<p class="text">
+  Our team consists of experienced professionals who incorporate a constant drive for excellence.</p>
+      </div>
+
+
+
+
+<!-- image  -->
+      <div class="col-md-4 col-lg-6">
+        <div class="image-container">
+
+        <img
+        src="assets\left-up.jpg"
+        alt="Left Image"
+        class="half-quarter-img-left-up "
+      />
+
+
+      <img
+      src="assets\right-up.jpg"
+      alt="Left Image"
+      class="half-quarter-img-right-up "
+    />
+
+
+
+
+      </div>
+    </div>
+
+    </div>
+
+
+
+
+    <div class="row g-2 pb-2">
+
+
+
+      <div class="col-md-4 col-lg-3 ">
+
+        <div class="me-3 icon-style bg-circle share-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+     
+        <h2 class="pt-4">  EFFICIENCY </h2>
+
+<p class="text">
+  No matter where in the world we are positioned, we all have a common goal, we support each other and we work together to achieve it.</p>
+
+      </div>
+
+
+      <div class="col-md-4 col-lg-3">
+        <div class="me-3 icon-style bg-circle share-icon"><i class="fa-regular fa-lightbulb"></i></div>
+     
+        <h2 class="pt-4">  INNOVATION </h2>
+
+<p class="text">
+  We are always on the lookout for new and better ways to solve problems and enhance our services</p>
+      </div>
+
+
+
+
+      <div class="col-md-4 col-lg-6">
+
+
+        <div class="image-container">
+
+        <img
+        src="assets\left-down.jpg"
+        alt="Left Image"
+        class="half-quarter-img-left-down"
+      />
+
+
+      <img
+      src="assets\right-down.jpg"
+      alt="Left Image"
+      class="half-quarter-img-right-down "
+    />
+
+      </div>
+
+    </div>
+
+     
+    </div>
+
+
 
     <div class="row g-5 pb-5">
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
-    </div>
+      <div class=" text-center fs-1 pt-5 text-primary fw-bolder">
+ Let's Create Magic Together     </div>
+   
+
+
+ 
+
+  </div>
+
+<div class="text-center">
+  <button
+  class="btn explore-button "
+  type="button"
+  (click)="scrollToSection()"
+>
+Explore Careers <span><i class="fa-solid fa-arrow-right"></i></span>
+  
+</button>
+</div>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Row  6 of 6 -->
 
-<div class="features-section py-5 bg">
+<div class="features-section pt-5  bg-contrast">
   <div class="container">
-    <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
-      Show Us Your Superpower
-    </h2>
 
-    <div class="row g-5 pb-5">
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
-      <div class="col-md-6 col-lg-3"></div>
+    <h1 class=" fw-bold text-center pt-5 text-white ">
+      Show Us Your Superpower
+
+          </h1>
+
+<div class="text-white text-center mb-5 fs-5 py-2 px-lg-5" style="line-height: 140%;">
+  As we continue to grow our core values stay the same and guide us through everything we do – from hiring to helping customers.
+</div>
+
+
+
+   
+
+    <div class="row ">
+ 
+      <div class=" text-center ">
+       
+    
+        <div class="resume-form-wrapper">
+          <form>
+            <h2 class="text-white">Your Contact Information</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="resume-input" placeholder="Your name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="resume-input" placeholder="Company name" required>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6">
+                <input type="email" class="resume-input" placeholder="Email" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="resume-input" placeholder="Address" required>
+              </div>
+            </div>
+    
+            <h2 class="text-white" >Professional Information</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="resume-input" placeholder="Position" required>
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="resume-input" placeholder="Years of experience" required>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-12">
+                <input type="text" class="resume-input" placeholder="Skills" required>
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="resume-cv-upload" class="form-label fs-4">
+                  <i class="fas fa-paperclip"></i> Attach CV
+                </label>
+                <input type="file" class="resume-input" id="resume-cv-upload" required>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="resume-btn-submit">Apply Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+
     </div>
+
+
+
+    
   </div>
 </div>
 
+
+
+
+
 <!-- data come form db  -->
-
-<div class="container">
+<!-- <div class="container">
   <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
-
-
-
-
 
     <mat-grid-tile *ngFor="let j of jobDetails">
       <div class="container">
@@ -395,8 +803,8 @@
         <button mat-raised-button color="primary" (click)="CareerView(j.id)">
           View Career
         </button>
-        <!-- <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button> -->
+        <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
-</div>
+</div> -->

@@ -1,6 +1,13 @@
-// h1, h2, h3, h4, h5, h6{
-//   // font-family: "Plus Jakarta Sans", sans-serif;
-// }
+
+
+h1{
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 72px;
+}
 
 p{
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -267,4 +274,276 @@ line-height: 24px;
     font-size: 16px;
     color: #6c757d;
   }
+}
+
+
+
+
+
+
+
+.container {
+  max-width: 1200px;
+}
+
+.expertise-card {
+  background-color: #f0f4ff;
+  border-radius: 30px 0px 30px 0px;
+  padding: 16px 9px 16px 9px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.expertise-card:hover {
+  transform: scale(1.05);
+}
+
+.icon-industry {
+  font-size: 40px;
+  color: #313131; 
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.lead {
+  color: #586069; 
+  font-size: 18px;
+}
+
+
+
+
+.icon-bg-color-1{
+  background-color:#ffd4ee;
+}
+
+.icon-bg-color-2{
+  background-color: #eff0f6;
+}
+
+.icon-bg-color-3{
+  background-color: #c5e8ff;
+}
+
+.icon-bg-color-4{
+  background-color: #ffeecf;
+}
+
+.icon-bg-color-5{
+  background-color: #d9d3ff;
+}
+
+.icon-bg-color-6{
+  background-color: #d3fee8;
+}
+
+.icon-bg-color-7{
+  background-color: #ffeecf;
+}
+
+
+.icon-bg-color-8{
+  background-color: #f7f7ff;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .lead {
+    color: #586069; 
+    font-size: 16px;
+  }
+
+  .icon-industry {
+    font-size: 30px;
+    color: black; 
+  }
+  
+
+}
+
+
+
+
+.bg-contrast{
+background-color: #0c0a25;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+.explore-button{
+
+  font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #0d6efd
+    ;
+    border-color: #0d6efd
+    ;
+    border-width: 1px;
+    border-radius: 9px;
+    padding: 20px 30px 20px 30px;
+}
+
+
+
+.resume-form-wrapper {
+  background-color: #2a2a4f;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.resume-form-wrapper h2 {
+  text-align: center;
+  // margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.resume-form-wrapper label {
+  color: #ddd;
+}
+
+.resume-input, .resume-select, .resume-textarea {
+  background-color: #3c3c5f;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.resume-input[type="file"] {
+  padding: 5px;
+}
+
+.resume-btn-submit {
+  background-color: #0d6efd
+  ;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.resume-btn-submit:hover {
+  background-color: #2a38b7;
+}
+
+@media (min-width: 768px) {
+  .resume-form-wrapper .row > div {
+    padding: 0 15px;
+  }
+}
+
+
+
+.share-icon{
+background-color: #0d6efd
+;
+color: white;
+}
+
+
+
+
+
+
+
+
+.half-quarter-img-left-up {
+  border-radius: 52% 0% 51% 30% / 58% 100% 0% 0%  ;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+
+
+.half-quarter-img-right-up {
+  border-radius: 0% 54% 51% 30% / 58% 57% 0% 0%  ;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+
+
+
+.half-quarter-img-left-down {
+  border-radius: 0% 0% 0% 57% / 49% 51% 0% 47% ;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+
+
+.half-quarter-img-right-down {
+  border-radius:0% 0% 58% 41% / 100% 53% 46% 0%   ;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.half-quarter-img-left-up, .half-quarter-img-right-up, .half-quarter-img-left-down, .half-quarter-img-right-down  {
+  width: 48%;
+  margin-bottom: 15px; 
+}
+
+
+@media (max-width: 768px) {
+
+
+  .half-quarter-img-left-up, .half-quarter-img-right-up, .half-quarter-img-left-down, .half-quarter-img-right-down  {
+    width: 30%;
+    margin-bottom: 0; 
+  }
+  
+
+  .image-container {
+    
+    justify-content: center; 
+   
+  }
+  
+
+
 }

@@ -3,7 +3,10 @@ import { jobPosting } from './../_model/jobPosting.model';
 import { Component, OnInit } from '@angular/core';
 import { JobpostService } from '../_service/jobpost.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ExtraOptions, Router, Routes } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-career',
@@ -11,6 +14,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./career.component.scss']
 })
 export class CareerComponent implements OnInit {
+
+
+
+  scrollToSection() {
+    const element = document.getElementById("jobDetails");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+
+  
 
   constructor(private JobPostSer: JobpostService, 
     private router: Router,
