@@ -1,15 +1,21 @@
 export interface JobApplicant{
 
-    firstName : string,
-    lastName : string,
+    name : string,
+    address : string,
     email : string,
     phone : string,
-    dateOfBirth : string,
-    applicationDate : string
-    
-    // resumePdf :
-    // applicantImages :
+    position : string,
+    yearsOfExperience : number,
+    skills : string,
+    pdfFile?: File;  // Optional field for file upload
+
+
+ 
+
 }
 
 
 // firstName, lastName, email, phone, dateOfBirth, applicationDate
+
+
+// name, address, email, phone, position, yearsOfExperience, skills

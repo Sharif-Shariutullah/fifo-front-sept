@@ -13,8 +13,11 @@
   </div>
 </h1>
 
+
+
 <div class="container mt-5">
   <div class="card p-2">
+
 
 
     <form
@@ -24,8 +27,12 @@
     >
 
 
+
+
+    
       <div class="col-md-6">
-        <label for="jobTitle" class="form-label">Job Title</label>
+        
+        <label for="jobTitle" class="form-label"> <i class="fa-solid fa-newspaper"></i> Job Title</label>
         <input
           type="text"
           class="form-control"
@@ -45,6 +52,8 @@
           name="jobDescription"
         />
       </div>
+
+
       <div class="col-12">
         <label for="salary" class="form-label">Salary</label>
         <input
@@ -55,6 +64,9 @@
           name="salary"
         />
       </div>
+
+
+
       <div class="col-12">
         <label for="experienceRequired" class="form-label">Experience</label>
         <input
@@ -93,7 +105,118 @@
       </div>
 
 
-      
+
+
+
+
+
+
     </form>
   </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container py-5">
+  <form  #jobPostingForm="ngForm"
+  (ngSubmit)="createJob(jobPostingForm)">
+    <!-- input -->
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Job Title</mat-label>
+      <input
+        matInput
+        placeholder="FIFO-Tech Company"
+        [(ngModel)]="jobPost.jobTitle"
+        name="jobTitle"
+      />
+      <mat-icon matPrefix>apartment</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Job Description</mat-label>
+      <input
+        matInput
+        placeholder="9th floor, Janata Tower, Software Technology Park, Dhaka-1215"
+        [(ngModel)]="jobPost.jobDescription"
+        name="jobDescription"
+      />
+      <mat-icon matPrefix>pin_drop</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Salary</mat-label>
+      <input
+        matInput
+        placeholder="Full Name"
+        [(ngModel)]="jobPost.salary"
+          name="salary"
+        required
+      />
+      <mat-icon matPrefix>account_circle</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Experience</mat-label>
+      <input
+        matInput
+        placeholder="abc@example.com"
+        [(ngModel)]="jobPost.experienceRequired"
+        name="experienceRequired"
+        required
+      />
+      <mat-icon matPrefix>mail</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-50">
+      <mat-label>Tel-Phone</mat-label>
+      <input
+        matInput
+        placeholder="02-44810012"
+        [(ngModel)]="jobPost.educationQualification"
+          name="educationQualification"
+      />
+      <mat-icon matPrefix>dialpad</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-50 p-2">
+      <mat-label>Mobile</mat-label>
+      <input
+        matInput
+        placeholder="+880 1927 666 222(required)"
+        [(ngModel)]="jobPost.applicationDeadline"
+        name="applicationDeadline"
+        required
+      />
+      <mat-icon matPrefix>call</mat-icon>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        rows="6"
+        style="width: 100%"
+        placeholder="Message"
+        [(ngModel)]="clientContactObject.message"
+        name="message"
+        required
+      ></textarea>
+      <mat-icon matPrefix>chat_info</mat-icon>
+    </mat-form-field> -->
+
+    <button
+      type="submit"
+      mat-raised-button
+      style="background-color: #0d6efd; color: white; font-weight: bold;"
+    >
+      Submit
+    </button>
+  </form>
 </div>

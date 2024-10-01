@@ -49,7 +49,7 @@ export class ContactComponent {
 
 
 
-        // ContactForm.reset();  s
+        // ContactForm.reset();  
         ContactForm.resetForm();
 
       },

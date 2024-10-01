@@ -211,16 +211,16 @@
 <!-- admin panel   -->
 
 <div *ngIf="isAdminLoggedIn">
-  <mat-toolbar color="warn" class="navbar">
-    <span class="navbar-brand" mat-button routerLink="/home" routerLinkActive="active">FIFO Tech</span>
+  <mat-toolbar class="navbar nav-bg">
+    <span class="navbar-brand " mat-button routerLink="/home" routerLinkActive="active">FIFO Tech</span>
     <span class="spacer"></span>
 
 
 
-    <button mat-button routerLink="/admin/createEverything" routerLinkActive="active">
+    <button class="nav-taxt" style="color: white;" mat-button routerLink="/admin/createEverything" routerLinkActive="active">
       Create
     </button>
-    <button mat-button routerLink="/admin/listOfEverything" routerLinkActive="active">
+    <button class="nav-taxt" style="color: white;"  mat-button routerLink="/admin/listOfEverything" routerLinkActive="active">
       List
     </button>
     <button mat-icon-button routerLink="/ApplicantList" routerLinkActive="active">

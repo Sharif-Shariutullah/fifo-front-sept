@@ -15,16 +15,16 @@ export class ApplicantListComponent implements OnInit{
   // object 
 
   // jobPost: jobPosting = {
-  jobApp: JobApplicant = {
+  // jobApp: JobApplicant = {
 
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    dateOfBirth: "",
-    applicationDate: "এটা বের করতে হবে",
+  //   // firstName: "",
+  //   // lastName: "",
+  //   // email: "",
+  //   // phone: "",
+  //   // dateOfBirth: "",
+  //   // applicationDate: "এটা বের করতে হবে",
     
-  }
+  // }
 
   // injecting the service where  http requests/methods are made
   constructor(

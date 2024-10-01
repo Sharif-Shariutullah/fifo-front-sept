@@ -48,7 +48,7 @@ const routes: Routes = [
 { path: "career", component: CareerComponent},
 { path: "about", component: AboutComponent},
 { path: "contact", component: ContactComponent},
-{ path: "applicationForm", component: ApplicationFormComponent},
+{ path: "job-Details/:id", component: ApplicationFormComponent},
 { path: "gallery", component: GalleryComponent},
 // { path: "gallery/:id", component: GalleryComponent},
 

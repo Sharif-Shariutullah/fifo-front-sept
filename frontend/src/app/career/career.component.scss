@@ -72,11 +72,11 @@ mat-grid-tile {
    
 
 
-button {
-    color: white;
-    text-transform: uppercase;
-    margin-left: 8px;
-  }
+// button {
+//     color: white;
+//     text-transform: uppercase;
+//     margin-left: 8px;
+//   }
 
 
 
@@ -439,6 +439,8 @@ html {
 
 .resume-input[type="file"] {
   padding: 5px;
+  // background-color: #ffffff;
+
 }
 
 .resume-btn-submit {
@@ -456,6 +458,10 @@ html {
 
 .resume-btn-submit:hover {
   background-color: #2a38b7;
+}
+
+::placeholder{
+color: rgb(169, 169, 169);
 }
 
 @media (min-width: 768px) {

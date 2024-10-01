@@ -196,9 +196,39 @@ body {
 
 .nav-bg {
   // background-image: linear-gradient(to right, #71c9ce, #ffffff);
-background-color: 	rgb(0,140,186);
-  
+// background-color: 	rgb(0,140,186);           // light blue
+// background-color: 	 #2C3E50;                 // gray
+
+background-image: linear-gradient(to right, #3498DB, #34495E);     //Gradient Blue-Gray Combo
+// background-color: 	 #2980B9 ;             //  (slightly darker)
+// background-color: 	 #3498DB ;             //  (light blue)
+
+
+// background: linear-gradient(90deg, rgba(0,140,186,1) 0%, rgba(0,100,150,1) 100%);
+
+// background-color: rgba(0,140,186, 0.9);   //Transparent Effect:
+
+
+//-----------------------Box Shadow or Border:
+
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);    
+border-bottom: 2px solid #005f78;
+
+
+// Text/Icon: Dark blue (#2C3E50) or gray (#7F8C8D) for a subtle contrast.
 }
+
+
+.nav-bg:hover {
+  color: #ffffff;
+  background-color: #007f9e;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
 
 
 
@@ -250,3 +280,8 @@ color: #585858
 
 }
 
+.nav-taxt{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
