@@ -147,6 +147,8 @@ export class ApplicationFormComponent implements OnInit, AfterViewInit {
     position: '',
     yearsOfExperience: 0,
     skills: '',
+
+    
   };
 
 

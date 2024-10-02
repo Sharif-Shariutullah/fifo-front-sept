@@ -9,5 +9,5 @@ export interface jobPosting{
     applicationDeadline : string, //there could be ERROR
     contactInformation : string,
 
-    
+    responsibilities: string[];
 }

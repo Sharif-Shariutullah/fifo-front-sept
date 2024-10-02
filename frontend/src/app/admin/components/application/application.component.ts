@@ -24,7 +24,9 @@ export class ApplicationComponent implements OnInit{
     educationQualification: "",
     applicationDeadline: "",
     contactInformation: "9th floor, Janata Tower, Software Technology Park, Dhaka 1215   ||  +88-02-44810012-3 & +880 1927 666 222 ",
-
+    
+    
+    responsibilities: []
   }
 
   // injecting the service where i http requests/method are made

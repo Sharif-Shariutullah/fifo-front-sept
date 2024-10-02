@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { jobPosting } from 'src/app/_model/jobPosting.model';
 import { JobpostService } from 'src/app/_service/jobpost.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-careerpost',
@@ -25,7 +26,9 @@ export class CareerpostComponent implements OnInit{
     educationQualification: "",
     applicationDeadline: "",
     contactInformation: "9th floor, Janata Tower, Software Technology Park, Dhaka 1215   ||  +88-02-44810012-3 & +880 1927 666 222 ",
-
+    
+    
+    responsibilities: [],
   }
 
   // injecting the service where i http requests/method are made
@@ -38,6 +41,29 @@ export class CareerpostComponent implements OnInit{
     
   }
 
+  trackByIndex(index: number, obj: any): any {
+    return index; // or return obj.id if you have a unique identifier
+}
+
+
+  // Method to add a new responsibility field
+  addResponsibility() {
+    this.jobPost.responsibilities.push('');
+  }
+
+
+ // Method to remove a responsibility by index
+  removeResponsibility(index: number) {
+    this.jobPost.responsibilities.splice(index, 1);
+  }
+
+
+
+
+
+
+
+
 
 
 
@@ -47,13 +73,32 @@ export class CareerpostComponent implements OnInit{
 
     this.jobPostSer.createJob(this.jobPost).subscribe(
       (response: jobPosting) => {
-        
       
+
+
+    Swal.fire({
+      icon: "success",
+      title: "Done",
+      text: "Successfully Created    JOB",
+      showConfirmButton: false,
+      timer: 2500
+    });
+
+
         // this.getAllJobs();
         this.router.navigate(['/admin/careerList']);
         jobPostingForm.reset();
       },
-              (error: HttpErrorResponse) => { console.log(error); }
+              (error: HttpErrorResponse) => { 
+                
+                
+                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: 'Something went wrong! Please think what is you mistake.'
+                                });
+                
+                console.log(error); }
     );
   }
 

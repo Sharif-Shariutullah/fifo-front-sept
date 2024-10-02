@@ -50,7 +50,11 @@
         <!-- Job Description Column -->
         <ng-container matColumnDef="Job Description">
             <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Job Description</b> </th>
-            <td mat-cell *matCellDef="let element"> {{element.jobDescription}} </td>
+            <td mat-cell *matCellDef="let element"> 
+                <div class="truncate-text">
+                    {{element.jobDescription}} 
+                </div>
+                </td>
         </ng-container>
 
         <!-- Salary Column -->
@@ -84,8 +88,46 @@
         <!-- Contact Column -->
         <ng-container matColumnDef="Contact">
             <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Contact</b> </th>
-            <td mat-cell *matCellDef="let element" style="text-align: justify; "> {{element.contactInformation}} </td>
+            <td mat-cell *matCellDef="let element" style="text-align: justify; "> 
+                
+                
+                <div class="truncate-text"> {{element.contactInformation}} </div>
+               </td>
         </ng-container>
+
+
+
+
+
+
+     <!-- responsibility Column -->
+     <ng-container matColumnDef="Responsibility">
+        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Responsibility</b> </th>
+        <td mat-cell *matCellDef="let element" style="text-align: justify; "> 
+            
+            
+            <div class="truncate-text">
+
+
+            {{element.responsibilities?.join(', ')}}  
+
+            </div>
+        
+        
+        
+        </td>
+    </ng-container>
+
+
+
+
+
+
+
+
+
+
+
 
 
           <!-- Edit Column -->

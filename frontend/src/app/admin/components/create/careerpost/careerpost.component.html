@@ -100,6 +100,27 @@
         />
       </div>
 
+
+
+
+
+      <!-- Responsibilities (dynamic fields) -->
+      <div class="col-md-6">
+        <label for="responsibilities" class="form-label">Responsibilities</label>
+        <div *ngFor="let responsibility of jobPost.responsibilities; let i = index trackBy: trackByIndex">
+          <input
+            type="text"
+            class="form-control mb-2"
+            [(ngModel)]="jobPost.responsibilities[i]"
+            name="responsibility{{i}}"
+          />
+          <button type="button" class="btn btn-danger" (click)="removeResponsibility(i)">Remove</button>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addResponsibility()">Add Responsibility</button>
+      </div>
+
+
+
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Create JOB</button>
       </div>
@@ -114,6 +135,33 @@
     </form>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

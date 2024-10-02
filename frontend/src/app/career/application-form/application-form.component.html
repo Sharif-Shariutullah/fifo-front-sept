@@ -54,7 +54,22 @@
 
 
 <div class="job-details py-1 mt-1">
-    <h2 >Responsibilities</h2>
+
+
+  <h2 >Responsibilities</h2>
+
+  <ul>
+    <li *ngFor="let responsibility of jobDetailsWithData.responsibilities">
+      {{ responsibility }}
+    </li>
+  </ul>
+
+
+<br><br><br> 
+
+
+
+    <!-- <h2 >Responsibilities</h2>
     <ul>
         <li>Develop and implement comprehensive digital marketing strategies.</li>
         <li>Oversee and coordinate the digital marketing team to ensure successful campaign execution.</li>
@@ -62,7 +77,7 @@
         <li>Analyze performance metrics and adjust strategies to optimize ROI.</li>
         <li>Collaborate with cross-functional teams to align marketing efforts with business goals.</li>
         <li>Stay updated on industry trends and emerging digital marketing techniques.</li>
-    </ul>
+    </ul> -->
 
     <h2>Requirements</h2>
     <ul>
