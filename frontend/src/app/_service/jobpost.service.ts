@@ -38,9 +38,9 @@ export class JobpostService {
 
   
   // edit 
-  public getJobPostById(id) {
+  public getJobPostById(id : number) {
     return this.httpClient.get<jobPosting>(
-      `http://localhost:8080/api/getJobPostById/${id}`
+      `http://localhost:8080/api/admin/getJobPostById/${id}`
     );
     // return this.httpClient.get<jobPosting>("http://localhost:8080/api/getJobPostById/"+id));
   }

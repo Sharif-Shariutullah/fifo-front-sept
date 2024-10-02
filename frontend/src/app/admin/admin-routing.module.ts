@@ -32,6 +32,7 @@ import { ContactMessageComponent } from './components/contact-message/contact-me
 import { ApplicantListComponent } from './components/list/applicant-list/applicant-list.component';
 import { TeampostComponent } from './components/create/teampost/teampost.component';
 import { GlobalBpoPostComponent } from './components/create/global-bpo-post/global-bpo-post.component';
+import { ApplicationFormComponent } from '../career/application-form/application-form.component';
 
 const routes: Routes = [
 
@@ -53,7 +54,7 @@ const routes: Routes = [
   { path: 'teamList', component: TeamlistComponent },
   { path: 'videoList', component: VideolistComponent },
   { path: 'galleryList', component: GallerylistComponent },
-  { path: 'applicantList', component: ApplicationComponent },
+  { path: 'applicant', component: ApplicationComponent },
   { path: 'contactMessageList', component: ContactMessageComponent },
   { path: 'CommentsList', component: CommentsComponent },
   { path: 'ApplicantList', component: ApplicantListComponent },
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'product/:productId', component: UpdateProductComponent },
  { path: 'dashboard', component: DashboardComponent },
 
+ { path: "job-Details/:id", component: ApplicationFormComponent},
 
   
 

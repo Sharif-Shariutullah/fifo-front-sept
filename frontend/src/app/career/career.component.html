@@ -41,9 +41,9 @@
 
 <!-- Row  2 of 6 -->
 
-<div class="py-5 text-white bg-contrast">
+<div class="py-5   bg">
   <div class="container">
-    <h1 class="fs-1 fw-bold text-center pt-5 pb-1 " style="color: #F5F5F5;">
+    <h1 class="fs-1 fw-bold text-center pt-5 pb-1 " style="color: #0d6efd">
       Why Join Us?
     </h1>
 
@@ -143,7 +143,7 @@
           <div class="job-details">
             <div class="job-title">{{ j.jobTitle }}</div>
             <div class="job-meta">
-              <span class="px-5 pb-2"><i class="fa-solid fa-hourglass-start"></i>&nbsp; <b>Deadline:</b> &nbsp; {{
+              <span class=" pb-2"><i class="fa-solid fa-hourglass-start"></i>&nbsp; <b>Deadline:</b> &nbsp; {{
                 j.applicationDeadline | date:'mediumDate' }}</span>
               <span class="px-5 pb-2"><i class="fas fa-bolt"></i>&nbsp; <b>Experience:</b> &nbsp; {{
                 j.experienceRequired }} years</span>
@@ -200,7 +200,7 @@
 
 
 <!-- Row  4 of 6    Our Industry -->
-
+<!-- 
 <div class="features-section py-5 bg-contrast">
   <div class="container text-center my-5">
     <h1 class=" fw-bold text-center pt-5 text-white ">
@@ -336,12 +336,7 @@
         </div>
       </div>
 
-      <!-- <div class="col-sm-2 col-md-2 col-lg-3">
-          <div class="expertise-card icon-bg-color-2">
-            <i class="icon-industry fas fa-share-alt"></i>
-            <h4>Social Media Marketing</h4>
-          </div>
-        </div> -->
+
 
       <div class="col-sm-2 col-md-2 col-lg-3">
         <div class="expertise-card icon-bg-color-3">
@@ -406,16 +401,11 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
     </div>
   </div>
+
+</div> -->
+
 
 
 
@@ -441,7 +431,19 @@
 
     </div>
   </div> -->
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -454,7 +456,7 @@
 
 
     <div class="row g-2 py-2">
-      <div class="col-md-8 col-lg-8">
+      <div class="col-md-8 col-lg-8 py-5">
         <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
           Share Our Values
         </h2>
@@ -750,111 +752,4 @@
 
 
 
-
-
-
-<!-- ---------------------------------------- Applicant List ______________________- -->
-
-
-
-
-<div class="container mt-5 p-2">
-
-
-
-
-  <table mat-table [dataSource]="applicationDetails" class="mat-elevation-z8">
-
-     <!-- firstName, lastName, email, phone, dateOfBirth, applicationDate -->
-
-      <!-- ID Column -->
-      <ng-container matColumnDef="ID">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>ID</b> </th>
-          <td mat-cell *matCellDef="let element" style="background-color: grey;"> <b>{{element.applicantId}}</b> </td>
-      </ng-container>
-
-      <!-- Job Title Column -->
-      <ng-container matColumnDef="Name">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b> Name </b> </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-
-      <!-- Job Description Column -->
-      <ng-container matColumnDef="Address">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Address</b> </th>
-          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-      </ng-container>
-
-      <!-- Phone Column -->
-      <ng-container matColumnDef="Email">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Email</b> </th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-      </ng-container>
-
-      <!-- Experience Column -->
-      <ng-container matColumnDef="Phone">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Phone</b> </th>
-          <td mat-cell *matCellDef="let element" style="text-align: center;"> <b>{{element.phone}}</b> </td>
-      </ng-container>
-
-
-      <!-- Education Column -->
-      <ng-container matColumnDef="Position">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Position</b> </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
-
-   
-
-
-
-      <!-- Contact Column -->
-      <ng-container matColumnDef="Experience">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Experience</b> </th>
-          <td mat-cell *matCellDef="let element" style="text-align: justify; "> {{element.yearsOfExperience}} </td>
-      </ng-container>
-
-      <!-- Contact Column -->
-      <ng-container matColumnDef="Skills">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Skills</b> </th>
-        <td mat-cell *matCellDef="let element" style="text-align: justify; "> {{element.skills}} </td>
-    </ng-container>
-
-
-
-    <!-- <i class="fa-solid fa-file-pdf"></i>  -->
-
-        <!-- Edit Column -->
-        <ng-container matColumnDef="CV Download">
-          <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;">  <b>CV Download</b> </th>
-          <td mat-cell *matCellDef="let element"> 
-              
-              <!-- <button mat-icon-button color="primary" (click)="downloadPdf(element)"> -->
-                <button mat-icon-button (click)="downloadPdf(element.applicantId)">
-
-
-
-              <mat-icon>download</mat-icon>
-              </button>
-          
-        
-          
-          </td>
-      </ng-container>
-
-
-
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-
-
-
-
-
-
-
-</div>
 

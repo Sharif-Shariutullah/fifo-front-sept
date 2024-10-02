@@ -1,18 +1,5 @@
 
 
-h1{
-
-  font-family: "Plus Jakarta Sans", sans-serif;
-
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 72px;
-}
-
-p{
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 
 
 
@@ -202,7 +189,7 @@ line-height: 24px;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
-    padding-bottom: 7%;
+    padding-bottom: 5px;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
   line-height: 36px;
@@ -378,7 +365,7 @@ h4 {
 
 
 .bg-contrast{
-background-color: #0c0a25;
+background-color: #00b4d8;
 }
 
 
@@ -409,7 +396,7 @@ html {
 
 
 .resume-form-wrapper {
-  background-color: #2a2a4f;
+  background-color: #0077b6;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -428,8 +415,8 @@ html {
 }
 
 .resume-input, .resume-select, .resume-textarea {
-  background-color: #3c3c5f;
-  color: #fff;
+  background-color: #caf0f8;
+  color: grey;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -444,7 +431,7 @@ html {
 }
 
 .resume-btn-submit {
-  background-color: #0d6efd
+  background-color: #03045e
   ;
   color: #fff;
   padding: 10px 30px;
@@ -457,7 +444,7 @@ html {
 }
 
 .resume-btn-submit:hover {
-  background-color: #2a38b7;
+  background-color: #0d6efd;
 }
 
 ::placeholder{
@@ -553,3 +540,4 @@ color: white;
 
 
 }
+

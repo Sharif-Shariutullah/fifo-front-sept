@@ -8,6 +8,7 @@ import { ViewOrderedProductsComponent } from './components/view-ordered-products
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 import { ViewProductDetailComponent } from './components/view-product-detail/view-product-detail.component';
 import { ViewWishlistComponent } from './components/view-wishlist/view-wishlist.component';
+import { ApplicationFormComponent } from '../career/application-form/application-form.component';
 
 
 
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'review/:productId', component: ReviewOrderedProductComponent }, // ???
   { path: 'product/:productId', component: ViewProductDetailComponent }, // ???
   { path: 'wishlist', component: ViewWishlistComponent },
+  
+  { path: "job-Details/:id", component: ApplicationFormComponent},
 
   
 
