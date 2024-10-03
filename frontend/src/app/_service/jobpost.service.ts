@@ -33,7 +33,7 @@ export class JobpostService {
     // return this.httpClient.delete("http://localhost:8080/api/admin/deleteJobPost/"+id);
   }
 
-
+ 
 
 
   

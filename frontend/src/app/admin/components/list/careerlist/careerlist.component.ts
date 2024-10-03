@@ -58,7 +58,7 @@ export class CareerlistComponent implements OnInit{
   //     (error: HttpErrorResponse) => { console.log(error); }
   //   );
   // }
-
+  
 
 
 

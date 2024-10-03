@@ -1,22 +1,179 @@
 import { SafeUrl } from '@angular/platform-browser';
 import { getLocaleDateFormat, getLocaleDateTimeFormat } from '@angular/common';
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FileHandle } from 'src/app/_model/file_handle.model';
-import { newsPostModel } from 'src/app/_model/newsPost.model';
 import { NewsPostService } from 'src/app/_service/NewsPost/news-post.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PracticeService } from 'src/app/Practice/service/practice.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-newspost', 
   templateUrl: './newspost.component.html',
   styleUrls: ['./newspost.component.scss'],
 })
-export class NewspostComponent {
+export class NewspostComponent implements OnInit{
+
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private snackBar: MatSnackBar,
+    private newsService: NewsPostService,
+  ) { }
+
+
+
+
+
+  newsForm!: FormGroup;
+  selectedFile: File | null = null;
+  imagePreview: string | ArrayBuffer | null = null;
+
+
+
+
+
+
+
+
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+    this.previewImage();
+  }
+
+
+
+
+
+  previewImage() {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result;
+    };
+    if (this.selectedFile) {
+      reader.readAsDataURL(this.selectedFile);
+    }
+  }
+
+
+
+
+
+
+  
+  ngOnInit(): void {
+    this.newsForm = this.fb.group({
+
+
+      title: ['', [Validators.required]],
+      subtitle: ['', [Validators.required]],
+      description: this.fb.array([this.fb.control('', Validators.required)])
+    
+    });
+  }
+
+
+
+
+
+  get descriptionArray() {
+    return (this.newsForm.get('description') as FormArray);
+  }
+
+  addDescription() {
+    this.descriptionArray.push(this.fb.control('', Validators.required));
+  }
+
+
+  removeDescription(index: number) {
+    if (this.descriptionArray.length > 1) {
+      this.descriptionArray.removeAt(index);
+    } else {
+      alert("You must have at least one description.");
+    }
+  }
+
+
+
+
+  trackByIndex(index: number, obj: any): any {
+    return index; 
+}
+
+
+
+
+
+
+
+
+
+
+addNews(): void {
+  if (this.newsForm.valid) {
+    const formData: FormData = new FormData();
+    formData.append('img', this.selectedFile); // Add image to the form data
+    formData.append('title', this.newsForm.get('title').value);
+    formData.append('subtitle', this.newsForm.get('subtitle').value);
+    formData.append('description', JSON.stringify(this.descriptionArray.value)); // Send the array of descriptions
+
+    this.newsService.addNews(formData).subscribe(
+      (res: any) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Done',
+          text: 'News Created Successfully',
+          showConfirmButton: false,
+          timer: 2500
+        });
+
+      
+          this.newsForm.reset(); 
+          this.selectedFile = null;  
+      },
+      (error: any) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        });
+      }
+    );
+  } else {
+    this.newsForm.markAllAsTouched();
+  }
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // 1. injecting the service where i http requests/method are made
 
@@ -202,95 +359,3 @@ export class NewspostComponent {
   // }
 
 
-
-
-
-
-
-
-
-
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private snackBar: MatSnackBar,
-    private practiceService: PracticeService
-  ) { }
-
-
-
-practiceForm: FormGroup;
-  listOfCategories: any = [];
-  selectedFile: File | null;
-  imagePreview: string | ArrayBuffer | null;
-
-
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-    this.previewImage();
-  }
-
-
-  previewImage() {
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-    };
-    reader.readAsDataURL(this.selectedFile);
-  }
-
-
-  ngOnInit(): void {
-    this.practiceForm = this.fb.group({
-      // categoryId: [null, [Validators.required]],
-      title: [null, [Validators.required]],
-      subtitle: [null, [Validators.required]],
-      description: [null, [Validators.required]],
-    });
-    // this.getAllCategories();
-  }
-
-
-
-  addPractice(): void {
-    if (this.practiceForm.valid) {
-      const formData: FormData = new FormData();
-      formData.append('img', this.selectedFile);
-      // formData.append('categoryId', this.productForm.get('categoryId').value);
-      formData.append('title', this.practiceForm.get('title').value);
-      formData.append('subtitle', this.practiceForm.get('subtitle').value);
-      formData.append('description', this.practiceForm.get('description').value);
-
-      console.log('-----formData-----', formData);
-
-
-      this.practiceService.addPractice(formData).subscribe((res: any) => {
-        const response = res;
-        if (response.id != null) {
-          this.snackBar.open('practice Posted successfully!', 'Close', {
-            duration: 5000
-          });
-          // this.router.navigateByUrl('/practice-details');
-        } else {
-
-          this.snackBar.open(response.message, 'Error', {
-            duration: 5000
-          });
-
-
-        }
-      })
-    } else {
-      for (const i in this.practiceForm.controls) {
-        this.practiceForm.controls[i].markAsDirty();
-        this.practiceForm.controls[i].updateValueAndValidity();
-      }
-    }
-  }
-
-
-
-
-
-}

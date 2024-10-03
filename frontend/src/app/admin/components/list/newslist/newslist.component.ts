@@ -11,8 +11,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class NewslistComponent implements OnInit {
 
-  // 1. injecting the service where i http requests/method are made
-
 
   constructor(
     private router: Router,
@@ -24,14 +22,15 @@ export class NewslistComponent implements OnInit {
 
     
   newsObject: newsPostModel = {
-
+// id: 0,
     title: '',
-    content: '',
-    imageUrl: '',
-    videoUrl: '',
-    author: '',
-    publishedAt: '',
-    newsImages: []
+  subtitle: '',
+  description: [],
+  img: '',
+
+
+
+    // newsImages: []
 
 
     // title, content, imageUrl, videoUrl, author, publishedAt
@@ -48,21 +47,74 @@ this.getAllNews();
   newsModelArray: newsPostModel[] = [];
 
   // table colomn names 
-  displayedColumns: string[] = ['ID', 'News Title', 'Description', 'Author', 'Image', 'Video', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['#', 'ID', 'News Title', 'Description', 'Image', 'Delete'];
 
 
-  // 3. method button method
+
 
   public getAllNews() {
 
     this.newsService.getAllNews().subscribe(
       (response: newsPostModel[]) => {
+        
         console.log(response);
-
         this.newsModelArray = response;
+
+    // // Convert each news item image (byte array) to a base64 string
+    // this.newsModelArray = response.map(news => ({
+
+
+    //   ...news,
+    //   img: news.img ? this.convertByteArrayToBase64(news.img) : null // Convert byte array to base64 string only if it exists
+    
+    
+    
+    
+    // }));
+
+
+
+
+
       }, (error: HttpErrorResponse) => { console.log(error); }
     );
   };
+
+  // practice: any[] = [];
+
+  // getAllNews() {
+  //   this.practice = [];
+  //   this.newsService.getAllNews().subscribe(res => {
+  //     res.forEach(element => {
+  //       element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
+  //       this.practice.push(element);
+
+  //       // console.log( this.products);  25.08.24 (sunday update)
+        
+  //     });
+  //   })
+  // }
+
+
+
+
+
+// Method to convert byte array to base64 string
+convertByteArrayToBase64(byteArray: Uint8Array): string {
+  const binaryString = String.fromCharCode(...new Uint8Array(byteArray));
+  return `data:image/jpeg;base64,${btoa(binaryString)}`;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
