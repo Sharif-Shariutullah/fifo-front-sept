@@ -10,4 +10,11 @@ export interface jobPosting{
     contactInformation : string,
 
     responsibilities: string[];
+
+    requirements: string[];
+    
+    whatWeOffer: string[];
+
+
+
 }

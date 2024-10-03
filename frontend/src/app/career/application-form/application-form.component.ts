@@ -153,6 +153,9 @@ export class ApplicationFormComponent implements OnInit, AfterViewInit {
 
 
   selectedFile!: File; // To store the selected PDF file
+
+
+  
   applicationDetails: JobApplicant[] = [];
 
   displayedColumns: string[] = [

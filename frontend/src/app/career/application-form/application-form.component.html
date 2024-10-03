@@ -65,7 +65,6 @@
   </ul>
 
 
-<br><br><br> 
 
 
 
@@ -79,7 +78,29 @@
         <li>Stay updated on industry trends and emerging digital marketing techniques.</li>
     </ul> -->
 
+
+
+
+
+
+
     <h2>Requirements</h2>
+  
+    <ul>
+      <li *ngFor="let requirements of jobDetailsWithData.requirements">
+        {{ requirements }}
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+    <!-- <h2>Requirements</h2>
     <ul>
         <li>5-6 years of experience in digital marketing.</li>
         <li>Strong leadership and project management skills.</li>
@@ -88,9 +109,23 @@
         <li>Up-to-date with the latest industry trends and technologies in web development.</li>
         <li>Good problem-solving, troubleshooting skills.</li>
         <li>Playing (football, cricket) and singing quality is definitely a plus.</li>
-    </ul>
+    </ul> -->
+
+
+
+
 
     <h2>What we offer</h2>
+    <ul>
+      <li *ngFor="let whatWeOffer of jobDetailsWithData.whatWeOffer">
+        {{ whatWeOffer }}
+      </li>
+    </ul>
+
+
+
+
+    <!-- <h2>What we offer</h2>
     <ul>
         <li>Good working environment.</li>
         <li>Weekly holiday: 2 Days.</li>
@@ -98,7 +133,12 @@
         <li>Friendly work environment (Game room, gym facilities, music corner).</li>
         <li>Scope for professional development & career growth.</li>
         <li>Other perks as per company policy.</li>
-    </ul>
+    </ul> -->
+
+
+
+
+
 </div>
 
 </div>

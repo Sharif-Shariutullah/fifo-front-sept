@@ -8,6 +8,6 @@ export interface newsPostModel{
     publishedAt: string,
     imageUrl: string,
     videoUrl: string,
-    newsImages: FileHandle[]
+    newsImages: FileHandle[],
 } 
 // title, content, imageUrl, videoUrl, author, published

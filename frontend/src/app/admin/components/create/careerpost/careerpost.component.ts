@@ -29,6 +29,9 @@ export class CareerpostComponent implements OnInit{
     
     
     responsibilities: [],
+    requirements: [],    
+    whatWeOffer: [],
+
   }
 
   // injecting the service where i http requests/method are made
@@ -41,6 +44,8 @@ export class CareerpostComponent implements OnInit{
     
   }
 
+
+  // keep typing 
   trackByIndex(index: number, obj: any): any {
     return index; // or return obj.id if you have a unique identifier
 }
@@ -56,6 +61,41 @@ export class CareerpostComponent implements OnInit{
   removeResponsibility(index: number) {
     this.jobPost.responsibilities.splice(index, 1);
   }
+
+
+
+
+
+
+
+  // Method to add a new responsibility field
+  addRequirements() {
+    this.jobPost.requirements.push('');
+  }
+
+
+ // Method to remove a responsibility by index
+  removeRequirements(index: number) {
+    this.jobPost.requirements.splice(index, 1);
+  }
+
+
+
+
+
+
+  // Method to add a new responsibility field
+  addWhatWeOffer() {
+    this.jobPost.whatWeOffer.push('');
+  }
+
+
+ // Method to remove a responsibility by index
+  removeWhatWeOffer(index: number) {
+    this.jobPost.whatWeOffer.splice(index, 1);
+  }
+
+
 
 
 

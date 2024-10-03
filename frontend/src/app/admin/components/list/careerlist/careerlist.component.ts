@@ -26,7 +26,10 @@ export class CareerlistComponent implements OnInit{
     contactInformation: "9th floor, Janata Tower, Software Technology Park, Dhaka 1215   ||  +88-02-44810012-3 & +880 1927 666 222 ",
    
    
-    responsibilities: []
+    responsibilities: [],
+    requirements: [],    
+    whatWeOffer: [],
+
   }
 
   // injecting the service where i http requests/method are made
@@ -63,7 +66,7 @@ export class CareerlistComponent implements OnInit{
   jobDetails: jobPosting[] = [];
 
   // table colomn names 
-  displayedColumns: string[] = ['#', 'ID', 'Job Title', 'Job Description', 'Salary', 'Experience', 'Education', 'Deadline', 'Contact', 'Responsibility', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['#', 'ID', 'Job Title', 'Job Description', 'Salary', 'Experience', 'Education', 'Deadline', 'Contact', 'Responsibility', 'Requirements', 'What We Offer', 'Edit', 'Delete'];
 
 
   public getAllJobs() {

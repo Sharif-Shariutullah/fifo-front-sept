@@ -122,7 +122,44 @@
 
 
 
+     <!-- Requirements Column -->
+     <ng-container matColumnDef="Requirements">
+        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>Requirements</b> </th>
+        <td mat-cell *matCellDef="let element" style="text-align: justify; "> 
+            
+            
+            <div class="truncate-text">
 
+
+            {{element.requirements?.join(', ')}}  
+
+            </div>
+        
+        
+        
+        </td>
+    </ng-container>
+
+
+
+
+         <!-- what We Offer Column -->
+         <ng-container matColumnDef="What We Offer">
+            <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine; text-align: center;"> <b>What We Offer</b> </th>
+            <td mat-cell *matCellDef="let element" style="text-align: justify; "> 
+                
+                
+                <div class="truncate-text">
+    
+    
+                {{element.whatWeOffer?.join(', ')}}  
+    
+                </div>
+            
+            
+            
+            </td>
+        </ng-container>
 
 
 
