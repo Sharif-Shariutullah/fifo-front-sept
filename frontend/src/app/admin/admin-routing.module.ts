@@ -47,6 +47,8 @@ const routes: Routes = [
   { path: 'teamPost', component: TeampostComponent },
   { path: 'careerPost', component: CareerpostComponent },
   { path: 'videoPost', component: VideopostComponent },
+
+  
   { path: 'careerList', component: CareerlistComponent },
   { path: 'newsList', component: NewslistComponent },
   { path: 'serviceList', component: ServicelistComponent },

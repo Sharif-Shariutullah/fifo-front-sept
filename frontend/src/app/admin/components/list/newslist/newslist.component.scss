@@ -5,5 +5,63 @@ table {
   img {
     border-radius: 5px;
     object-fit: cover;
+    padding: 5px;
   }
+
+
+
+
+  .truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  
+
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif; /* Set a clean font */
+  }
+  
+  .header-cell {
+    /* Blue background for header */
+    color: rgb(255, 255, 255); /* White text color for contrast */
+  
+    font-weight: bold; /* Bold header text */
+    text-align: center; /* Center header text */
+    padding: 12px; /* Add padding for better spacing */
+  }
+  
+  .data-cell {
+    background-color: #f8f9fa; /* Light gray background for data cells */
+    text-align: center; /* Center data text */
+    padding: 10px; /* Add padding for better spacing */
+  }
+  
+  /* Striped rows */
+  .data-cell:nth-child(even) {
+    background-color: #e9ecef; /* Slightly darker gray for even rows */
+  }
+  
+  .data-cell:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+  }
+  
+  /* Add hover effect for rows */
+  .mat-row:hover {
+    background-color: #d1ecf1; /* Light blue on hover */
+  }
+  
+  // /* Truncate text styles */
+  // .truncate-text {
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   max-width: 150px; /* Adjust this width as needed */
+  // }
   

@@ -131,6 +131,7 @@ addNews(): void {
       
           this.newsForm.reset(); 
           this.selectedFile = null;  
+
       },
       (error: any) => {
         Swal.fire({

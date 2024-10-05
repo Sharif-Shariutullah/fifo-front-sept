@@ -45,6 +45,9 @@ export class CareerComponent implements OnInit {
 
   jobDetailsWithData: jobPosting; // a single object, not an array
 
+
+
+  
   // details page
   JobViewDetails(id: number) {
     this.JobPostSer.getJobPostById(id).subscribe(
@@ -61,6 +64,11 @@ export class CareerComponent implements OnInit {
       }
     );
   }
+
+
+
+
+
 
   ngOnInit() {
     this.getAllJobs();
@@ -168,6 +176,24 @@ export class CareerComponent implements OnInit {
     );
   }
 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // --------------------------------------------it works
 
   // // object
@@ -231,4 +257,3 @@ export class CareerComponent implements OnInit {
 
   //   );
   // }
-}

@@ -13,92 +13,14 @@ import { PracticeService } from 'src/app/Practice/service/practice.service';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
+  
+  
+  newsData: any[] = [];
 
+  constructor(private newsService: NewsPostService) {}
 
-
-  // constructor(private router: Router, private newsService: NewsPostService) {}
-
-  // ngOnInit(): void {
-  //   this.getAllNews();
-  // }
- 
-  // newsModelArray = [];
-
-  // public getAllNews() {
-  //   this.newsService.getAllNews().subscribe(
-  //     (response: newsPostModel[]) => {
-  //       this.newsModelArray = response;
-  //       console.log(this.newsModelArray);
-
-  //       this.newsModelArray.forEach((element) => {
-  //         var imageSrc: string | ArrayBuffer | null = '';
-
-  //         const reader = new FileReader();
-  //         reader.onloadend = () => {
-  //           element.imageSrc = reader.result;
-  //         };
-  //         reader.readAsDataURL(new Blob([element.newsImages[0].picByte]));
-  //       });
-
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
-
-  // convertBinaryToBase64(binaryData: any) {
-  //   console.log(binaryData);
-  //   var imageSrc: string | ArrayBuffer | null = '';
-
-  //   const reader = new FileReader();
-  //   reader.onloadend = () => {
-  //     imageSrc = reader.result;
-  //   };
-  //   reader.readAsDataURL(new Blob([binaryData]));
-  //   return imageSrc;
-  // }
-
-  // // details page
-  // newsDetailsViewPage(id) {
-  //   this.router.navigate(['/পাইজের নাম হইবো', { id: id }]);
-  // }
-
-
-
-
-
-
-
-  practice: any[] = [];
-
-  searchProductForm!: FormGroup;
-
-  constructor(
-    private practiceService: PracticeService,
-    private fb: FormBuilder,
-    private snackBar: MatSnackBar) { }
-
-  ngOnInit() {
-    this.getAllPractice();
-    this.searchProductForm = this.fb.group({
-      title: [null, [Validators.required]]
-
-    })
-  }
-
-
-  getAllPractice() {
-    this.practice = [];
-    this.practiceService.getAllPractice().subscribe(res => {
-      res.forEach(element => {
-        element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-        this.practice.push(element);
-
-        // console.log( this.products);  25.08.24 (sunday update)
-        
-      });
-    })
+  ngOnInit(): void {
+    this.getAllNews();
   }
 
 
@@ -106,4 +28,32 @@ export class NewsComponent implements OnInit {
 
 
 
+// get all method 
+
+  getAllNews(): void {
+    this.newsService.getAllNews().subscribe(
+      (data) => {
+        this.newsData = data;
+        this.newsData.forEach((element) => {
+          console.log('Processing element:', element);
+          this.processImage(element);
+        });
+      },
+      (error) => {
+        console.error('Error fetching news:', error);
+      }
+    );
+  }
+
+  processImage(element: any): void {
+    if (element.byteImg) {
+      const base64Image = `data:image/jpeg;base64,${element.byteImg}`;
+      element.img = base64Image;
+      console.log('Image processed for element:', element.id);
+    } else {
+      console.warn('No image data found for element:', element);
+      element.img = null;
+    }
+  }
 }
+ 

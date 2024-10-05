@@ -3,94 +3,67 @@
     padding: 3%;
     text-align: center;
     position: static;
-    background-color: rgb(232, 151, 255);
+    background-color: rgb(87, 151, 255);
   "
 >
-  <h1><b> See Your News List</b></h1>
+  <h1><b>See Your News List</b></h1>
   <h3>You can <b>Update</b> & <b>Delete</b></h3>
 
   <button mat-icon-button aria-label="Applicants">
     <mat-icon style="font-size: 25px">notifications</mat-icon>
     <span
-      matBadge="{{ newsModelArray.length }}"
+      matBadge="{{ newsData.length }}"
       matBadgeColor="warn"
       matBadgeOverlap="false"
     ></span>
   </button>
 </div>
 
-
-
-
 <div class="container mt-5 p-2">
-    <table mat-table [dataSource]="newsModelArray" class="mat-elevation-z8">
-      <!-- Index Column -->
+    <table mat-table [dataSource]="newsData" class="mat-elevation-z8 custom-table">
       <ng-container matColumnDef="#">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>#</b> </th>
-        <td mat-cell *matCellDef="let element; let i = index" style="background-color: rgb(255, 255, 255);"> 
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>#</b> </th>
+        <td mat-cell *matCellDef="let element; let i = index" class="data-cell"> 
           <b>{{ i + 1 }}</b> 
         </td>
       </ng-container>
-  
-      <!-- ID Column -->
+
       <ng-container matColumnDef="ID">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>ID</b> </th>
-        <td mat-cell *matCellDef="let element" style="background-color: grey;"> <b>{{ element.id }}</b> </td>
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>ID</b> </th>
+        <td mat-cell *matCellDef="let element" class="data-cell"> <b>{{ element.id }}</b> </td>
       </ng-container>
-  
-      <!-- News Title Column -->
       <ng-container matColumnDef="News Title">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>News Title</b> </th>
-        <td mat-cell *matCellDef="let element"> {{ element.title }} </td>
-      </ng-container>
-  
-      <!-- Subtitle Column --> 
-      <ng-container matColumnDef="Subtitle">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Subtitle</b> </th>
-        <td mat-cell *matCellDef="let element"> {{ element.subtitle }} </td>
-      </ng-container>
-  
-      <!-- Description Column --> 
-      <ng-container matColumnDef="Description">
-        <th mat-header-cell *matHeaderCellDef style="background-color: aquamarine;"> <b>Description</b> </th>
-        <td mat-cell *matCellDef="let element"> 
-          {{ element.description?.join(', ') }}  
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>News Title</b> </th>
+        <td mat-cell *matCellDef="let element" class="data-cell"> 
+          <div class="truncate-text">{{ element.title }}</div>
         </td>
       </ng-container>
-  
-      <!-- Image Column -->
-      <!-- <ng-container matColumnDef="Image">
-        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(127, 129, 128);"> <b>Image</b> </th>
+
+      <ng-container matColumnDef="Subtitle">
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>Subtitle</b> </th>
+        <td mat-cell *matCellDef="let element" class="data-cell">
+          <div class="truncate-text">{{ element.subtitle }}</div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>Description</b> </th>
+        <td mat-cell *matCellDef="let element" class="data-cell">
+          <div class="truncate-text">{{ element.description?.join(', ') }}</div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Image">
+        <th mat-header-cell *matHeaderCellDef class="header-cell" style="background-color:  #007BFF;"> <b>Image</b> </th>
         <td mat-cell *matCellDef="let element" style="text-align: center;">
           <img *ngIf="element.img" [src]="element.img" alt="News Image" style="width: 100px; height: 100px;">
         </td>
-      </ng-container> -->
+      </ng-container>
 
-
-
-
-
-
-
-<!-- Image Column -->
-<ng-container matColumnDef="Image">
-    <th mat-header-cell *matHeaderCellDef style="background-color: rgb(127, 129, 128);"> <b>Image</b> </th>
-    <td mat-cell *matCellDef="let element" style="text-align: center;">
-      <img *ngIf="element.img" [src]="element.img" alt="News Image" style="width: 100px; height: 100px;">
-    </td>
-  </ng-container>
-  
-
-
-
-
-
-  
-      <!-- Delete Column -->
       <ng-container matColumnDef="Delete">
-        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(184, 255, 211);"> <b>Delete</b> </th>
-        <td mat-cell *matCellDef="let element"> 
-          <button mat-icon-button color="warn" (click)="deleteNews(element.newsId)">
+        <th mat-header-cell *matHeaderCellDef class="header-cell"style="background-color:  #007BFF;"> <b>Delete</b> </th>
+        <td mat-cell *matCellDef="let element" class="data-cell"> 
+          <button mat-icon-button color="warn" (click)="deleteNews(element.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -99,5 +72,22 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  </div>
-  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

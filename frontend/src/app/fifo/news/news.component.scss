@@ -168,3 +168,23 @@ mat-grid-tile {
     margin-top: 10px;
   }
 }
+
+
+
+
+
+
+
+
+
+.card {
+  border: none; /* Removes the default card border */
+  border-radius: 10px; /* Adds rounded corners to the card */
+  overflow: hidden; /* Ensures the content doesn't overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.card-img-top {
+  max-height: 200px; /* Sets a maximum height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}

@@ -13,3 +13,37 @@ mat-grid-tile {
 }
 
 
+.card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+  .icon-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .list-icon {
+    color: #6c757d;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .large-icon {
+    color: #007BFF;
+  }
+
+  .card-title {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .container {
+    margin-top: 20px;
+  }

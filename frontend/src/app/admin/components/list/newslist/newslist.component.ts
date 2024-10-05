@@ -18,22 +18,21 @@ export class NewslistComponent implements OnInit {
 
   };
 
-  // 2. creating an object
 
     
   newsObject: newsPostModel = {
-// id: 0,
     title: '',
   subtitle: '',
   description: [],
   img: '',
 
+  createDate: '',
+  createTime: '',
+  lastUpdated: ''
+
+    // img: []
 
 
-    // newsImages: []
-
-
-    // title, content, imageUrl, videoUrl, author, publishedAt
   };
 
 
@@ -47,63 +46,69 @@ this.getAllNews();
   newsModelArray: newsPostModel[] = [];
 
   // table colomn names 
-  displayedColumns: string[] = ['#', 'ID', 'News Title', 'Description', 'Image', 'Delete'];
+  displayedColumns: string[] = ['#', 'ID', 'News Title', 'Subtitle', 'Description', 'Image', 'Delete'];
 
 
 
 
-  public getAllNews() {
+//   public getAllNews() {
 
-    this.newsService.getAllNews().subscribe(
-      (response: newsPostModel[]) => {
+//     this.newsService.getAllNews().subscribe(
+//       (response: newsPostModel[]) => {
         
-        console.log(response);
-        this.newsModelArray = response;
-
-    // // Convert each news item image (byte array) to a base64 string
-    // this.newsModelArray = response.map(news => ({
+//         console.log(response);
+//         this.newsModelArray = response;
 
 
-    //   ...news,
-    //   img: news.img ? this.convertByteArrayToBase64(news.img) : null // Convert byte array to base64 string only if it exists
-    
-    
-    
-    
-    // }));
+//     // Convert each news item image (byte array) to a base64 string
+//     // this.newsModelArray = response.map(news => ({
 
 
+//     //   ...news,
+      
+//     //   img: news.img ? this.convertByteArrayToBase64(news.img) : null, // Convert byte array to base64 string only if it exists
+
+
+//     // }));
 
 
 
-      }, (error: HttpErrorResponse) => { console.log(error); }
-    );
-  };
 
-  // practice: any[] = [];
+//       }, (error: HttpErrorResponse) => { console.log(error); }
+//     );
+//   };
 
-  // getAllNews() {
-  //   this.practice = [];
-  //   this.newsService.getAllNews().subscribe(res => {
-  //     res.forEach(element => {
-  //       element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-  //       this.practice.push(element);
 
-  //       // console.log( this.products);  25.08.24 (sunday update)
+
+
+
+
+
+
+//   // practice: any[] = [];
+
+//   // getAllNews() {
+//   //   this.practice = [];
+//   //   this.newsService.getAllNews().subscribe(res => {
+//   //     res.forEach(element => {
+//   //       element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
+//   //       this.practice.push(element);
+
+//   //       // console.log( this.products);  25.08.24 (sunday update)
         
-  //     });
-  //   })
-  // }
+//   //     });
+//   //   })
+//   // }
 
 
 
 
 
-// Method to convert byte array to base64 string
-convertByteArrayToBase64(byteArray: Uint8Array): string {
-  const binaryString = String.fromCharCode(...new Uint8Array(byteArray));
-  return `data:image/jpeg;base64,${btoa(binaryString)}`;
-}
+// // Method to convert byte array to base64 string
+// convertByteArrayToBase64(byteArray: Uint8Array): string {
+//   const binaryString = String.fromCharCode(...new Uint8Array(byteArray));
+//   return `data:image/jpeg;base64,${btoa(binaryString)}`;
+// }
 
 
 
@@ -119,7 +124,51 @@ convertByteArrayToBase64(byteArray: Uint8Array): string {
 
 
 // delete news
-  deleteNews(id){
+  
+
+
+newsData: any[] = [];
+
+
+getAllNews(): void {
+  this.newsService.getAllNews().subscribe(
+    (data) => {
+      this.newsData = data;
+      this.newsData.forEach((element) => {
+        console.log('Processing element:', element);
+        this.processImage(element);
+      });
+    },
+    (error) => {
+      console.error('Error fetching news:', error);
+    }
+  );
+}
+
+processImage(element: any): void {
+  if (element.byteImg) {
+    const base64Image = `data:image/jpeg;base64,${element.byteImg}`;
+    element.img = base64Image;
+    console.log('Image processed for element:', element.id);
+  } else {
+    console.warn('No image data found for element:', element);
+    element.img = null;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleteNews(id){
 this.newsService.deleteNews(id).subscribe(
   (response) => { 
     console.log(response);  

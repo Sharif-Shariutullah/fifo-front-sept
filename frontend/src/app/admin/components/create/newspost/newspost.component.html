@@ -1,4 +1,4 @@
-
+<!-- 
 <h1>
   <div
     style="
@@ -21,7 +21,6 @@
         <label class="file-upload-label">
           <mat-icon>add_a_photo</mat-icon>
           <span>Select a Photo</span>
-          <!-- <mat-icon>add_a_photo</mat-icon> -->
 
           <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
         </label>
@@ -45,20 +44,6 @@
         <mat-error *ngIf="newsForm.get('newsDetails.subtitle')?.hasError('required')">This Input Is Required!</mat-error>
       </mat-form-field>
 
-      <!-- Dynamic Description Fields -->
-
-      <!-- <label for="description">Description:</label>
-      <div formArrayName="description">
-        <div *ngFor="let description of descriptionArray.controls; let i = index">
-          <mat-form-field appearance="outline" class="form-field">
-            <input matInput [formControlName]="i" type="text" placeholder="Description" />
-          </mat-form-field>
-          <button type="button" (click)="removeDescription(i)" class="btn btn-danger">Remove</button>
-        </div>
-      </div>
-      <button type="button" (click)="addDescription()" class="btn btn-primary">Add Description</button>
- -->
-
 
 <label for="description">Description:</label>
 <div formArrayName="description">
@@ -77,4 +62,103 @@
       <button  type="submit">Create News</button>
     </form>
   </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="page-header">
+  <b>Create a News</b>
+</h1>
+
+<div class="container bg-light shadow p-5 my-4 rounded ">
+  <form [formGroup]="newsForm" (ngSubmit)="addNews()">
+    <!-- Row 1: File Upload and Title -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-6 col-sm-12 mb-4 ">
+        <label class="file-upload-container">
+          <i class="fa fa-camera fa-2x upload-icon"></i>
+          <span>Select a Photo</span>
+          <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+        </label>
+        <div *ngIf="selectedFile" class="image-preview mt-3">
+          <img [src]="imagePreview" alt="Selected Image" class="preview-image">
+        </div>
+      </div>
+
+ 
+    </div>
+
+
+
+    <div class="row">
+   
+      <div class="col-12  mb-4">
+        <label class="form-label"><i class="fa fa-header fa-lg"></i> &nbsp; Title</label>
+        <input type="text" class="form-control" placeholder="Title" formControlName="title" />
+        <small class="text-danger" *ngIf="newsForm.get('newsDetails.title')?.hasError('required')">
+          This Input Is Required!
+        </small>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Row 2: Subtitle -->
+    <div class="row">
+      <div class="col-12 mb-4">
+        <label class="form-label"><i class="fa fa-pencil fa-lg"></i> &nbsp; Subtitle</label>
+        <input type="text" class="form-control" placeholder="Subtitle" formControlName="subtitle" />
+        <small class="text-danger" *ngIf="newsForm.get('newsDetails.subtitle')?.hasError('required')">
+          This Input Is Required!
+        </small>
+      </div>
+    </div>
+
+    <!-- Row 3: Description (textarea) -->
+    <div class="row">
+      <div class="col-12">
+        <label class="form-label"><i class="fa fa-align-left fa-lg"></i>  &nbsp;  Description</label>
+        <div formArrayName="description">
+          <div *ngFor="let description of descriptionArray.controls; let i = index;" class="input-group mb-3">
+            <textarea class="form-control" [formControlName]="i" rows="3" placeholder="Description {{i+1}}"></textarea>
+            <button type="button" class="btn btn-danger" (click)="removeDescription(i)">
+              <i class="fa fa-trash"></i> 
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addDescription()">
+          <i class="fa fa-plus"></i>  &nbsp; Add Description
+        </button>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <button type="submit" class="btn btn-success btn-lg">
+          <i class="fa fa-paper-plane"></i> &nbsp; Create News
+        </button>
+      </div>
+    </div>
+  </form>
 </div>

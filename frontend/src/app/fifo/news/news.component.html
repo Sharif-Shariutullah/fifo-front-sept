@@ -2,88 +2,24 @@
 
 
 
- 
-
-<div class="product-list">
-
-
-
-
-
-    <mat-card class="product-card" *ngFor="let prac of practice">
-        <div class="product-image">
-            <img [src]="prac.processedImg" alt="product-image">
+<div class="container mt-4">
+    <div class="row">
+      <div *ngFor="let newsItem of newsData" class="col-md-4 mb-4">
+        <div class="card">
+          <img *ngIf="newsItem.img" [src]="newsItem.img" class="card-img-top" alt="{{ newsItem.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ newsItem.title }}</h5>
+            <p class="card-text">{{ newsItem.subtitle }}</p>
+            <!-- <p class="text-muted">{{ newsItem.postedDate | date:'dd MMM, yyyy' }}</p> -->
+            <p class="text-muted">{{ newsItem.createDate }} {{ newsItem.createTime }} </p>
+            <!-- <a [routerLink]="['/news', newsItem.id]" class="btn btn-primary">Read More</a> -->
+            <a  class="btn btn-primary">Read More</a>
+          </div>
         </div>
-        <div class="product-details">
-            <h2 class="product-name">{{ prac.title }}</h2>
-  
-            
-            <p class="product-description">{{ prac.subtitle }}</p>
-            <mat-divider></mat-divider>
-            <div class="product-info">
-                <div class="info-row">
-                    <span class="info-label">Description:</span>
-                    <span class="info-value"> {{ prac.description }}  </span>
-                </div> 
-                
-             </div>
-  
-  
-  
-  
-        </div>
-    </mat-card>
+      </div>
+    </div>
   </div>
   
   
-  
-
-
-
-
-
-<!-- 
-
-   
-<div class="container">
-    <mat-grid-list cols="1" rowHeight="5:2" gutterSize="25">
-        <mat-grid-tile *ngFor="let n of newsModelArray">
-
-            <div class="container">
-                <h1><b>News Title :</b> &nbsp; &nbsp; {{n.title}}</h1>
-                <hr>
-
-                <h1><b>Author :</b> &nbsp; &nbsp; {{n.author}} </h1>
-
-                 <h1><b>Image :</b> &nbsp; &nbsp; {{n.imageUrl}} years </h1>
-             
-
-                <h1><b>date :</b> &nbsp; &nbsp; {{n.publishedAt}} </h1>
-                 <h1><b>Description :</b> &nbsp; &nbsp; {{n.content}} </h1>
-                <h1><b>Video :</b> &nbsp; &nbsp; {{n.videoUrl}} </h1>
-
-               <img *ngIf="n.newsImages" [src]="n.imageSrc" alt="Image" />
-
-
-
-                <button mat-raised-button color="warn" class="align-content-end;"   routerLink="/applicationForm" routerLinkActive="active"> Apply Now</button> -->
-                <!-- <button mat-raised-button color="primary" (click)="CareerView(j.id)"> View Career </button> -->
-                <!-- <button mat-raised-button color="primary" routerLink="/CareerView" routerLinkActive="active"> View Career </button>
-                
-                
-                <button mat-raised-button color="primary"> View</button>
-
-            </div>
-
-
-
-        </mat-grid-tile>
-
-    </mat-grid-list>
-</div>
-
-
-
- -->
 
 

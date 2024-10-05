@@ -1,5 +1,4 @@
-<div style="padding: 1%"></div>
-
+<!-- 
 <h1>
     <div style="
       padding: 3%;
@@ -13,7 +12,6 @@
 
 <div class="container">
     <mat-grid-list cols="3" rowHeight="2:1" gutterSize="30">
-        <!--  icon dhik korte hobe: middle;         -->
        
         <mat-grid-tile>        
             <button mat-icon-button color="warn" routerLink="/admin/newsPost" routerLinkActive="active" >
@@ -21,7 +19,6 @@
             <mat-icon>add</mat-icon>
            </div>
               
-            <!-- <mat-divider></mat-divider> -->
                 
                 <div>News</div>
             </button>
@@ -68,9 +65,241 @@
 
     </mat-grid-list>
 </div>
+ -->
 
-<div class="container pt-5">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, deserunt
-    pariatur iste quo culpa sunt soluta ab, nostrum cumque recusandae omnis optio
-    sapiente, error numquam vitae quisquam repudiandae corporis aspernatur.
-</div>
+
+
+
+
+<!-- 
+ <div class="admin-page">
+    <h1 class="admin-header">
+      Let's Create to Grow My Company
+    </h1>
+  
+    <div class="container">
+      <mat-grid-list cols="3" rowHeight="2:1" gutterSize="30">
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/newsPost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">article</mat-icon>
+              <span class="icon-label">News</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/careerPost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">work</mat-icon>
+              <span class="icon-label">Career</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/servicePost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">build</mat-icon>
+              <span class="icon-label">Service</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/photoUploadToGallery"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">photo</mat-icon>
+              <span class="icon-label">Photo</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/videoPost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">videocam</mat-icon>
+              <span class="icon-label">Video</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/teamPost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">group</mat-icon>
+              <span class="icon-label">Team</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+  
+        <mat-grid-tile>
+          <button
+            mat-icon-button
+            class="action-button"
+            routerLink="/admin/globalBpoPost"
+            routerLinkActive="active"
+          >
+            <div class="icon-wrapper">
+              <mat-icon class="small-icon">add</mat-icon>
+              <mat-icon class="large-icon">public</mat-icon>
+              <span class="icon-label">GlobalBPO</span>
+            </div>
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+  
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="admin-page">
+    <h1 class="admin-header">
+      Let's Create to Grow My Company
+    </h1>
+  
+    <div class="container">
+      <div class="row">
+        <!-- News -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/newsPost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class=" large-icon fa-solid fa-newspaper"></i>
+              <span class="icon-label">News</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Career -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/careerPost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-briefcase"></i>
+              <span class="icon-label">Career</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Service -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/servicePost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-cogs"></i>
+              <span class="icon-label">Service</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Photo -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/photoUploadToGallery'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-camera"></i>
+              <span class="icon-label">Photo</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Video -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/videoPost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-video-camera"></i>
+              <span class="icon-label">Video</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Team -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/teamPost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-users"></i>
+              <span class="icon-label">Team</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Global BPO -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="action-card" onclick="location.href='/admin/globalBpoPost'">
+            <div class="icon-wrapper">
+              <i class="small-icon fa fa-plus-circle"></i>
+              <i class="large-icon fa fa-globe"></i>
+              <span class="icon-label">GlobalBPO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

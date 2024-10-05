@@ -133,7 +133,66 @@
 
 
 
-
+        .page-header {
+            padding: 3%;
+            text-align: center;
+            background-color: #3b5998;
+            color: white;
+          }
+          
+          .file-upload-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #3b5998;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+          
+          .file-upload-container i {
+            color: #3b5998;
+            margin-right: 10px;
+          }
+          
+          .preview-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+          
+          .form-label {
+            font-weight: bold;
+          }
+          
+          .upload-icon {
+            color: #3b5998;
+          }
+          
+          .btn-danger, .btn-primary {
+            display: flex;
+            align-items: center;
+          }
+          
+          .btn-lg {
+            display: inline-flex;
+            align-items: center;
+          }
+          
+          textarea {
+            resize: none;
+          }
+          
+          /* Hover Effects */
+          .btn:hover, .file-upload-container:hover {
+            opacity: 0.9;
+            transition: opacity 0.3s;
+          }
+          
+          .bg-light {
+            background-color: #f0f8ff !important;
+          }
+          
 
 
 

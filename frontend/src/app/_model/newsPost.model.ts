@@ -5,7 +5,26 @@ export interface newsPostModel {
   title: string;
   subtitle: string;
   description: string[];
-  img: string;
-  // newsImages: FileHandle[],
+  img: any;
+  processedImg?: string; // Add this line to store the base64 image
+  
+  createDate: string;  // Date in string format or Date object
+  createTime: string;  // Time in string format or Date object
+  lastUpdated: string; // Optional, to store the last update datetime
+  // img: FileHandle[],
 }
-// title, content, imageUrl, videoUrl, author, published
+
+
+
+
+// export interface newsPostModel {
+
+//     title: string;
+//     subtitle: string;
+//     description: string[];
+//     img: any;
+//     processedImg?: string; 
+  
+
+//   }
+  

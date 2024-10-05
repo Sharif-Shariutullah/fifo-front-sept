@@ -1,3 +1,9 @@
+
+
+
+
+
+ <!-- Header Section -->
 <div style="padding: 1%"></div>
 
 <h1>
@@ -7,139 +13,130 @@
       text-align: center;
       position: static;
       background-color: rgb(128, 241, 221);
+      color: #333;
     "
   >
-    Check your List: to do Update & Delete
+    Check your List
   </div>
 </h1>
 
 <div class="container">
-  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="30">
-    <!--  icon dhik korte hobe: middle;         -->
+  <div class="row justify-content-center">
+    <!-- Card 1: Contact List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/client-contact-list'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-address-book fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Contact List</h5>
+        </div>
+      </div>
+    </div>
 
-    
-      <mat-grid-tile
-        ><button
-          mat-icon-button
-          color="warn"
-          routerLink="/client-contact-list"
-          routerLinkActive="active"
-        >
-          <div><mat-icon>list</mat-icon></div>
-          <div>Contact List</div>
-        </button></mat-grid-tile >
+    <!-- Card 2: Applicant List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/ApplicantList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-user fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Applicant List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 3: News List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/newsList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-newspaper fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">News List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 4: Career List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/careerList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-briefcase fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Career List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 5: Service List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/serviceList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-cogs fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Service List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 6: Photo List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/galleryList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-image fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Photo List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 7: Video List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/videoList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-video fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Video List</h5>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 8: Team List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/teamList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-users fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Team List</h5>
+        </div>
+      </div>
+    </div>
 
-        <mat-grid-tile
-        ><button
-          mat-icon-button
-          color="warn"
-          routerLink="/admin/ApplicantList"
-          routerLinkActive="active"
-        >
-          <div><mat-icon>list</mat-icon></div>
-          <div>Applicant List</div>
-        </button></mat-grid-tile
-      >
-    
-
-
-      <mat-grid-tile>
-      <button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/newsList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>News List</div>
-      </button>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/careerList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>Carrer List</div>
-      </button>
-      </mat-grid-tile>
-
-
-
-
-    <mat-grid-tile>
-      <button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/serviceList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>Service List</div>
-      </button>
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      ><button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/galleryList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>Photo List</div>
-      </button></mat-grid-tile
-    >
-
-    <mat-grid-tile
-      ><button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/videoList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>Video List</div>
-      </button></mat-grid-tile
-    >
-
-    <mat-grid-tile
-      ><button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/teamList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>Team List</div>
-      </button></mat-grid-tile
-    >
-
-    <mat-grid-tile
-      ><button
-        mat-icon-button
-        color="warn"
-        routerLink="/admin/globalBpoList"
-        routerLinkActive="active"
-      >
-        <div><mat-icon>list</mat-icon></div>
-        <div>GlobalBPO List</div>
-      </button></mat-grid-tile
-    >
-  </mat-grid-list>
-</div>
-
-<div class="container pt-5">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, deserunt
-  pariatur iste quo culpa sunt soluta ab, nostrum cumque recusandae omnis optio
-  sapiente, error numquam vitae quisquam repudiandae corporis aspernatur.
+    <!-- Card 9: Global BPO List -->
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-center card-hover" onclick="location.href='/admin/globalBpoList'">
+        <div class="card-body">
+          <div class="icon-container">
+            <i class="fa fa-list fa-2x list-icon"></i>
+            <i class="fa fa-globe fa-3x large-icon"></i>
+          </div>
+          <h5 class="card-title">Global BPO List</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
