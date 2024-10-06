@@ -36,6 +36,7 @@ import { DetailsComponent } from './Practice/details/details.component';
 import { EditComponent } from './Practice/edit/edit.component';
 import { NavbarComponent } from './fifo/navbar/navbar.component';
 import { ViewComponent } from './Practice/view/view.component';
+import { ViewNewsComponent } from './fifo/news/view-news/view-news.component';
 
 const routes: Routes = [
 
@@ -85,6 +86,9 @@ const routes: Routes = [
 
 { path: "nav", component: NavbarComponent},
 { path: "view", component: ViewComponent},
+
+
+{ path: "news-details/:id", component: ViewNewsComponent},
 
 
 

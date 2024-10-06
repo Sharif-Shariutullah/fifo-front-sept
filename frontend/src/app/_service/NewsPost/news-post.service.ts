@@ -35,6 +35,19 @@ export class NewsPostService {
     return this.http.delete(BASIC_URL + `api/admin/news/${id}`)
   }
 
+
+
+  // getNewsById(id: any): Observable<any> {
+  //   return this.http.get(BASIC_URL + `api/admin/news/details/${id}`)
+  // }
+
+
+  getNewsById(id: number): Observable<newsPostModel> {
+    return this.http.get<newsPostModel>(BASIC_URL + `api/admin/news/details/${id}`);
+  }
+  
+
+
 }
 
 

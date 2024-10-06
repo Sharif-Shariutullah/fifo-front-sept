@@ -17,7 +17,10 @@ export class NewsComponent implements OnInit {
   
   newsData: any[] = [];
 
-  constructor(private newsService: NewsPostService) {}
+  constructor(private newsService: NewsPostService,
+    private router: Router,
+
+  ) {}
 
   ngOnInit(): void {
     this.getAllNews();
@@ -55,5 +58,56 @@ export class NewsComponent implements OnInit {
       element.img = null;
     }
   }
+
+
+
+
+
+  // // details page
+  // getNewsById(id: number) {
+  //   this.newsService.getNewsById(id).subscribe(
+  //     (response: newsPostModel[]) => {
+
+  //       console.log(response);
+
+  //       // this.newsData = response;
+
+  //       this.router.navigate(['/news-details', id]);
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       console.error('Error fetching News details:', error);
+  //       console.log(error);
+  //     }
+  //   );
+  // }
+
+
+
+
+
+// details page
+getNewsById(id: number) {
+  this.newsService.getNewsById(id).subscribe(
+    (response: newsPostModel) => {  // Expect a single newsPostModel, not an array
+      console.log(response);
+
+      // If you need to set news data in this component, uncomment the line below:
+      // this.newsData = response;
+
+      // Navigate to the details page with the fetched ID
+      this.router.navigate(['/news-details', id]);
+    },
+    (error: HttpErrorResponse) => {
+      console.error('Error fetching News details:', error);
+    }
+  );
+}
+
+
+
+
+
+
+
 }
  

@@ -116,7 +116,8 @@ addNews(): void {
     formData.append('img', this.selectedFile); // Add image to the form data
     formData.append('title', this.newsForm.get('title').value);
     formData.append('subtitle', this.newsForm.get('subtitle').value);
-    formData.append('description', JSON.stringify(this.descriptionArray.value)); // Send the array of descriptions
+    // formData.append('description', JSON.stringify(this.descriptionArray.value)); // Send the array of descriptions
+    formData.append('description', this.descriptionArray.value.join(' ')); 
 
     this.newsService.addNews(formData).subscribe(
       (res: any) => {

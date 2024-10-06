@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
+
+
+
+
+
+<!-- 
+  <div class="container job-details" *ngIf="newsModelArray">
+    <h1>Title: {{ newsModelArray.title }}</h1>
+    <h3>Subtitle: {{ newsModelArray.subtitle }}</h3>
+  
+    <div *ngFor="let des of newsModelArray.description">
+      <p class="py-2">{{ des }}</p>
+    </div>
+  
+    <div *ngIf="newsModelArray.img">
+      <img [src]="newsModelArray.img" alt="News Image" style="max-width: 100%; height: auto;">
+    </div>
+  
+    <p>Create Date: {{ newsModelArray.createDate }}</p>
+  </div> -->
+  
+  
+
+
+
+  <div class="container">
+    <!-- Main News Section -->
+    <div class="news-details">
+      <h1>{{ newsModelArray.title }}</h1>
+      
+      <!-- Image at the top after title -->
+      <div *ngIf="newsModelArray.img" class="image-container">
+        <img
+        
+        [ngClass]="{'horizontal-image': isHorizontalImage, 'vertical-image': !isHorizontalImage}" 
+
+        class="news-image"
+
+        
+        [src]="newsModelArray.img" alt="News Image">
+      </div>
+
+      <!-- Quoted Subtitle -->
+      <div class="subtitle">
+        {{ newsModelArray.subtitle }}
+      </div>
+
+      <!-- Horizontal Line -->
+      <hr>
+
+      <!-- Description -->
+      <div *ngFor="let des of newsModelArray.description">
+        <p>{{ des }}</p>
+      </div>
+
+      <!-- Display Create Date -->
+      <!-- <p class="create-date">Create Date: {{ newsModelArray.createDate }}</p> -->
+   
+   
+   
+    </div>
+
+    <!-- More News Section -->
+    <!-- <div class="more-news">
+      <h2>More News</h2>
+      <div> </div>
+      <div class="news-item" *ngFor="let title of newsModelArray.title" >
+
+        <h1 >
+             {{title}}
+        </h1>
+      </div>
+
+
+
+
+      <div class="news-item">News Title 2</div>
+      <div class="news-item">News Title 3</div>
+      <div class="news-item">News Title 4</div>
+      <div class="news-item">News Title 5</div>
+    </div> -->
+
+
+
+    <div class="more-news">
+        <h2>More News</h2>
+        <div>
+            
+        </div>
+        <div *ngFor="let newsItem of newsData">
+          <div class="news-item" (click)="getNewsById(newsItem.id)">
+          <!-- <div class="news-item" > -->
+            <h1  class="news-title">{{ newsItem.title }}</h1>
+        <hr class="news-divider">
+
+          </div>
+        </div>
+   
+      </div>
+      
+
+  </div>

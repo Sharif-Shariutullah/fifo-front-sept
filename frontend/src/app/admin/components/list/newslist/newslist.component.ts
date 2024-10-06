@@ -51,6 +51,104 @@ this.getAllNews();
 
 
 
+newsData: any[] = [];
+
+
+getAllNews(): void {
+  this.newsService.getAllNews().subscribe(
+    (data) => {
+      this.newsData = data;
+      this.newsData.forEach((element) => {
+        console.log('Processing element:', element);
+
+              this.processImage(element);
+
+
+      });
+    },
+    (error) => {
+      console.error('Error fetching news:', error);
+    }
+  );
+}
+
+
+
+
+
+processImage(element: any): void {
+  if (element.byteImg) {
+    const base64Image = `data:image/jpeg;base64,${element.byteImg}`;
+    element.img = base64Image;
+    console.log('Image processed for element:', element.id);
+  } else {
+    console.warn('No image data found for element:', element);
+    element.img = null;
+  }
+}
+
+
+
+
+deleteNews(id){
+this.newsService.deleteNews(id).subscribe(
+  (response) => { 
+    console.log(response);  
+    this.getAllNews();
+},
+    (error: HttpErrorResponse) => { console.log(error); }
+)
+
+
+  }
+
+
+
+  // edit news
+editNews(id){
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   public getAllNews() {
 
 //     this.newsService.getAllNews().subscribe(
@@ -125,66 +223,3 @@ this.getAllNews();
 
 // delete news
   
-
-
-newsData: any[] = [];
-
-
-getAllNews(): void {
-  this.newsService.getAllNews().subscribe(
-    (data) => {
-      this.newsData = data;
-      this.newsData.forEach((element) => {
-        console.log('Processing element:', element);
-        this.processImage(element);
-      });
-    },
-    (error) => {
-      console.error('Error fetching news:', error);
-    }
-  );
-}
-
-processImage(element: any): void {
-  if (element.byteImg) {
-    const base64Image = `data:image/jpeg;base64,${element.byteImg}`;
-    element.img = base64Image;
-    console.log('Image processed for element:', element.id);
-  } else {
-    console.warn('No image data found for element:', element);
-    element.img = null;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleteNews(id){
-this.newsService.deleteNews(id).subscribe(
-  (response) => { 
-    console.log(response);  
-    this.getAllNews();
-},
-    (error: HttpErrorResponse) => { console.log(error); }
-)
-
-
-  }
-
-
-
-  // edit news
-editNews(id){
-
-}
-
-}

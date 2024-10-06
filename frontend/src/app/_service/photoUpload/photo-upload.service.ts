@@ -43,4 +43,12 @@ export class PhotoUploadService {
     );
     // return this.httpClient.get<photoUploadModel>("http://localhost:8080/api/getGalleryById/"+id));
   }
+
+
+
+
+
+
+
+  
 }

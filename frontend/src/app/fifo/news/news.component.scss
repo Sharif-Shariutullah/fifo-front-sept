@@ -188,3 +188,24 @@ mat-grid-tile {
   max-height: 200px; /* Sets a maximum height for the image */
   object-fit: cover; /* Ensures the image covers the area without distortion */
 }
+
+
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+
+.truncate-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}

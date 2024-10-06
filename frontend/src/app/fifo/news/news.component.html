@@ -5,15 +5,19 @@
 <div class="container mt-4">
     <div class="row">
       <div *ngFor="let newsItem of newsData" class="col-md-4 mb-4">
-        <div class="card">
+        <!-- <div class="card shadow-lg p-3 mb-5 bg-body rounded" (click)="getNewsById(newsItem.id)"> -->
+        <div class="card shadow p-3 mb-5 bg-body rounded" (click)="getNewsById(newsItem.id)">
           <img *ngIf="newsItem.img" [src]="newsItem.img" class="card-img-top" alt="{{ newsItem.title }}" />
           <div class="card-body">
-            <h5 class="card-title">{{ newsItem.title }}</h5>
-            <p class="card-text">{{ newsItem.subtitle }}</p>
+            <h5 class="card-title truncate-title">{{ newsItem.title }}</h5>
+            <p class="card-text truncate-text">{{ newsItem.subtitle }}</p>
             <!-- <p class="text-muted">{{ newsItem.postedDate | date:'dd MMM, yyyy' }}</p> -->
-            <p class="text-muted">{{ newsItem.createDate }} {{ newsItem.createTime }} </p>
+            <p class="text-muted">{{ newsItem.createDate }} </p>
             <!-- <a [routerLink]="['/news', newsItem.id]" class="btn btn-primary">Read More</a> -->
-            <a  class="btn btn-primary">Read More</a>
+         
+            <!-- <a  class="btn btn-primary">Read More</a> -->
+            
+            <!-- <a  class="btn btn-primary">Read More</a> -->
           </div>
         </div>
       </div>

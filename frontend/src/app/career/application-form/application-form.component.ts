@@ -102,7 +102,8 @@ export class ApplicationFormComponent implements OnInit, AfterViewInit {
   jobDetailsWithData: jobPosting; // a single object, not an array
  
  
-  constructor(private route: ActivatedRoute, 
+  constructor(
+    private route: ActivatedRoute, 
     private JobPostSer: JobpostService,
     private renderer: Renderer2, 
     private router: Router,

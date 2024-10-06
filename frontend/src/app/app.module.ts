@@ -50,6 +50,7 @@ import { ViewComponent } from './Practice/view/view.component';
 import { DetailsComponent } from './Practice/details/details.component';
 import { EditComponent } from './Practice/edit/edit.component';
 import { NavbarComponent } from './fifo/navbar/navbar.component';
+import { ViewNewsComponent } from './fifo/news/view-news/view-news.component';
 
 
 
@@ -63,7 +64,7 @@ import { NavbarComponent } from './fifo/navbar/navbar.component';
                 SignupComponent, 
                 HomeComponent, 
                 TrackOrderComponent, 
-                CareerComponent, ServiceComponent, NewsComponent, GalleryComponent, ContactComponent, GlobalbpoComponent, AboutComponent, ApplicationFormComponent, CareerViewListComponent, TeamComponent, VideoComponent, ContactCenterComponent, BackOfficeComponent, DigitalMarketingComponent, CreativeDesignComponent, AppDesignDevelopmentComponent, SkillsDevelopmentComponent, TowhidHossainComponent, JahangirHossainUzzalComponent, NurulIslamComponent, TariqulHasanComponent, ObaiduHaqueComponent, AtiaBilkisComponent, RashaduzammanRianComponent, TamannaSharkerComponent, CreateComponent, ListComponent, ViewComponent, DetailsComponent, EditComponent, NavbarComponent],
+                CareerComponent, ServiceComponent, NewsComponent, GalleryComponent, ContactComponent, GlobalbpoComponent, AboutComponent, ApplicationFormComponent, CareerViewListComponent, TeamComponent, VideoComponent, ContactCenterComponent, BackOfficeComponent, DigitalMarketingComponent, CreativeDesignComponent, AppDesignDevelopmentComponent, SkillsDevelopmentComponent, TowhidHossainComponent, JahangirHossainUzzalComponent, NurulIslamComponent, TariqulHasanComponent, ObaiduHaqueComponent, AtiaBilkisComponent, RashaduzammanRianComponent, TamannaSharkerComponent, CreateComponent, ListComponent, ViewComponent, DetailsComponent, EditComponent, NavbarComponent, ViewNewsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
