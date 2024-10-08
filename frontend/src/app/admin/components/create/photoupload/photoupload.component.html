@@ -1,4 +1,4 @@
-<div style="padding: 1%"></div>
+<!-- <div style="padding: 1%"></div>
  
 <h1>
   <div
@@ -56,3 +56,321 @@
 </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+
+
+
+ -->
+
+
+
+
+<!-- 
+<form (submit)="uploadGallery()">
+  <div>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="title" required>
+  </div>
+
+  <div>
+    <label>Subtitle</label>
+    <input type="text" [(ngModel)]="subtitle" required>
+  </div>
+
+  <div>
+    <label>Details</label>
+    <textarea [(ngModel)]="details" required></textarea>
+  </div>
+
+  <div>
+    <label>Captions (comma separated)</label>
+
+      <input type="text" (change)="onCaptionsChange($event)" placeholder="Enter captions" required>
+
+  </div>
+
+  <div>
+    <label>Select Images</label>
+    <input type="file" (change)="onFileChange($event)" multiple required>
+  </div>
+
+  <button type="submit">Upload Gallery</button>
+</form> -->
+
+
+
+
+
+
+
+
+<!-- //----------------- it works -->
+
+<!-- 
+<div class="container mt-5">
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card-header text-white bg-primary">
+      <h4 class="text-center">Upload Gallery</h4>
+    </div>
+    <div class="card-body">
+      <form (submit)="uploadGallery()" class="needs-validation" novalidate>
+        
+        <div class="form-group row mb-3">
+          <label for="title" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-heading"></i> Title
+          </label>
+          <div class="col-sm-10">
+            <input type="text" [(ngModel)]="title" id="title" class="form-control" placeholder="Enter title" required>
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <label for="subtitle" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-tag"></i> Subtitle
+          </label>
+          <div class="col-sm-10">
+            <input type="text" [(ngModel)]="subtitle" id="subtitle" class="form-control" placeholder="Enter subtitle" required>
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <label for="details" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-info-circle"></i> Details
+          </label>
+          <div class="col-sm-10">
+            <textarea [(ngModel)]="details" id="details" rows="3" class="form-control" placeholder="Enter details" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <label for="captions" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-quote-right"></i> Captions
+          </label>
+          <div class="col-sm-10">
+            <input type="text" (change)="onCaptionsChange($event)"id="captions" class="form-control" placeholder="Enter captions (comma separated)" required>
+
+         
+         
+         
+          </div>
+        </div>
+
+        <div class="form-group row mb-3">
+          <label for="images" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-image"></i> Images
+          </label>
+          <div class="col-sm-10">
+            <input type="file" (change)="onFileChange($event)" id="images" class="form-control" multiple required>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary btn-lg w-100">
+            <i class="fas fa-upload"></i> Upload Gallery
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-5">
+  <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+    
+    
+    
+
+<div class="card-header text-white bg-primary d-flex justify-content-center align-items-center">
+  <i class="fas fa-images me-2 fs-1"></i>
+  <h4 class="text-center fs-2 pt-2 gallery-title">Upload Gallery</h4>
+</div>
+
+   
+   
+   
+    <div class="card-body">
+      <!-- <form  (submit)="uploadGallery()" class="needs-validation" novalidate> -->
+      <form  #galleryForm="ngForm" (ngSubmit)="uploadGallery()" class="needs-validation" novalidate>
+
+        <!-- Title Field -->
+        <div class="form-group row mb-3">
+          <label for="title" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-heading"></i> Title
+          </label>
+          <div class="col-sm-10">
+            <input type="text" [(ngModel)]="title" id="title" class="form-control" placeholder="Enter title" required>
+          </div>
+        </div>
+
+        <!-- Subtitle Field -->
+        <div class="form-group row mb-3">
+          <label for="subtitle" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-tag"></i> Subtitle
+          </label>
+          <div class="col-sm-10">
+            <input type="text" [(ngModel)]="subtitle" id="subtitle" class="form-control" placeholder="Enter subtitle" required>
+          </div>
+        </div>
+
+        <!-- Details Field -->
+        <div class="form-group row mb-3">
+          <label for="details" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-info-circle"></i> Details
+          </label>
+          <div class="col-sm-10">
+            <textarea [(ngModel)]="details" id="details" rows="3" class="form-control" placeholder="Enter details" required></textarea>
+          </div>
+        </div>
+
+        <!-- Captions Field -->
+        <div class="form-group row mb-3">
+          <label for="captions" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-quote-right"></i> Captions
+          </label>
+          <div class="col-sm-10">
+            <input type="text" (change)="onCaptionsChange($event)" id="captions" class="form-control" placeholder="Enter captions (comma separated)" required>
+          </div>
+        </div>
+
+        <!-- Image Upload Field -->
+        <!-- <div class="form-group row mb-3">
+          <label for="images" class="col-sm-2 col-form-label text-primary">
+            <i class="fas fa-image"></i> Images
+          </label>
+          <div class="col-sm-10">
+            <input type="file" (change)="onFileChange($event)" id="images" class="form-control" multiple required>
+          </div>
+        </div> -->
+
+
+
+
+<!-- Drag and Drop File Upload -->
+<div class="form-group row mb-3">
+  <label for="images" class="col-sm-2 col-form-label text-primary">
+    <i class="fas fa-image"></i> Images
+  </label>
+  <div class="col-sm-10">
+    <div 
+      class="drag-drop-area" 
+      (dragover)="onDragOver($event)" 
+      (dragleave)="onDragLeave($event)" 
+      (drop)="onDrop($event)"
+      (click)="fileInput.click()"
+      [class.drag-over]="dragging">
+      <i class="fa-solid fa-cloud-arrow-up fa-3x cloud"></i>
+      <p>Drag and drop images here, or click to select</p>
+    </div>
+    <input 
+      type="file" 
+      #fileInput 
+      (change)="onFileChange($event)" 
+      id="images" 
+      class="form-control d-none" 
+      multiple required>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Image Previews -->
+<div class="form-group row mb-3">
+  <div class="col-sm-10 offset-sm-2">
+    <div *ngIf="imagePreviews.length > 0">
+      <h5>Image Previews:</h5>
+      <div class="row">
+        <div class="col-sm-6" *ngFor="let preview of imagePreviews; let i = index">
+          <div class="position-relative img-wrapper">
+            <img [src]="preview" class="img-thumbnail w-100 preview-img mb-2" alt="Preview">
+            <!-- Cancel Button -->
+            <button 
+              type="button" 
+              class="btn btn-danger btn-cancel" 
+              (click)="removeImage(i)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary btn-lg w-100">
+            <i class="fas fa-upload"></i> Upload Gallery
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
