@@ -113,7 +113,7 @@ export class NewspostComponent implements OnInit{
 addNews(): void {
   if (this.newsForm.valid) {
     const formData: FormData = new FormData();
-    formData.append('img', this.selectedFile); // Add image to the form data
+    formData.append('img', this.selectedFile); 
     formData.append('title', this.newsForm.get('title').value);
     formData.append('subtitle', this.newsForm.get('subtitle').value);
     // formData.append('description', JSON.stringify(this.descriptionArray.value)); // Send the array of descriptions
@@ -142,6 +142,10 @@ addNews(): void {
         });
       }
     );
+
+
+
+    
   } else {
     this.newsForm.markAllAsTouched();
   }

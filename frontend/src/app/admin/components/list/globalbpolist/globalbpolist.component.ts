@@ -10,76 +10,93 @@ import { GlobalBpoService } from 'src/app/_service/globalBpo/global-bpo.service'
   styleUrls: ['./globalbpolist.component.scss']
 })
 export class GlobalbpolistComponent {
+  globalBPOs: any[] = [];
 
- // 1. injecting the service where i http requests/method are made
+  constructor(private bpoService: GlobalBpoService) {}
 
- constructor(
-  private router: Router,
-  private service: GlobalBpoService) { }
+  ngOnInit(): void {
+    this.bpoService.getAllGlobalBPOs().subscribe(data => {
+      this.globalBPOs = data;
+    });
+  }
 
-
-// 2. creating an object
-
-Object: globalBpoModel = {
-
-  title: '',
-  subtitle: '',
-  details: '',
-
-//date : 
-// bpoImage :
-// bpoVideo :
-
-};
-
-
-ngOnInit(): void {
-  this.getAllGlobalBPO();
-}
+  deleteBPO(id: number): void {
+    this.bpoService.deleteGlobalBPO(id).subscribe(() => {
+      this.globalBPOs = this.globalBPOs.filter(bpo => bpo.id !== id);
+    });
+  }
 
 
 
-// data source which is array 
-listArray: globalBpoModel[] = [];
+//  // 1. injecting the service where i http requests/method are made
 
-// table colomn names 
-displayedColumns: string[] = ['ID', 'Title', 'Subtitle','Details', 'Edit', 'Delete'];
-
-
-// 3. method button method
-
-public getAllGlobalBPO() {
-
-  this.service.getAllGlobalBpo().subscribe(
-    (response: globalBpoModel[]) => {
-      console.log(response);
-
-      this.listArray = response;
-    }, (error: HttpErrorResponse) => { console.log(error); }
-  );
-};
+//  constructor(
+//   private router: Router,
+//   private service: GlobalBpoService) { }
 
 
+// // 2. creating an object
 
-// delete news
-delete(id) {
-  this.service.deleteGlobalBpo(id).subscribe(
-    (response) => {
-      console.log(response);
-      this.getAllGlobalBPO();
-    },
-    (error: HttpErrorResponse) => { console.log(error); }
-  )
+// Object: globalBpoModel = {
+
+//   title: '',
+//   subtitle: '',
+//   details: '',
+
+// //date : 
+// // bpoImage :
+// // bpoVideo :
+
+// };
 
 
-}
+// ngOnInit(): void {
+//   this.getAllGlobalBPO();
+// }
 
 
 
-// edit news
-edit(id) {
+// // data source which is array 
+// listArray: globalBpoModel[] = [];
 
-}
+// // table colomn names 
+// displayedColumns: string[] = ['ID', 'Title', 'Subtitle','Details', 'Edit', 'Delete'];
+
+
+// // 3. method button method
+
+// public getAllGlobalBPO() {
+
+//   this.service.getAllGlobalBpo().subscribe(
+//     (response: globalBpoModel[]) => {
+//       console.log(response);
+
+//       this.listArray = response;
+//     }, (error: HttpErrorResponse) => { console.log(error); }
+//   );
+// };
+
+
+
+// // delete news
+// delete(id) {
+//   this.service.deleteGlobalBpo(id).subscribe(
+//     (response) => {
+//       console.log(response);
+//       this.getAllGlobalBPO();
+//     },
+//     (error: HttpErrorResponse) => { console.log(error); }
+//   )
+
+
+// }
+
+
+
+// // edit news
+// edit(id) {
+
+// }
 
 }
  

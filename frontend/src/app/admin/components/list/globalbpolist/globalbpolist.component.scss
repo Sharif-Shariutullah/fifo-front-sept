@@ -1,0 +1,35 @@
+.list-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .list-title {
+    color: #469CD1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .bpo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .bpo-list li {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .delete-btn:hover {
+    background-color: #e60000;
+  }
