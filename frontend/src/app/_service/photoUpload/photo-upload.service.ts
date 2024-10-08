@@ -17,6 +17,7 @@ export class PhotoUploadService {
     );
   }
 
+
   // get/show 
   public getAllGallery() {
     return this.httpClient.get<photoUploadModel[]>(
