@@ -1,41 +1,153 @@
 
-<form (ngSubmit)="submitGlobalBPOForm(bpoForm)" #bpoForm="ngForm" enctype="multipart/form-data">
-  <div class="form-container">
-    <h2 class="form-title">Create GlobalBPO</h2>
+
+<!-- basic  -->
+
+<!-- <form [formGroup]="postForm" (ngSubmit)="submitPost()">
+  <label>Title:</label>
+  <input formControlName="title" type="text">
+
+  <label>Subtitle:</label>
+  <input formControlName="subtitle" type="text">
+
+  <label>Post Date:</label>
+  <input formControlName="postDate" type="date">
+
+  <label>Details:</label>
+  <textarea formControlName="details"></textarea>
+
+  <div *ngFor="let image of imageFormArray.controls; let i=index">
+    <label>Image {{i+1}}:</label>
+    <input type="file" (change)="onFileSelected($event, i)">
     
-    <div class="form-group">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" ngModel required class="form-input"/>
-    </div>
-
-    <div class="form-group">
-      <label for="subtitle">Subtitle:</label>
-      <input type="text" id="subtitle" name="subtitle" ngModel required class="form-input"/>
-    </div>
-
-    <div class="form-group">
-      <label for="postDate">Post Date:</label>
-      <input type="date" id="postDate" name="postDate" ngModel required class="form-input"/>
-    </div>
-
-    <div class="form-group">
-      <label for="details">Details:</label>
-      <textarea id="details" name="details" ngModel required class="form-input"></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="images">Upload Images:</label>
-      <input type="file" id="images" name="images" (change)="onFileSelected($event)" multiple class="form-input"/>
-    </div>
-
-    <div class="form-group">
-      <label for="captions">Image Captions (comma-separated):</label>
-      <input type="text" id="captions" name="captions" ngModel required class="form-input"/>
-    </div>
-
-    <button type="submit" class="submit-btn">Submit</button>
+    <label>Caption {{i+1}}:</label>
+    <input formControlName="caption" formControlName="caption-{{i}}" type="text">
   </div>
-</form>
+  
+  <button type="button" (click)="addImage()">Add Image</button>
+  
+  <button type="submit">Submit Post</button>
+</form> -->
+
+
+
+
+
+
+<!-- Bluish Professional Form -->
+<div class="container mt-5">
+  <!-- Large Form Title -->
+  <h1 class="text-center mb-4 text-primary">
+    <i class="fas fa-pencil-alt"></i> Create a New Post
+  </h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="submitPost()" class="p-4 border rounded shadow-sm" style="background-color: #f0f8ff;">
+    <!-- Title Field -->
+    <div class="form-group">
+      <label for="title"><i class="fas fa-heading text-primary"></i> Title</label>
+      <input
+        id="title"
+        class="form-control"
+        formControlName="title"
+        type="text"
+        placeholder="Enter post title"
+        required
+      />
+    </div>
+
+    <!-- Subtitle Field -->
+    <div class="form-group">
+      <label for="subtitle"><i class="fas fa-subscript text-primary"></i> Subtitle</label>
+      <input
+        id="subtitle"
+        class="form-control"
+        formControlName="subtitle"
+        type="text"
+        placeholder="Enter post subtitle"
+        required
+      />
+    </div>
+
+    <!-- Post Date Field -->
+    <div class="form-group">
+      <label for="postDate"><i class="fas fa-calendar-alt text-primary"></i> Post Date</label>
+      <input
+        id="postDate"
+        class="form-control"
+        formControlName="postDate"
+        type="date"
+        required
+      />
+    </div>
+
+    <!-- Details Field -->
+    <div class="form-group">
+      <label for="details"><i class="fas fa-info-circle text-primary"></i> Details</label>
+      <textarea
+        id="details"
+        class="form-control"
+        formControlName="details"
+        rows="4"
+        placeholder="Enter post details"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Image and Caption Fields (Dynamic) -->
+    <div *ngFor="let image of imageFormArray.controls; let i = index" class="form-group">
+      <label class="py-3 px-3"><i class="fas fa-image text-primary"></i> Image {{ i + 1 }}</label>
+
+      <!-- Drag-and-Drop Area -->
+      <div 
+        class="drag-drop-area p-3 border rounded text-center" 
+        (drop)="onFileDrop($event, i)" 
+        (dragover)="onDragOver($event)"
+        style="background-color: #e6f7ff; cursor: pointer;"
+      >
+        <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-2"></i>
+        <p>Drag & Drop to upload or</p>
+        <input
+          type="file"
+          class="form-control-file d-none"
+          id="image{{ i }}"
+          (change)="onFileSelected($event, i)"
+        />
+        <label for="image{{ i }}" class="btn btn-outline-primary">Choose File</label>
+      </div>
+
+      <!-- Image Preview -->
+      <div *ngIf="image.get('previewUrl').value" class="mt-2">
+        <img [src]="image.get('previewUrl').value" alt="Preview" class="img-thumbnail" width="200" />
+      </div>
+
+      <!-- Caption Input -->
+      <label for="caption{{ i }}">
+        <i class="fas fa-comment-alt text-primary"></i> Caption {{ i + 1 }}
+      </label>
+      <input
+        id="caption{{ i }}"
+        class="form-control"
+        formControlName="caption"
+        type="text"
+        placeholder="Enter image caption"
+      />
+
+      <!-- Remove Button -->
+      <button type="button" class="btn btn-danger btn-sm mt-2 float-end" (click)="removeImage(i)">
+        <i class="fas fa-trash-alt"></i> 
+      </button>
+    </div>
+
+    <!-- Add Image Button -->
+    <button type="button" class="btn btn-outline-primary btn-sm mb-3" (click)="addImage()">
+      <i class="fas fa-plus"></i> Add Image
+    </button>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary btn-block">
+      <i class="fas fa-check-circle"></i> Submit Post
+    </button>
+  </form>
+</div>
 
 
 
@@ -62,12 +174,224 @@
 
 
 
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
+
+
+
+
+
+<!--it works but i add more & more -->
+
+<!-- 
+<div class="container mt-5">
+  <h1 class="text-center mb-4 text-primary">
+    <i class="fas fa-pencil-alt"></i> Post a GlobalBPO News
+  </h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="submitPost()" class="p-4 border rounded shadow-sm" style="background-color: #f0f8ff;">
+    <div class="form-group">
+      <label for="title"><i class="fas fa-heading text-primary"></i> Title</label>
+      <input
+        id="title"
+        class="form-control"
+        formControlName="title"
+        type="text"
+        placeholder="Enter post title"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subtitle"><i class="fas fa-subscript text-primary"></i> Subtitle</label>
+      <input
+        id="subtitle"
+        class="form-control"
+        formControlName="subtitle"
+        type="text"
+        placeholder="Enter post subtitle"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="postDate"><i class="fas fa-calendar-alt text-primary"></i> Post Date</label>
+      <input
+        id="postDate"
+        class="form-control"
+        formControlName="postDate"
+        type="date"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="details"><i class="fas fa-info-circle text-primary"></i> Details</label>
+      <textarea
+        id="details"
+        class="form-control"
+        formControlName="details"
+        rows="6"
+        placeholder="Enter post details"
+        required
+      ></textarea>
+    </div>
+
+    <div *ngFor="let image of imageFormArray.controls; let i = index" class="form-group">
+      <label for="image{{ i }}" class="py-3 px-3">
+        <i class="fas fa-image text-primary"></i> Image {{ i + 1 }}
+      </label>
+      <input
+        id="image{{ i }}"
+        type="file"
+        class="form-control-file"
+        (change)="onFileSelected($event, i)"
+      />
+
+      <div *ngIf="image.get('previewUrl').value" class="mt-2">
+        <img [src]="image.get('previewUrl').value" alt="Preview" class="img-thumbnail" width="200" />
+      </div>
+
+      <label for="caption{{ i }}">
+        <i class="fas fa-comment-alt text-primary"></i> Caption {{ i + 1 }}
+      </label>
+      <input
+        id="caption{{ i }}"
+        class="form-control"
+        formControlName="caption"
+        type="text"
+        placeholder="Enter image caption"
+      />
+
+      <button type="button" class="btn btn-danger btn-sm mt-2 float-end" (click)="removeImage(i)">
+        <i class="fas fa-trash-alt"></i> 
+      </button>
+    </div>
+
+    <button type="button" class="btn btn-outline-primary btn-sm mb-3" (click)="addImage()">
+      <i class="fas fa-plus"></i> Add Image
+    </button>
+
+    <button type="submit" class="btn btn-primary btn-block">
+      <i class="fas fa-check-circle"></i> Submit Post
+    </button>
+  </form>
+</div>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--it works but i add more -->
+<!-- <div class="container mt-5">
+
+  <h1 class="text-center mb-4 text-primary">
+    <i class="fas fa-pencil-alt"></i> Create a New Post
+  </h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="submitPost()" class="p-4 border rounded shadow-sm" style="background-color: #f0f8ff;">
+
+
+    <div class="form-group">
+      <label for="title"><i class="fas fa-heading text-primary"></i> Title</label>
+      <input
+        id="title"
+        class="form-control"
+        formControlName="title"
+        type="text"
+        placeholder="Enter post title"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subtitle"><i class="fas fa-subscript text-primary"></i> Subtitle</label>
+      <input
+        id="subtitle"
+        class="form-control"
+        formControlName="subtitle"
+        type="text"
+        placeholder="Enter post subtitle"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="postDate"><i class="fas fa-calendar-alt text-primary"></i> Post Date</label>
+      <input
+        id="postDate"
+        class="form-control"
+        formControlName="postDate"
+        type="date"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="details"><i class="fas fa-info-circle text-primary"></i> Details</label>
+      <textarea
+        id="details"
+        class="form-control"
+        formControlName="details"
+        rows="4"
+        placeholder="Enter post details"
+        required
+      ></textarea>
+    </div>
+
+    <div *ngFor="let image of imageFormArray.controls; let i = index" class="form-group">
+      <label for="image{{i}}" class="py-3 px-3"><i class="fas fa-image text-primary"></i> Image {{i + 1}}</label>
+      <input
+        id="image{{i}}"
+        type="file"
+        class="form-control-file"
+        (change)="onFileSelected($event, i)"
+      />
+
+      <label for="caption{{i}}"><i class="fas fa-comment-alt text-primary"></i> Caption {{i + 1}}</label>
+      <input
+        id="caption{{i}}"
+        class="form-control"
+        formControlName="caption-{{i}}"
+        type="text"
+        placeholder="Enter image caption"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-outline-primary btn-sm mb-3"
+      (click)="addImage()"
+    >
+      <i class="fas fa-plus"></i> Add Image
+    </button>
+
+    <button type="submit" class="btn btn-primary btn-block">
+      <i class="fas fa-check-circle"></i> Submit Post
+    </button>
+  </form>
+</div> -->
+
+
+
+
 
 
 

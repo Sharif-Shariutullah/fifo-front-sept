@@ -241,3 +241,21 @@
       padding: 12px;
     }
 }
+
+
+.drag-drop-area:hover {
+  background-color: #d9f1ff;
+}
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap if the row is too long */
+}
+.image-item {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.image-item .caption {
+  margin-top: 5px;
+}

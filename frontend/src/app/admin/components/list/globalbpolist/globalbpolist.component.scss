@@ -33,3 +33,44 @@
   .delete-btn:hover {
     background-color: #e60000;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+   /* Background color for striped rows */
+   .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f0f8ff;
+  }
+  /* Highlighting table header */
+  .thead-dark th {
+    background-color: #003366;
+    color: white;
+  }
+
+
+  // .truncate-text-details {
+  //   display: -webkit-box;
+  //   -webkit-line-clamp: 3; /* Limits to 3 lines */
+  //   -webkit-box-orient: vertical;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   white-space: normal;
+  // }
+  
+  .truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  
