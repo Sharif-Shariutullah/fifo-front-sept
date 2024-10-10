@@ -73,9 +73,6 @@ getAllNews(): void {
 }
 
 
-
-
-
 processImage(element: any): void {
   if (element.byteImg) {
     const base64Image = `data:image/jpeg;base64,${element.byteImg}`;

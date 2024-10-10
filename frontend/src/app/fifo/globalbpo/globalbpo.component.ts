@@ -7,6 +7,8 @@ import { globalBpoModel } from 'src/app/_model/globalBpo.model';
 import { GlobalBpoService } from 'src/app/_service/globalBpo/global-bpo.service';
 import { PracticeService } from 'src/app/Practice/service/practice.service';
 
+
+
 @Component({
   selector: 'app-globalbpo',
   templateUrl: './globalbpo.component.html',
@@ -14,76 +16,73 @@ import { PracticeService } from 'src/app/Practice/service/practice.service';
 })
 export class GlobalbpoComponent implements OnInit {
 
- 
 
-  // constructor(
-  //   private router: Router,
-  //   private serviceClass: GlobalBpoService) { }
+
+  constructor(private bpoService: GlobalBpoService) {}
   
+    // --------------------------frontend -------------------
 
-  //   ngOnInit() {
-  //     this.getAllGlobalbpo();
-  //   }
   
+  isModalOpen = false;
+  currentImage: string;
   
-    
-  //   //array
-  //   globalBpoModelDetails = [];
-  
-  //   public getAllGlobalbpo() {
-  //     this.serviceClass.getAllGlobalBpo().subscribe(
-  //       (response: globalBpoModel[]) => {
-  //         console.log(response);
-  
-  //         this.globalBpoModelDetails = response;
-  //       },
-  //       (error: HttpErrorResponse) => {
-  //         console.log(error);
-  //       }
-  //     );
-  //   }
-  
-  //   // details page
-  //   detailsById(id) {
-  //     // this.router.navigate(['/CareerView', {id:id}]);
-  //   }
+   // Method to open the modal with the clicked image
+   openModal(imageSrc: string): void {
+    this.currentImage = imageSrc;
+    this.isModalOpen = true;
+  }
 
-
-
-
-
-
-
-  practice: any[] = [];
-
-  searchProductForm!: FormGroup;
-
-  constructor(
-    private practiceService: PracticeService,
-    private fb: FormBuilder,
-    private snackBar: MatSnackBar) { }
-
-  ngOnInit() {
-    this.getAllPractice();
-    this.searchProductForm = this.fb.group({
-      title: [null, [Validators.required]]
-
-    })
+  // Method to close the modal
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.currentImage = '';
   }
 
 
-  getAllPractice() {
-    this.practice = [];
-    this.practiceService.getAllPractice().subscribe(res => {
-      res.forEach(element => {
-        element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-        this.practice.push(element);
+  // --------------------------Backend -------------------
 
-        // console.log( this.products);  25.08.24 (sunday update)
-        
+  globalBPOs: globalBpoModel[] = [];
+  errorMessage: string | null = null; // To hold any error messages
+
+
+  ngOnInit(): void {
+    this.getAllGlobalBPOs();
+  }
+
+  getAllGlobalBPOs() {
+    this.bpoService.getAllGlobalBPOs().subscribe({
+      next: (data) => {
+        this.globalBPOs = data;
+        this.handleImageData(); // Call to handle image data conversion
+      },
+      error: (error) => {
+        this.errorMessage = error; // Capture error for display
+      }
+    });
+  }
+
+  private handleImageData() {
+    this.globalBPOs.forEach(bpo => {
+      bpo.images.forEach(image => {
+        // If your backend returns base64 directly, use it directly
+        image.img = 'data:image/jpeg;base64,' + image.img; // Make sure to prepend the correct data URI scheme
       });
-    })
+    });
   }
+  
+  // Helper function to convert Uint8Array to base64
+  private arrayBufferToBase64(buffer: Uint8Array): string {
+    let binary = '';
+    const len = buffer.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(buffer[i]);
+    }
+    return window.btoa(binary); // Convert binary string to base64
+  }
+  
+
+
+
 
 
 

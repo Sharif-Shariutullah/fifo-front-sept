@@ -218,3 +218,61 @@ button {
     margin-top: 10px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+.card-custom {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #f0f8ff; /* Light bluish background */
+  margin-bottom: 20px;
+}
+
+.card-custom .card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-custom .card-body {
+  background-color: #e6f2ff; /* Bluish color */
+}
+
+.card-custom h3, .card-custom h4 {
+  color: #005b96; /* Dark bluish text */
+}
+
+.card-custom .card-date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #666;
+}
+
+.card-custom .card-date i {
+  margin-right: 5px;
+  color: #005b96;
+}
+
+.card-custom .btn-custom {
+  background-color: #005b96;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card-custom .btn-custom:hover {
+  background-color: #004080;
+}

@@ -1,253 +1,82 @@
+
+
+
 <div class="py-5 container" style="align-items: center; justify-content: center; text-align: center;">
   <button type="submit" class="btn btn-success btn-block fs-3" routerLink="/globalBpoPost" routerLinkActive="Active">
     <i class="fa-solid fa-circle-plus"></i>&nbsp; Add More
   </button>
 </div>
 
-<!-- Professional List with Bluish Theme -->
-<div class="container mt-5">
-  <!-- Large List Title -->
-  <h1 class="text-center mb-4 text-primary fs-1">
-    <i class="fas fa-list-alt"></i> Post List
-  </h1>
-
-  <!-- Table -->
-  <table class="table table-striped table-bordered">
-    <thead class="thead-dark">
-      <tr class="text-center align-center">
-        <th><i class="fas fa-heading text-primary"></i> Title</th>
-        <th><i class="fas fa-subscript text-primary"></i> Subtitle</th>
-        <th><i class="fas fa-calendar-alt text-primary"></i> Post Date</th>
-        <th><i class="fas fa-info-circle text-primary"></i> Details </th>
-        <th><i class="fas fa-images text-primary"></i> Images & Captions</th>
-        <th><i class="fa-regular fa-trash-can"></i> Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let post of posts">
-        <td>{{ post.title }}</td>
-        <td>{{ post.subtitle }}</td>
-        <td>{{ post.postDate | date }}</td>
-        <td>{{ post.details }}</td>
-       
-       
-       
-        <!-- <td>
-          <div class="image-container">
-            <div *ngFor="let image of post.images" class="image-item">
-   
-              <img [src]="getImageUrl(image.image)" alt="Image" class="img-thumbnail" style="max-width: 150px; margin-right: 10px;" />
-       
-              <p class="caption"><i class="fas fa-comment-alt text-primary"></i> {{ image.caption }}</p>
-            </div>
-          </div>
-        </td> -->
-        <td>
-          <div class="image-container">
-            <div *ngFor="let image of post.images" class="image-item mb-2">
-              <!-- Display image if previewUrl is set -->
-              <img *ngIf="image.previewUrl" [src]="image.previewUrl" alt="Image Preview" class="img-thumbnail" style="max-width: 150px; margin-right: 10px;" />
-              <p *ngIf="image.caption"><i class="fas fa-comment-alt text-primary"></i> {{ image.caption }}</p>
-            </div>
-          </div>
-        </td>
-        
-
-
-
-        <td>
-          <button mat-icon-button color="warn" (click)="deleteButton(post.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-
-<!-- 
-
-<div class="py-5 container" style="align-items: center; justify-content: center; text-align: center;">
-  <button type="submit" class="btn btn-success btn-block fs-3" routerLink="/globalBpoPost" routerLinkActive="Active">
-    <i class="fa-solid fa-circle-plus"></i>&nbsp; Add More
-  </button>
-</div> -->
-
-
-
-
-<!-- 
 <div class="container mt-5">
   <h1 class="text-center mb-4 text-primary fs-1">
     <i class="fas fa-list-alt"></i> Post List
   </h1>
-
-  <table class="table table-striped table-bordered">
-    <thead class="thead-dark">
-      <tr class="text-center align-center">
-        <th><i class="fas fa-heading text-primary"></i> Title</th>
-        <th><i class="fas fa-subscript text-primary"></i> Subtitle</th>
-        <th><i class="fas fa-calendar-alt text-primary"></i> Post Date</th>
-        <th><i class="fas fa-info-circle text-primary"></i> Details </th>
-        <th><i class="fas fa-images text-primary"></i> Images & Captions</th>
-        <th><i class="fa-regular fa-trash-can"></i> Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let post of posts">
-
-
-        <td  >{{ post.title }}</td>
-
-
-        <td >{{ post.subtitle }}</td>
-
-
-        
-        <td>{{ post.postDate | date }}</td>
-        <td >
-          
-          
-          {{ post.details }}
-
-
-        </td>
-        <td>
-          <div *ngFor="let image of post.images" class="mb-2">
-            <img [src]="getImageUrl(image.image)" alt="Image" width="100" class="img-thumbnail" />
-            <p><i class="fas fa-comment-alt text-primary"></i> {{ image.caption }}</p>
-          </div>
-        </td>
-
-        <td> 
-          
-    
-            
-        <button mat-icon-button color="warn" (click)="deleteButton(post.id)">
-          <mat-icon>delete</mat-icon>    
-          </button>
-        </td>
-
-
-      </tr>
-    </tbody>
-  </table>
-</div>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Post Date</th>
-      <th>Details</th>
-      <th>Images & Captions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let post of posts">
-      <td>{{ post.title }}</td>
-      <td>{{ post.subtitle }}</td>
-      <td>{{ post.postDate | date }}</td>
-      <td>{{ post.details }}</td>
-      <td>
-        <div *ngFor="let image of post.images">
-          <img [src]="getImageUrl(image.image)" alt="Image" width="100">
-          <p>{{ image.caption }}</p>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-<div class="list-container">
-  <h2 class="list-title">All GlobalBPOs</h2>
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
   
-  <ul class="bpo-list">
-    <li *ngFor="let bpo of globalBPOs">
-      <h3>{{ bpo.title }} ({{ bpo.postDate }})</h3>
-      <p><strong>Subtitle:</strong> {{ bpo.subtitle }}</p>
-      <p><strong>Details:</strong> {{ bpo.details }}</p>
+  <div class="container">
+    <table class="bpo-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><i class="fa-solid fa-fingerprint"></i> Id</th>
 
-      <button (click)="deleteBPO(bpo.id)" class="delete-btn">Delete</button>
-    </li>
-  </ul>
-</div>
+          <th><i class="fas fa-folder"></i> Title</th>
+          <th><i class="fas fa-tag"></i> Subtitle</th>
+          <th><i class="fas fa-info-circle"></i> Details</th>
+          <th><i class="fas fa-calendar-alt"></i> Posted On</th>
+          <th><i class="fas fa-images"></i> Images</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bpo of globalBPOs; let i = index" class="bpo-item">
+
+          <td class="bg-dark-subtle"> {{ i + 1 }}</td>
+
+          <td>{{ bpo.id }}</td>
+          <td>{{ bpo.title }}</td>
+          <td>{{ bpo.subtitle }}</td>
+          <td>{{ bpo.details }}</td>
+          <td>{{ bpo.postDate }}</td>
+          <td>
+            <div class="image-list">
+              <div *ngFor="let image of bpo.images; let i = index" class="image-item">
+                <img [src]="image.img" alt="{{ image.caption }}" class="bpo-image" (click)="openModal(image.img)" />
+                <p class="image-caption">{{ image.caption }}</p>
+
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Modal for displaying enlarged image -->
+  <div class="modal" *ngIf="isModalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()"><i class="fa-solid fa-rectangle-xmark"></i></span>
+      <img [src]="currentImage" class="modal-image" />
+    </div>
+  </div>
+  
 
 
 
- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

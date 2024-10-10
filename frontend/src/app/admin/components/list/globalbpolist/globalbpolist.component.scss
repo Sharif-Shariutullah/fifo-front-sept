@@ -1,76 +1,195 @@
-.list-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+// .container {
+//   padding: 20px;
+// }
 
-  .list-title {
-    color: #469CD1;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+.bpo-list {
+  list-style: none;
+  padding: 0;
+}
 
-  .bpo-list {
-    list-style-type: none;
-    padding: 0;
-  }
+.bpo-item {
+  background-color: #f0f8ff; /* Light blue background */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  // border-left: 5px solid #007bff; /* Blue left border */
+  transition: background-color 0.3s;
+}
 
-  .bpo-list li {
-    background-color: #f1f1f1;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
+.bpo-item:nth-child(even) {
+  background-color: #e6f7ff; /* Lighter blue for even items */
+}
 
-  .delete-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.bpo-item:hover {
+  background-color: #b3d7ff; /* Darker blue on hover */
+}
 
-  .delete-btn:hover {
-    background-color: #e60000;
-  }
+.bpo-content {
+  margin-bottom: 10px;
+}
 
+.bpo-title,
+.bpo-subtitle,
+.bpo-details,
+.bpo-post-date {
+  margin: 5px 0;
+}
 
+.bpo-title i,
+.bpo-subtitle i,
+.bpo-details i,
+.bpo-post-date i {
+  margin-right: 5px;
+}
 
+.bpo-images {
+  margin-top: 10px;
+}
 
-
-
-
-
-
-
-
-
-   /* Background color for striped rows */
-   .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f0f8ff;
-  }
-  /* Highlighting table header */
-  .thead-dark th {
-    background-color: #003366;
-    color: white;
-  }
+// .image-list {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
 
-  // .truncate-text-details {
-  //   display: -webkit-box;
-  //   -webkit-line-clamp: 3; /* Limits to 3 lines */
-  //   -webkit-box-orient: vertical;
-  //   overflow: hidden;
-  //   text-overflow: ellipsis;
-  //   white-space: normal;
-  // }
-  
-  .truncate-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limits to 3 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-  }
-  
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px; /* Space between images */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-item {
+  position: relative;
+  // margin-right: 10px;
+  // margin-bottom: 10px;
+  text-align: center;
+}
+
+// .bpo-image {
+//   width: 100px;
+//   height: auto;
+//   border-radius: 5px;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+// }
+
+.image-caption {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555; /* Darker gray for captions */
+}
+
+
+
+
+
+.bpo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.bpo-table th,
+.bpo-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #d0e7ff; /* Light border */
+}
+
+.bpo-table th {
+  background-color: #007bff; /* Blue header */
+  color: white; /* White text for header */
+}
+
+.bpo-item:nth-child(even) {
+  background-color: #e6f7ff; /* Lighter blue for even rows */
+}
+
+.bpo-item:hover {
+  background-color: #b3d7ff; /* Darker blue on hover */
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin to the bottom for spacing */
+}
+
+
+
+
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 50px;
+  color: rgb(255, 0, 0); /* Close button color */
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.bpo-image {
+  width: 100px;
+  // width: 50%; /* Adjusted for table display */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Change cursor to pointer for clickable images */
+}
+
+.bpo-image:nth-child(3n) {
+  margin-right: 0; /* Remove margin for every 3rd item */
+}
+
+/* Modal Styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* No background color */
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80vw;
+  max-height: 90vh;
+}
+
+
+.modal-image {
+  width: 800px;
+  height: 750px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain; /* Ensure the image fits within the modal */
+}

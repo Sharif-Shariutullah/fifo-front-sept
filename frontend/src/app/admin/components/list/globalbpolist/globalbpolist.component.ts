@@ -11,213 +11,115 @@ import { GlobalBpoService } from 'src/app/_service/globalBpo/global-bpo.service'
 })
 
 export class GlobalbpolistComponent implements OnInit {
-  posts: any[] = [];
-
+  
   constructor(private bpoService: GlobalBpoService) {}
+  
+    // --------------------------frontend -------------------
 
-  ngOnInit(): void {
-    this.loadPosts();
+  
+  isModalOpen = false;
+  currentImage: string;
+  
+   // Method to open the modal with the clicked image
+   openModal(imageSrc: string): void {
+    this.currentImage = imageSrc;
+    this.isModalOpen = true;
   }
 
-  loadPosts(): void {
-    this.bpoService.getAllGlobalBPOs().subscribe(data => {
-      // Map the response to include previewUrl for each image
-      this.posts = data.map(post => {
-        if (post.images) {
-          post.images = post.images.map(image => ({
-            ...image,
-            previewUrl: this.getImageUrl(image.image) // Set initial preview URL from image data
-          }));
-        }
-        return post;
-      });
-    },
-    (error: HttpErrorResponse) => { 
-      console.log(error); 
+  // Method to close the modal
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.currentImage = '';
+  }
+
+
+  // --------------------------Backend -------------------
+
+  globalBPOs: globalBpoModel[] = [];
+  errorMessage: string | null = null; // To hold any error messages
+
+
+  ngOnInit(): void {
+    this.getAllGlobalBPOs();
+  }
+
+  getAllGlobalBPOs() {
+    this.bpoService.getAllGlobalBPOs().subscribe({
+      next: (data) => {
+        this.globalBPOs = data;
+        this.handleImageData(); // Call to handle image data conversion
+      },
+      error: (error) => {
+        this.errorMessage = error; // Capture error for display
+      }
     });
   }
 
-  // Convert byte array to image URL
-  getImageUrl(imageData: any): string {
-    // Check if imageData is a valid byte array or string
-    if (imageData) {
-      const base64String = btoa(String.fromCharCode(...new Uint8Array(imageData)));
-      return `data:image/jpeg;base64,${base64String}`;
-    }
-    return '';
+  private handleImageData() {
+    this.globalBPOs.forEach(bpo => {
+      bpo.images.forEach(image => {
+        // If your backend returns base64 directly, use it directly
+        image.img = 'data:image/jpeg;base64,' + image.img; // Make sure to prepend the correct data URI scheme
+      });
+    });
   }
+  
+  // Helper function to convert Uint8Array to base64
+  private arrayBufferToBase64(buffer: Uint8Array): string {
+    let binary = '';
+    const len = buffer.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(buffer[i]);
+    }
+    return window.btoa(binary); // Convert binary string to base64
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   deleteButton(id: number): void {
     this.bpoService.deleteGlobalBPO(id).subscribe(
       (response) => { 
         console.log(response); 
-        this.loadPosts(); // Refresh the list after deletion
+        // this.loadPosts(); // Refresh the list after deletion
+        this.getAllGlobalBPOs(); // Refresh the list after deletion
       },
       (error: HttpErrorResponse) => { 
         console.log(error); 
       }
     );
   }
+
+
+
+
+
+
 }
 
 
-// ---------------------it works but i add more 
-// export class GlobalbpolistComponent implements OnInit{
 
 
 
-//   constructor(private bpoService: GlobalBpoService) {}
 
-//   posts: any[] = [];
 
-
-//   ngOnInit(): void {
-//     this.loadPosts();
-//   }
-
-
-
-//   loadPosts(): void {
-//     this.bpoService.getAllGlobalBPOs().subscribe(data => {
-//       this.posts = data;
-//     },
-//     (error: HttpErrorResponse) => { console.log(error); }
-  
-  
-  
-//   );
-//   }
-
-//   getImageUrl(imageData: any): string {
-//     // Convert byte array to image URL
-//     const base64String = btoa(String.fromCharCode(...new Uint8Array(imageData)));
-//     return `data:image/jpeg;base64,${base64String}`;
-//   }
-
-
-
-
-
-//   deleteButton(id) {
-//     this.bpoService.deleteGlobalBPO(id).subscribe(
-//       (response) => { 
-//         console.log(response); 
-//       this.loadPosts();
-      
-//       },
-//       (error: HttpErrorResponse) => { console.log(error); }
-//     );
-
-//   }
-
-
-
-
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // globalBPOs: any[] = [];
-  // ngOnInit(): void {
-  //   this.bpoService.getAllGlobalBPOs().subscribe(data => {
-  //     this.globalBPOs = data;
-  //   });
-  // }
-
-  // deleteBPO(id: number): void {
-  //   this.bpoService.deleteGlobalBPO(id).subscribe(() => {
-  //     this.globalBPOs = this.globalBPOs.filter(bpo => bpo.id !== id);
-  //   });
-  // }
-
-
-
-//  // 1. injecting the service where i http requests/method are made
-
-//  constructor(
-//   private router: Router,
-//   private service: GlobalBpoService) { }
-
-
-// // 2. creating an object
-
-// Object: globalBpoModel = {
-
-//   title: '',
-//   subtitle: '',
-//   details: '',
-
-// //date : 
-// // bpoImage :
-// // bpoVideo :
-
-// };
-
-
-// ngOnInit(): void {
-//   this.getAllGlobalBPO();
-// }
-
-
-
-// // data source which is array 
-// listArray: globalBpoModel[] = [];
-
-// // table colomn names 
-// displayedColumns: string[] = ['ID', 'Title', 'Subtitle','Details', 'Edit', 'Delete'];
-
-
-// // 3. method button method
-
-// public getAllGlobalBPO() {
-
-//   this.service.getAllGlobalBpo().subscribe(
-//     (response: globalBpoModel[]) => {
-//       console.log(response);
-
-//       this.listArray = response;
-//     }, (error: HttpErrorResponse) => { console.log(error); }
-//   );
-// };
-
-
-
-// // delete news
-// delete(id) {
-//   this.service.deleteGlobalBpo(id).subscribe(
-//     (response) => {
-//       console.log(response);
-//       this.getAllGlobalBPO();
-//     },
-//     (error: HttpErrorResponse) => { console.log(error); }
-//   )
-
-
-// }
-
-
-
-// // edit news
-// edit(id) {
-
-// }
-
-
-
-
-
-
- 
