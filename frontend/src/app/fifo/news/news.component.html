@@ -15,9 +15,9 @@
             <p class="text-muted">{{ newsItem.createDate }} </p>
             <!-- <a [routerLink]="['/news', newsItem.id]" class="btn btn-primary">Read More</a> -->
          
-            <!-- <a  class="btn btn-primary">Read More</a> -->
-            
-            <!-- <a  class="btn btn-primary">Read More</a> -->
+            <div class="card-footer">
+              <a type="submit" (click)="getNewsById(newsItem.id)" class="btn btn-outline-primary w-100">View</a>
+            </div>
           </div>
         </div>
       </div>

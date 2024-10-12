@@ -64,7 +64,21 @@ export class GlobalBpoService {
     return this.http.delete<void>(`${this.baseUrl}/deleteGlobalBPO/${id}`);
   }
 
+
+    // edit 
+  public getGlobalBPOById(id: number) : Observable<globalBpoModel> {
+    return this.http.get<globalBpoModel>(
+      `http://localhost:8080/api/admin/getGlobalBPOById/${id}`
+    );
+    // return this.httpClient.get<globalBpoModel>("http://localhost:8080/api/getGlobalBPOById/"+id));
+  }
+
 }
+
+
+// getNewsById(id: number): Observable<newsPostModel> {
+//   return this.http.get<newsPostModel>(BASIC_URL + `api/admin/news/details/${id}`);
+// }
 
 
 

@@ -37,6 +37,7 @@ import { EditComponent } from './Practice/edit/edit.component';
 import { NavbarComponent } from './fifo/navbar/navbar.component';
 import { ViewComponent } from './Practice/view/view.component';
 import { ViewNewsComponent } from './fifo/news/view-news/view-news.component';
+import { GlobalBpoViewComponent } from './fifo/globalbpo/global-bpo-view/global-bpo-view.component';
 
 const routes: Routes = [
 
@@ -54,6 +55,7 @@ const routes: Routes = [
 // { path: "gallery/:id", component: GalleryComponent},
 
 { path: "globalBpoAlliance", component: GlobalbpoComponent},
+{ path: "global-bpo-view/:id", component: GlobalBpoViewComponent},
 { path: "news", component: NewsComponent},
 { path: "service", component: ServiceComponent},
 { path: "CareerView", component: CareerViewListComponent},

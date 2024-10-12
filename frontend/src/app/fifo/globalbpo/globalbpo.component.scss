@@ -276,3 +276,20 @@ button {
 .card-custom .btn-custom:hover {
   background-color: #004080;
 }
+
+
+
+
+
+
+
+
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}

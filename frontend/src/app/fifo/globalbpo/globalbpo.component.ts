@@ -18,7 +18,9 @@ export class GlobalbpoComponent implements OnInit {
 
 
 
-  constructor(private bpoService: GlobalBpoService) {}
+  constructor(
+    private bpoService: GlobalBpoService,
+  private router : Router) {}
   
     // --------------------------frontend -------------------
 
@@ -83,6 +85,12 @@ export class GlobalbpoComponent implements OnInit {
 
 
 
+
+
+// call the details page
+getGlobalBPOById(id: number) {
+  this.router.navigate(['/global-bpo-view', id]);
+}
 
 
 

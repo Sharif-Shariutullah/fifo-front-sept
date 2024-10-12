@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./global-bpo-post.component.scss']
 })
 export class GlobalBpoPostComponent {
+
+
   constructor(
     private bpoService: GlobalBpoService,
     private fb: FormBuilder,
@@ -29,6 +31,9 @@ export class GlobalBpoPostComponent {
       images: this.imageFormArray, // Handle multiple images with captions
     });
   }
+
+
+// ---------------------------------------------------------------Frontend --------------------------------------------------------------- 
 
   postForm: FormGroup;
   imageFormArray: FormArray;
@@ -85,6 +90,15 @@ export class GlobalBpoPostComponent {
     this.imageFormArray.removeAt(index); // Remove from form
     this.selectedFiles.splice(index, 1); // Remove from selected files
   }
+
+
+
+
+// ---------------------------------------------------------------Backend --------------------------------------------------------------- 
+
+
+
+
 
   // Submit form data
   submitPost() {

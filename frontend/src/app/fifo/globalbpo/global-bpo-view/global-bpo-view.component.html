@@ -1,0 +1,124 @@
+<!-- <div *ngIf="bpo">
+    <h1>{{ bpo.title }}</h1>
+    <p>{{ bpo.subtitle }}</p>
+    <p><strong>Posted on: </strong>{{ bpo.postDate | date:'mediumDate' }}</p>
+  
+    <div class="row">
+      <div class="col-md-6" *ngFor="let image of bpo.images">
+        <img [src]="image.img" class="img-fluid" alt="Image for {{ bpo.title }}">
+        <p>{{ image.caption }}</p>
+
+    </div>
+    </div>
+  
+  </div>
+  
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+   -->
+
+
+
+   <div class="container my-5">
+    <!-- Title -->
+    <h1 class="fs-1 fw-bold text-dark mb-5">{{ bpo.title }}</h1>
+    
+    <!-- Subtitle -->
+    <h3 class="fs-5 text-muted lh-sm ">{{ bpo.subtitle }}</h3>
+    
+<!-- error  -->
+<!-- share in social media  -->
+<div class="my-4 float-end">
+    <!-- <h5>Share this news:</h5> -->
+    <a (click)="shareOnFacebook()" class="me-3" target="_blank" title="Share on Facebook">
+      <i class="fa-brands fa-facebook-square fs-2 text-primary"></i>
+    </a>  
+    
+    <a (click)="shareOnTwitter()" class="me-3" target="_blank" title="Share on Twitter">
+
+        <i class="fa-brands fa-x-twitter fs-2 text-black"></i>
+    </a>
+
+    <a (click)="shareOnLinkedIn()" class="me-3" target="_blank" title="Share on LinkedIn">
+      <i class="fa-brands fa-linkedin fs-2 text-primary"></i>
+    </a>
+
+
+
+
+    <a (click)="printPage()" title="Print this page">
+      <i class="fa-solid fa-print fs-2 text-dark"></i>
+    </a>
+  </div>
+
+
+    <!-- Post Date with Icon -->
+    <p class="text-muted mt-3">
+      <i class="fa-regular fa-clock"></i> {{ bpo.postDate | date:'mediumDate' }}
+    </p>
+
+
+<hr>
+
+
+
+
+    <!-- Details -->
+    <div class="m-5">
+      <p>{{ bpo.details }}</p>
+    </div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+ <!-- Image Section -->
+ <div class="row g-3">
+    <div class="col-md-6" *ngFor="let image of bpo.images">
+      <div class="card h-100 shadow-sm">
+        <!-- Image container with fixed aspect ratio -->
+        <div class="image-container">
+          <img [src]="image.img" class="card-img-top img-fluid" (click)="openModal(image.img)" alt="Image for {{ image.caption }}">
+        </div>
+        <div class="card-body text-center">
+          <p class="card-text">{{ image.caption }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Image Viewing -->
+  <div class="modal" *ngIf="isModalOpen">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+ <div class="modal-footer">
+          <button class="btn btn-danger" (click)="closeModal()">
+            <i class="fa-solid fa-rectangle-xmark"></i> Close
+          </button>
+        </div>
+
+        <div class="modal-body text-center">
+          <img [src]="currentImage" class="img-fluid" alt="Selected Image">
+        </div>
+       
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  

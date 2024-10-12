@@ -119,6 +119,10 @@
         <img [src]="image.get('previewUrl').value" alt="Preview" class="img-thumbnail" width="200" />
       </div>
 
+
+
+
+      
       <!-- Caption Input -->
       <label for="caption{{ i }}">
         <i class="fas fa-comment-alt text-primary"></i> Caption {{ i + 1 }}
@@ -130,6 +134,13 @@
         type="text"
         placeholder="Enter image caption"
       />
+
+
+
+
+
+
+
 
       <!-- Remove Button -->
       <button type="button" class="btn btn-danger btn-sm mt-2 float-end" (click)="removeImage(i)">
